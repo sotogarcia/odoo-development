@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data noupdate="0">
+
+        <!--  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+            CUSTOMIZING ODOO ADMINISTRATOR USER
+
+            - Administrator renamed to 'Administrador'.
+            - Added timezone and language.
+        - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+        <!-- Administrator custom settings -->
+        <record model="res.users" id="base.user_root">
+            <field name="name">Administrador</field>
+            <field name="lang">es_ES</field>
+            <field name="tz">Europe/Madrid</field>
+            <field name="action_id" ref="base.action_res_company_form" />
+        </record>
+
+    </data>
+</openerp>

@@ -22,25 +22,21 @@
 ###############################################################################
 {
     'name': '{{ name }}',
-    'summary': '{{ name }} Module Project',
+    'summary': '{{ name }} custom settings',
     'version': '1.0',
 
     'description': """
-{{ name }} Module Project.
+{{ name }} custom settings.
 ==============================================
 
-Allows to quickly start the development of new Odoo modules providing a full
-folder structure and some common files.
+This module adapts the Odoo behavior to the specific **{{ name }}**
+requirements, overwriting general settings of the installed modules.
 
-Included components:
+Enterprise specific information:
 ---------------------------------------------------------------------
-    * Module folder tree
-    * Module manifest file (__openerp__.py)
-    * File to store hierarchical group categories (data/ir_module_data.xml)
-    * Groups definition (security/res_groups.xml)
-    * Model access rights (security/ir_access_rights.xml)
-    * Resoure access rules (security/ir_rule.xml)
-    * Module main menu (views/ir_ui_menu.xml)
+    - Company information.
+    - Custom translations.
+    - Security policies and access rights.
     """,
 
     'author': 'Jorge Soto Garcia',
@@ -61,17 +57,15 @@ Included components:
     },
 
     'data': [
-        'data/ir_module_data.xml',
-        'data/templates.xml',
+        'data/res_company.xml',
+        'data/res_partner.xml',
+        'data/res_users.xml',
 
         'security/res_groups.xml',
         'security/ir_model_access.xml',
         'security/ir_rule.xml',
-
-        'views/ir_ui_menu.xml',
     ],
     'demo': [
-        'demo/demo.xml',
     ],
 
     'js': [

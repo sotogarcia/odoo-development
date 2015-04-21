@@ -1,0 +1,29 @@
+res.company
+    name
+    rml_header1
+    email
+    phone
+    fax
+
+res.partner (x2)
+    name
+    image
+    street
+    street2
+    city
+    zip
+    phone
+    mobile
+    email
+    website
+
+res.users
+    password
+
+openerp.py
+    name
+    summary
+    description
+    depends
+
+

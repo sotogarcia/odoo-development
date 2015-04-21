@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openerp>
+    <data noupdate="1">
+
+        <!-- <record model="ir.model.access" id="access_{{ name|snake }}_{{ name|snake }}">
+            <field name="name">access.{{ name|snake }}.{{ name|snake }}</field>
+            <field name="model_id" ref="{{ name|snake }}.{{ name|snake }}"/>
+            <field name="perm_read" eval="True" />
+            <field name="perm_create" eval="True" />
+            <field name="perm_write" eval="True" />
+            <field name="perm_unlink" eval="True" />
+            <field name="active" eval="True" />
+        </record> -->
+
+    </data>
+</openerp>

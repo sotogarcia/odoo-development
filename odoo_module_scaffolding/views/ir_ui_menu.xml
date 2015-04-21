@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openerp>
+    <data noupdate="1">
+
+        <!-- <record model="ir.ui.menu" id="menu_{{ name }}" >
+            <field name="name">{{ name }}</field>
+            <field name="sequence" eval="10" />
+        </record> -->
+
+    </data>
+</openerp>

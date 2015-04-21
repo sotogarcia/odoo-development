@@ -17,3 +17,17 @@ Feel free to fork and modify the project and its Wiki, sending me a pull request
 
 Likewise, you can leave constancy of any issue about the project through issues button shown at right.
 
+
+## Tool
+
+### add/remove
+
+--model=model_name --inherit=parent_name --type=[abstract, transient, model] --description=text
+--view=model_name --
+--controller
+- group
+- test
+- wizard
+- report
+
+
