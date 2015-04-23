@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openerp>
+    <data noupdate="0">
+
+        <record model="ir.ui.view" id="view_exercise_delegated_model_tree_full">
+            <field name="name">view.exercise.delegated.model.tree.full</field>
+            <field name="model">exercise.delegated.model</field>
+            <field name="type">tree</field>
+            <field name="mode">extension</field>
+            <field name="priority" eval="16" />
+            <field name="inherit_id" ref="odoo_inheritance_exercise.view_exercise_delegated_model_tree_full" />
+            <field name="active" eval="True" />
+            <field name="arch" type="xml">
+                <xpath expr="//tree" position="attributes">
+                    <attribute name="create">1</attribute>
+                    <attribute name="edit">1</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_exercise_delegated_model_form_full">
+            <field name="name">view.exercise.delegated.model.form.full</field>
+            <field name="model">exercise.delegated.model</field>
+            <field name="type">form</field>
+            <field name="mode">extension</field>
+            <field name="priority" eval="16" />
+            <field name="inherit_id" ref="odoo_inheritance_exercise.view_exercise_delegated_model_form_full" />
+            <field name="active" eval="True" />
+            <field name="arch" type="xml">
+                <xpath expr="//form" position="attributes">
+                    <attribute name="create">1</attribute>
+                    <attribute name="edit">1</attribute>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>

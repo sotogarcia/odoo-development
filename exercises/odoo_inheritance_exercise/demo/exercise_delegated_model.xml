@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openerp>
+    <data noupdate="0">
+
+        <record model="exercise.delegated.model" id="exercise_delegated_model_01">
+            <field name="inherited_id" ref="exercise_inherited_model_01" />
+            <field name="color">V</field>
+        </record>
+
+        <record model="exercise.delegated.model" id="exercise_delegated_model_02">
+            <field name="inherited_id" ref="exercise_inherited_model_01" />
+            <field name="color">G</field>
+        </record>
+
+        <record model="exercise.delegated.model" id="exercise_delegated_model_03">
+            <field name="name">Boeing 77-200ER</field>
+            <field name="purchase_price" eval="201.08" />
+            <field name="sale_price" eval="258.80" />
+            <field name="color">B</field>
+        </record>
+
+        <record model="exercise.delegated.model" id="exercise_delegated_model_04">
+            <field name="name">Airbus A-380-800</field>
+            <field name="purchase_price" eval="392.925" />
+            <field name="sale_price" eval="403.93" />
+            <field name="color">Y</field>
+        </record>
+
+        <record model="exercise.delegated.model" id="">
+             <field name="inherited_id" ref="exercise_delegated_model_04_exercise_inherited_model" />
+             <field name="color">O</field>
+        </record>
+
+    </data>
+</openerp>

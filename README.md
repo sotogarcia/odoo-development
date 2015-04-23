@@ -1,33 +1,63 @@
-Odoo Module Scaffolding is an learning exercise born to understand development of Odoo modules.
+This project contains several Odoo projects in which I have been working, these are distributed in folders by topic:
 
-Odoo documentation is scarce and scattered, find information about how Odoo works it's an arduous and exhausting task. Once found, it's a good idea non loose it never.
+```bash
+├───exercises   # Exercises which have been used to learn about Odoo
+│   ├───odoo_inheritance_exercise
+│   └───odoo_security_exercise
+│
+├───modules     # Modules to extend the Odoo funcionality
+│   └───development_tools
+│
+├───scaffolds   # Scaffold templates which can be used whith odoo.py scaffold -t
+│   ├───common_scaffolding
+│   └───enterprise_name
+│
+├───tools       # Some usefull  tools and scripts to work with Odoo
+│   ├───batch
+│   └───python
+│
+└───_assets_    # Resources used in this project (images, icons, fonts, etc...)
+```
 
-# Topics covered
+## Exercises
 
-* Module structure
-* Models
-* Views
-* Controllers
-* Security
-* Web
+Sometimes, it's not possible to find required information about a searched topic in the Odoo documentation, forums, etc. I this case, the only way to resolve the raised question is try it for yourself.
 
-# Contributing
+### odoo_inheritance_exercise
 
-Feel free to fork and modify the project and its Wiki, sending me a pull request with anything you considered relevant. 
+Module to illustrate the different possibilities of inheritance in Odoo. It have a basic model which will be the parent of an an extended model, an inherited model and a delegate model.
 
-Likewise, you can leave constancy of any issue about the project through issues button shown at right.
+### odoo_security_exercise
 
+Module to illustrate how to use res.groups, ir.model.access and ir.rule in Odoo to set the security access rights.
 
-## Tool
+## Modules
 
-### add/remove
+Odoo is an extensible system which can be extended adding new modules to it, the following are available in this project:
 
---model=model_name --inherit=parent_name --type=[abstract, transient, model] --description=text
---view=model_name --
---controller
-- group
-- test
-- wizard
-- report
+### development_tools
 
+This module provides some technical reports listed bellow:
 
+- **Groups implied**: pivot table which shows the dependencies between the existing groups.
+- **Users by groups**: pivot table which shows which users belong to each group.
+- **Modules by groups** `[WIP]`: pivot table which shows model access rules to each group.
+
+## Scaffolds
+
+The Odoo command line allows to create new modules starting from existing scaffolding templates, the following are available in this project:
+
+### common_scaffolding
+
+- Common directory structure and manifest file.
+- A sample of a model, a view and a controller.
+
+### enterprise_name
+
+- Common directory structure and manifest file.
+- Data files to overwrite:
+    - The main company
+	- The main company partner
+	- The administrator user
+	- The administrator partner
+- Empty files to ovewrite access rights and translation terms.

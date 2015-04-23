@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openerp>
+    <data noupdate="0">
+
+        <record model="ir.module.category" id="module_category_odoo_security_exercise_hierarchical">
+            <field name="name">Odoo security exercise</field>
+            <field name="description">Hierarchical category</field>
+            <field name="sequence" eval="10" />
+            <field name="visible" eval="True" />
+        </record>
+
+        <record model="ir.module.category" id="module_category_odoo_security_exercise_flat">
+            <field name="name">Odoo security exercise</field>
+            <field name="description">Non hierarchical category</field>
+            <field name="sequence" eval="10" />
+            <field name="visible" eval="True" />
+        </record>
+
+    </data>
+</openerp>
+

@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+
+<openerp>
+    <data noupdate="0">
+
+        <record model="ir.ui.menu" id="odoo_inheritance_exercise.menu_inheritance_exercise" >
+            <field name="name">Security exercise</field>
+            <field name="sequence" eval="10" />
+        </record>
+
+    </data>
+</openerp>

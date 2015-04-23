@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openerp>
+    <data noupdate="0">
+
+        <record model="ir.ui.view" id="view_exercise_extended_model_tree">
+            <field name="name">view.exercise.extended.model.tree</field>
+            <field name="model">exercise.base.model</field>
+            <field name="inherit_id" ref="odoo_inheritance_exercise.view_exercise_extended_model_tree" />
+            <field name="type">tree</field>
+            <field name="mode">extension</field>
+            <field name="priority" eval="16" />
+            <field name="active" eval="True" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="before">
+                    <field name="treatment" />
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_exercise_extended_model_form">
+            <field name="name">view.exercise.extended.model.form</field>
+            <field name="model">exercise.base.model</field>
+            <field name="inherit_id" ref="odoo_inheritance_exercise.view_exercise_extended_model_form" />
+            <field name="type">form</field>
+            <field name="mode">extension</field>
+            <field name="priority" eval="16" />
+            <field name="active" eval="True" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='middle_name']//.." position="attributes">
+                    <attribute name="col">2</attribute>
+                </xpath>
+                <xpath expr="//field[@name='middle_name']//.." position="before">
+                    <group col="2">
+                        <field name="treatment" />
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>

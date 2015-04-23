@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openerp>
+    <data noupdate="0">
+
+        <record model="exercise.base.model" id="odoo_inheritance_exercise.exercise_base_model_01">
+            <field name="treatment">mr</field>
+        </record>
+
+        <record model="exercise.base.model" id="odoo_inheritance_exercise.exercise_base_model_02">
+            <field name="treatment">mrs</field>
+        </record>
+
+        <record model="exercise.base.model" id="odoo_inheritance_exercise.exercise_base_model_03">
+            <field name="treatment">mr</field>
+        </record>
+
+        <record model="exercise.base.model" id="odoo_inheritance_exercise.exercise_base_model_04">
+            <field name="treatment">mrs</field>
+        </record>
+
+        <record model="exercise.base.model" id="odoo_inheritance_exercise.exercise_base_model_05">
+            <field name="treatment">mrs</field>
+        </record>
+
+    </data>
+</openerp>

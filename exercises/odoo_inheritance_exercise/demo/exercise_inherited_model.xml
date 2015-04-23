@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openerp>
+    <data noupdate="0">
+
+        <record model="exercise.inherited.model" id="exercise_inherited_model_01">
+            <field name="name">Airbus A-320</field>
+            <field name="purchase_price" eval="78.63" />
+            <field name="sale_price" eval="91.50" />
+        </record>
+
+        <record model="exercise.inherited.model" id="exercise_inherited_model_02">
+            <field name="name">Boeing 737-800</field>
+            <field name="purchase_price" eval="76.83" />
+            <field name="sale_price" eval="89.10" />
+        </record>
+
+        <record model="exercise.inherited.model" id="exercise_inherited_model_03">
+            <field name="name">Airbus A-330-300</field>
+            <field name="purchase_price" eval="199.55" />
+            <field name="sale_price" eval="239.44" />
+        </record>
+
+    </data>
+</openerp>

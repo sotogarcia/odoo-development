@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openerp>
+    <data noupdate="0">
+
+        <record model="ir.ui.view" id="view_dev_domain_tester_form">
+            <field name="name">view.dev.domain.tester.form</field>
+            <field name="model">dev.domain.tester</field>
+            <field name="type">form</field>
+            <field name="mode">primary</field>
+            <field name="priority" eval="16" />
+            <field name="groups_id" eval="[4, ref('base.group_no_one')]" />
+            <field name="active" eval="True" />
+            <field name="arch" type="xml">
+                <form string="Caption" create="1" delete="1" edit="1">
+                    <group col="4">
+                        <field name="model_id"/>
+                        <field name="view_id" />
+                    </group>
+                    <group>
+                        <field name="domain_string" widget="text" />
+                    </group>
+                    <group>
+                        <field name="context_string" widget="text" />
+                    </group>
+                    <footer>
+                        <button name="cmd_execute" string="Execute" type="object" class="oe_highlight"/> or
+                        <button special="cancel" string="Cancel" class="oe_link"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_dev_domain_tester_act_window">
+            <field name="type">ir.actions.act_window</field>
+            <field name="name">Test domains and contexts</field>
+            <field name="res_model">dev.domain.tester</field>
+            <field name="view_mode">form</field>
+            <field name="view_type">form</field>
+            <field name="target">new</field>
+            <field name="limit" eval="80" />
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+            <field name="auto_search" eval="True" />
+        </record>
+
+        <record model="ir.ui.menu" id="menu_act_window_tests" >
+            <field name="name">Domain tester</field>
+            <field name="action" ref="action_dev_domain_tester_act_window" />
+            <field name="parent_id" ref="menu_testing_tools" />
+            <field name="sequence" eval="10" />
+        </record>
+
+    </data>
+</openerp>

@@ -1,0 +1,735 @@
+# Translation of Odoo Server.
+# This file contains the translation of the module
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0-20150121\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-04-22 22:03+0000\n"
+"PO-Revision-Date: 2015-04-23 00:06+0100\n"
+"Last-Translator: Jorge Soto Garcia <sotogarcia@gmail.com>\n"
+"Language-Team: Jorge Soto Garcia <sotogarcia@gmail.com>\n"
+"Language: es_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 1.7.5\n"
+
+#. module: development_tools
+#: field:report.groups.models,perm_create:0
+#: field:report.groups.models,perm_read:0
+#: field:report.groups.models,perm_unlink:0
+msgid "Allowed to create"
+msgstr ""
+
+#. module: development_tools
+#: field:report.groups.models,perm_write:0
+msgid "Allowed to read"
+msgstr ""
+
+#. module: development_tools
+#: model:res.groups,name:development_tools.group_archbishops
+msgid "Archbishops"
+msgstr ""
+
+#. module: development_tools
+#: model:res.groups,name:development_tools.group_bishops
+msgid "Bishops"
+msgstr ""
+
+#. module: development_tools
+#: model:ir.filters,name:development_tools.filter_report_groups_implied_group_by_categories
+#: model:ir.filters,name:development_tools.filter_report_groups_users_group_by_categories
+msgid "By categories"
+msgstr ""
+
+#. module: development_tools
+#: model:ir.filters,name:development_tools.filter_report_groups_implied_categories_external
+#: model:ir.filters,name:development_tools.filter_report_groups_users_categories_external
+msgid "By categories  (External)"
+msgstr ""
+
+#. module: development_tools
+#: model:ir.filters,name:development_tools.filter_report_groups_implied_identifiers
+#: model:ir.filters,name:development_tools.filter_report_groups_users_identifiers
+msgid "By database IDs"
+msgstr ""
+
+#. module: development_tools
+#: model:ir.actions.act_window,help:development_tools.action_report_groups_implied_graph_act_window
+msgid ""
+"By default, rows show main groups information and columns information about "
+"the implied groups"
+msgstr ""
+
+#. module: development_tools
+#: model:ir.filters,name:development_tools.filter_report_groups_implied_group_by_module
+#: model:ir.filters,name:development_tools.filter_report_groups_users_group_by_module
+msgid "By modules"
+msgstr ""
+
+#. module: development_tools
+#: model:ir.filters,name:development_tools.filter_report_groups_implied_modules_external
+#: model:ir.filters,name:development_tools.filter_report_groups_users_modules_external
+msgid "By modules (External)"
+msgstr ""
+
+#. module: development_tools
+#: field:report.groups.models,crud:0
+msgid "CRUD"
+msgstr ""
+
+#. module: development_tools
+#: view:dev.domain.tester:development_tools.view_dev_domain_tester_form
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: development_tools
+#: view:dev.domain.tester:development_tools.view_dev_domain_tester_form
+msgid "Caption"
+msgstr "Etiqueta"
+
+#. module: development_tools
+#: model:res.groups,name:development_tools.group_cardinals
+msgid "Cardinals"
+msgstr ""
+
+#. module: development_tools
+#: help:report.groups.implied,group_category_id:0
+#: help:report.groups.models,group_category_id:0
+#: help:report.groups.users,group_category_id:0
+msgid "Category to which child group belongs"
+msgstr ""
+
+#. module: development_tools
+#: help:report.groups.implied,implied_category_id:0
+#: help:report.groups.models,implied_category_id:0
+#: help:report.groups.users,implied_category_id:0
+msgid "Category to which implied group belongs"
+msgstr ""
+
+#. module: development_tools
+#: model:ir.module.category,description:development_tools.module_category_technical_reporting
+msgid ""
+"Category with the groups defined in Technical Reporting module with "
+"demonstration purposes only"
+msgstr ""
+
+#. module: development_tools
+#: help:report.groups.implied,group_xml_id:0
+#: help:report.groups.models,group_xml_id:0
+#: help:report.groups.users,group_xml_id:0
+msgid ""
+"Child group external Key/Identifier that can be used for data integration "
+"with third-party systems"
+msgstr ""
+
+#. module: development_tools
+#: view:report.groups.implied:development_tools.view_report_groups_implied_search
+msgid "Child groups"
+msgstr ""
+
+#. module: development_tools
+#: help:dev.domain.tester,view_id:0
+msgid "Choose a valid view for model"
+msgstr "Seleccione una vista válida para el modelo"
+
+#. module: development_tools
+#: help:dev.domain.tester,model_id:0
+msgid "Choose an Odoo existing model"
+msgstr "Seleccione un modelo existente de Odoo"
+
+#. module: development_tools
+#: model:res.groups,comment:development_tools.group_pope
+msgid "Company CEO"
+msgstr ""
+
+#. module: development_tools
+#: field:dev.domain.tester,context_string:0
+msgid "Context"
+msgstr "Contexto"
+
+#. module: development_tools
+#: model:res.groups,comment:development_tools.group_archbishops
+msgid "Coordinators among regional delegations"
+msgstr ""
+
+#. module: development_tools
+#: help:report.groups.models,crud:0
+msgid "Create, read, update and delete permisions (bitfield)"
+msgstr ""
+
+#. module: development_tools
+#: field:dev.domain.tester,create_uid:0
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: development_tools
+#: field:dev.domain.tester,create_date:0
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: development_tools
+#: model:ir.model,name:development_tools.model_report_groups_models
+msgid ""
+"Data of model access by each group (and implied) to be used in pivot table "
+"reports"
+msgstr ""
+
+#. module: development_tools
+#: model:ir.model,name:development_tools.model_report_groups_users
+msgid "Data of users by group (and implied) to be used in pivot table reports"
+msgstr ""
+
+#. module: development_tools
+#: help:report.groups.implied,group_id:0 help:report.groups.models,group_id:0
+#: help:report.groups.users,group_id:0
+msgid "Database identifier of the child group"
+msgstr ""
+
+#. module: development_tools
+#: help:report.groups.implied,implied_id:0
+#: help:report.groups.models,implied_id:0
+#: help:report.groups.users,implied_id:0
+msgid "Database identifier of the implied group"
+msgstr ""
+
+#. module: development_tools
+#: model:ir.filters,name:development_tools.filter_report_groups_implied_demostration_groups
+msgid "Demostration groups"
+msgstr ""
+
+#. module: development_tools
+#: help:report.groups.implied,involving_itself:0
+#: help:report.groups.models,involving_itself:0
+#: help:report.groups.users,involving_itself:0
+msgid "Determines when group is involving itself"
+msgstr ""
+
+#. module: development_tools
+#: model:ir.ui.menu,name:development_tools.menu_developement_tools
+msgid "Developement"
+msgstr "Desarrollo"
+
+#. module: development_tools
+#: model:res.groups,comment:development_tools.group_bishops
+msgid "Directors of each one of the regional delegations"
+msgstr ""
+
+#. module: development_tools
+#: field:dev.domain.tester,domain_string:0
+msgid "Domain"
+msgstr "Dominio"
+
+#. module: development_tools
+#: model:ir.ui.menu,name:development_tools.menu_act_window_tests
+msgid "Domain tester"
+msgstr "Probador de dominios"
+
+#. module: development_tools
+#: view:dev.domain.tester:development_tools.view_dev_domain_tester_form
+msgid "Execute"
+msgstr "Ejecutar"
+
+#. module: development_tools
+#: help:report.groups.models,model_module_xml_id:0
+msgid "External Key/Identifier of the module in which model was defined"
+msgstr ""
+
+#. module: development_tools
+#: help:report.groups.implied,group_module_xml_id:0
+#: help:report.groups.models,group_module_xml_id:0
+#: help:report.groups.users,group_module_xml_id:0
+msgid ""
+"External Key/Identifier of the module in which the child group was defined"
+msgstr ""
+
+#. module: development_tools
+#: help:report.groups.implied,implied_module_xml_id:0
+#: help:report.groups.models,implied_module_xml_id:0
+#: help:report.groups.users,implied_module_xml_id:0
+msgid ""
+"External Key/Identifier of the module in which the implied group was defined"
+msgstr ""
+
+#. module: development_tools
+#: help:report.groups.users,user_module_xml_id:0
+msgid "External Key/Identifier of the module in which user was defined"
+msgstr ""
+
+#. module: development_tools
+#: model:res.groups,comment:development_tools.group_eclectics
+msgid "Freelancers who can serve at several companies at same time."
+msgstr ""
+
+#. module: development_tools
+#: help:report.groups.implied,group_category_fully_qualified_xml_id:0
+#: help:report.groups.models,group_category_fully_qualified_xml_id:0
+#: help:report.groups.users,group_category_fully_qualified_xml_id:0
+msgid "Fully qualified external Key/Identifier of the child group category"
+msgstr ""
+
+#. module: development_tools
+#: help:report.groups.implied,group_fully_qualified_xml_id:0
+#: help:report.groups.implied,implied_fully_qualified_xml_id:0
+#: help:report.groups.models,group_fully_qualified_xml_id:0
+#: help:report.groups.models,implied_fully_qualified_xml_id:0
+#: help:report.groups.models,model_fully_qualified_xml_id:0
+#: help:report.groups.users,group_fully_qualified_xml_id:0
+#: help:report.groups.users,implied_fully_qualified_xml_id:0
+msgid "Fully qualified external Key/Identifier of the implied group"
+msgstr ""
+
+#. module: development_tools
+#: help:report.groups.implied,implied_category_fully_qualified_xml_id:0
+#: help:report.groups.models,implied_category_fully_qualified_xml_id:0
+#: help:report.groups.users,implied_category_fully_qualified_xml_id:0
+msgid "Fully qualified external Key/Identifier of the implied group category"
+msgstr ""
+
+#. module: development_tools
+#: help:report.groups.users,user_fully_qualified_xml_id:0
+msgid "Fully qualified external Key/Identifier of the user"
+msgstr ""
+
+#. module: development_tools
+#: field:report.groups.implied,group_id:0
+#: field:report.groups.models,group_id:0 field:report.groups.users,group_id:0
+msgid "Group ID"
+msgstr ""
+
+#. module: development_tools
+#: field:report.groups.implied,group_name:0
+#: field:report.groups.models,group_name:0
+#: field:report.groups.users,group_name:0
+msgid "Group Name"
+msgstr ""
+
+#. module: development_tools
+#: help:report.groups.models,perm_create:0
+msgid "Group can create a new instance from model"
+msgstr ""
+
+#. module: development_tools
+#: help:report.groups.models,perm_unlink:0
+msgid "Group can delete an existing instance of the model"
+msgstr ""
+
+#. module: development_tools
+#: help:report.groups.models,perm_read:0
+msgid "Group can read an existing instance of the model"
+msgstr ""
+
+#. module: development_tools
+#: help:report.groups.models,perm_write:0
+msgid "Group can update an existing instance of the model"
+msgstr ""
+
+#. module: development_tools
+#: field:report.groups.implied,group_category_id:0
+#: field:report.groups.models,group_category_id:0
+#: field:report.groups.users,group_category_id:0
+msgid "Group category"
+msgstr ""
+
+#. module: development_tools
+#: field:report.groups.implied,group_category_fully_qualified_xml_id:0
+#: field:report.groups.models,group_category_fully_qualified_xml_id:0
+#: field:report.groups.users,group_category_fully_qualified_xml_id:0
+msgid "Group category fully qualified external ID"
+msgstr ""
+
+#. module: development_tools
+#: field:report.groups.implied,group_xml_id:0
+#: field:report.groups.models,group_xml_id:0
+#: field:report.groups.users,group_xml_id:0
+msgid "Group external ID"
+msgstr ""
+
+#. module: development_tools
+#: field:report.groups.implied,group_fully_qualified_xml_id:0
+#: field:report.groups.models,group_fully_qualified_xml_id:0
+#: field:report.groups.users,group_fully_qualified_xml_id:0
+msgid "Group fully qualified external ID"
+msgstr ""
+
+#. module: development_tools
+#: model:ir.ui.menu,name:development_tools.menu_groups_by_group
+msgid "Group inheritance"
+msgstr ""
+
+#. module: development_tools
+#: model:ir.model,name:development_tools.model_report_groups_implied
+msgid "Group inheritance data to be used in pivot reports"
+msgstr ""
+
+#. module: development_tools
+#: field:report.groups.implied,group_module_id:0
+#: field:report.groups.models,group_module_id:0
+#: field:report.groups.users,group_module_id:0
+msgid "Group module"
+msgstr ""
+
+#. module: development_tools
+#: field:report.groups.implied,group_module_xml_id:0
+#: field:report.groups.models,group_module_xml_id:0
+#: field:report.groups.users,group_module_xml_id:0
+msgid "Group module external ID"
+msgstr ""
+
+#. module: development_tools
+#: model:ir.actions.act_window,name:development_tools.action_report_groups_implied_graph_act_window
+#: view:report.groups.implied:development_tools.view_report_groups_implied_graph
+msgid "Groups inheritance"
+msgstr ""
+
+#. module: development_tools
+#: view:report.groups.users:development_tools.view_report_groups_users_search
+msgid "Hide groups with no users"
+msgstr ""
+
+#. module: development_tools
+#: view:report.groups.implied:development_tools.view_report_groups_implied_search
+msgid "Hide those that are involved themselves"
+msgstr ""
+
+#. module: development_tools
+#: field:dev.domain.tester,id:0 field:report.groups.implied,id:0
+#: field:report.groups.models,id:0 field:report.groups.users,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: development_tools
+#: field:report.groups.implied,implied_id:0
+#: field:report.groups.models,implied_id:0
+#: field:report.groups.users,implied_id:0
+msgid "Implied ID"
+msgstr ""
+
+#. module: development_tools
+#: field:report.groups.implied,implied_name:0
+#: field:report.groups.models,implied_name:0
+#: field:report.groups.users,implied_name:0
+msgid "Implied Name"
+msgstr ""
+
+#. module: development_tools
+#: field:report.groups.implied,implied_category_id:0
+#: field:report.groups.models,implied_category_id:0
+#: field:report.groups.users,implied_category_id:0
+msgid "Implied category"
+msgstr ""
+
+#. module: development_tools
+#: field:report.groups.implied,implied_category_fully_qualified_xml_id:0
+#: field:report.groups.models,implied_category_fully_qualified_xml_id:0
+#: field:report.groups.users,implied_category_fully_qualified_xml_id:0
+msgid "Implied category fully qualified external ID"
+msgstr ""
+
+#. module: development_tools
+#: field:report.groups.implied,implied_xml_id:0
+#: field:report.groups.models,implied_xml_id:0
+#: field:report.groups.users,implied_xml_id:0
+msgid "Implied external ID"
+msgstr ""
+
+#. module: development_tools
+#: field:report.groups.implied,implied_fully_qualified_xml_id:0
+#: field:report.groups.models,implied_fully_qualified_xml_id:0
+#: field:report.groups.users,implied_fully_qualified_xml_id:0
+msgid "Implied fully qualified external ID"
+msgstr ""
+
+#. module: development_tools
+#: help:report.groups.implied,implied_xml_id:0
+#: help:report.groups.models,implied_xml_id:0
+#: help:report.groups.users,implied_xml_id:0
+msgid ""
+"Implied group external Key/Identifier that can be used for data integration "
+"with third-party systems"
+msgstr ""
+
+#. module: development_tools
+#: field:report.groups.implied,involving_itself:0
+#: field:report.groups.models,involving_itself:0
+#: field:report.groups.users,involving_itself:0
+msgid "Implied is itself"
+msgstr ""
+
+#. module: development_tools
+#: field:report.groups.implied,implied_module_id:0
+#: field:report.groups.models,implied_module_id:0
+#: field:report.groups.users,implied_module_id:0
+msgid "Implied module"
+msgstr ""
+
+#. module: development_tools
+#: field:report.groups.implied,implied_module_xml_id:0
+#: field:report.groups.models,implied_module_xml_id:0
+#: field:report.groups.users,implied_module_xml_id:0
+msgid "Implied module external ID"
+msgstr ""
+
+#. module: development_tools
+#: help:report.groups.implied,present:0 help:report.groups.models,present:0
+#: help:report.groups.users,present:0
+msgid "It's used to count implied groups in pivot tables"
+msgstr ""
+
+#. module: development_tools
+#: field:dev.domain.tester,write_uid:0
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: development_tools
+#: field:dev.domain.tester,write_date:0
+msgid "Last Updated on"
+msgstr "Última actualización en"
+
+#. module: development_tools
+#: model:res.groups,comment:development_tools.group_cardinals
+msgid "Members of the executive board"
+msgstr ""
+
+#. module: development_tools
+#: field:dev.domain.tester,model_id:0
+msgid "Model"
+msgstr "Modelo"
+
+#. module: development_tools
+#: field:report.groups.models,model_id:0
+msgid "Model ID"
+msgstr ""
+
+#. module: development_tools
+#: help:report.groups.models,model_id:0
+msgid "Model database identifier"
+msgstr ""
+
+#. module: development_tools
+#: field:report.groups.models,model_xml_id:0
+msgid "Model external ID"
+msgstr ""
+
+#. module: development_tools
+#: help:report.groups.models,model_xml_id:0
+msgid ""
+"Model external Key/Identifier that can be used for data integration with "
+"third-party systems"
+msgstr ""
+
+#. module: development_tools
+#: field:report.groups.models,model_fully_qualified_xml_id:0
+msgid "Model fully qualified external ID"
+msgstr ""
+
+#. module: development_tools
+#: field:report.groups.models,model_module_id:0
+msgid "Model module"
+msgstr ""
+
+#. module: development_tools
+#: field:report.groups.models,model_module_xml_id:0
+msgid "Model module external ID"
+msgstr ""
+
+#. module: development_tools
+#: field:report.groups.models,model_name:0
+#: help:report.groups.models,model_name:0
+msgid "Model name"
+msgstr ""
+
+#. module: development_tools
+#: model:ir.actions.act_window,name:development_tools.action_report_groups_models_graph_act_window
+#: model:ir.ui.menu,name:development_tools.menu_models_by_group
+msgid "Models by group"
+msgstr ""
+
+#. module: development_tools
+#: help:report.groups.implied,group_module_id:0
+#: help:report.groups.models,group_module_id:0
+#: help:report.groups.users,group_module_id:0
+msgid "Module in which child group was defined"
+msgstr ""
+
+#. module: development_tools
+#: help:report.groups.implied,implied_module_id:0
+#: help:report.groups.models,implied_module_id:0
+#: help:report.groups.users,implied_module_id:0
+msgid "Module in which implied group was defined"
+msgstr ""
+
+#. module: development_tools
+#: help:report.groups.models,model_module_id:0
+msgid "Module in which model was defined"
+msgstr ""
+
+#. module: development_tools
+#: help:report.groups.users,user_module_id:0
+msgid "Module in which user was defined"
+msgstr ""
+
+#. module: development_tools
+#: help:report.groups.implied,group_name:0
+#: help:report.groups.models,group_name:0
+#: help:report.groups.users,group_name:0
+msgid "Name of the child group"
+msgstr ""
+
+#. module: development_tools
+#: help:report.groups.implied,implied_name:0
+#: help:report.groups.models,implied_name:0
+#: help:report.groups.users,implied_name:0
+msgid "Name of the implied group"
+msgstr ""
+
+#. module: development_tools
+#: view:report.groups.users:development_tools.view_report_groups_users_search
+msgid "Non empty"
+msgstr ""
+
+#. module: development_tools
+#: model:res.groups,name:development_tools.group_pope
+msgid "Pope"
+msgstr ""
+
+#. module: development_tools
+#: field:report.groups.implied,present:0 field:report.groups.models,present:0
+#: field:report.groups.users,present:0
+msgid "Present"
+msgstr ""
+
+#. module: development_tools
+#: model:res.groups,name:development_tools.group_eclectics
+msgid "Syncretists"
+msgstr ""
+
+#. module: development_tools
+#: model:ir.ui.menu,name:development_tools.menu_technical_reporting
+msgid "Technical Reporting"
+msgstr ""
+
+#. module: development_tools
+#: model:ir.module.category,name:development_tools.module_category_technical_reporting
+msgid "Technical reporting (demo only)"
+msgstr ""
+
+#. module: development_tools
+#: model:ir.actions.act_window,name:development_tools.action_dev_domain_tester_act_window
+msgid "Test domains and contexts"
+msgstr "Probando dominios y contextos"
+
+#. module: development_tools
+#: code:addons\development_tools\wizard\dev_domain_tester.py:145
+#, python-format
+msgid "Testing domain for {}"
+msgstr "Prodando dominio para {}"
+
+#. module: development_tools
+#: model:ir.ui.menu,name:development_tools.menu_testing_tools
+msgid "Testing tools"
+msgstr "Herramientas de pruebas"
+
+#. module: development_tools
+#: code:addons\development_tools\wizard\dev_domain_tester.py:25
+#: model:ir.model,name:development_tools.model_dev_domain_tester
+#, python-format
+msgid "Usefull wizard to test diferent domains and contexts"
+msgstr "Asistente útil para probar diferentes dominios y contextos"
+
+#. module: development_tools
+#: field:report.groups.users,user_id:0
+msgid "User ID"
+msgstr ""
+
+#. module: development_tools
+#: help:report.groups.users,user_id:0
+msgid "User database identifier"
+msgstr ""
+
+#. module: development_tools
+#: field:report.groups.users,user_xml_id:0
+msgid "User external ID"
+msgstr ""
+
+#. module: development_tools
+#: help:report.groups.users,user_xml_id:0
+msgid ""
+"User external Key/Identifier that can be used for data integration with "
+"third-party systems"
+msgstr ""
+
+#. module: development_tools
+#: field:report.groups.users,user_fully_qualified_xml_id:0
+msgid "User fully qualified external ID"
+msgstr ""
+
+#. module: development_tools
+#: help:report.groups.users,user_name:0
+msgid "User login name"
+msgstr ""
+
+#. module: development_tools
+#: field:report.groups.users,user_module_id:0
+msgid "User module"
+msgstr ""
+
+#. module: development_tools
+#: field:report.groups.users,user_module_xml_id:0
+msgid "User module external ID"
+msgstr ""
+
+#. module: development_tools
+#: field:report.groups.users,user_name:0
+msgid "User name"
+msgstr "Nombre de usuario"
+
+#. module: development_tools
+#: model:ir.actions.act_window,name:development_tools.action_report_groups_users_graph_act_window
+#: model:ir.ui.menu,name:development_tools.menu_users_by_group
+#: view:report.groups.users:development_tools.view_report_groups_users_graph
+msgid "Users by group"
+msgstr "Usuario por grupo"
+
+#. module: development_tools
+#: field:dev.domain.tester,view_id:0
+msgid "View"
+msgstr "Vistas"
+
+#. module: development_tools
+#: help:dev.domain.tester,context_string:0
+msgid "Write the context which will be tested"
+msgstr "Escribir el contexto con el cual será probado"
+
+#. module: development_tools
+#: help:dev.domain.tester,domain_string:0
+msgid "Write the domain which will be tested"
+msgstr "Escribir el dominio con el cual será probado"
+
+#. module: development_tools
+#: view:report.groups.models:development_tools.view_report_groups_models_graph
+msgid "models by group"
+msgstr "modelos por grupo"
+
+#. module: development_tools
+#: view:dev.domain.tester:development_tools.view_dev_domain_tester_form
+msgid "or"
+msgstr "o"
+
+#. module: development_tools
+#: view:report.groups.models:development_tools.view_report_groups_models_search
+msgid "report.groups.models.search"
+msgstr "report.groups.models.search"
+
+#. module: development_tools
+#: view:report.groups.implied:development_tools.view_report_groups_implied_search
+msgid "report.groups.search"
+msgstr "report.groups.search"
+
+#. module: development_tools
+#: view:report.groups.users:development_tools.view_report_groups_users_search
+msgid "report.groups.users.search"
+msgstr "report.groups.users.search"

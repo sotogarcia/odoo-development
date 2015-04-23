@@ -1,0 +1,120 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* odoo_security_exercise
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0-20150121\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-04-20 11:45+0000\n"
+"PO-Revision-Date: 2015-04-20 13:51+0100\n"
+"Last-Translator: <>\n"
+"Language-Team: Jorge Soto Garcia <sotogarcia@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Poedit 1.7.5\n"
+"Language: es_ES\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+#. module: odoo_security_exercise
+#: model:res.groups,comment:odoo_security_exercise.group_chairmans
+msgid "CEO of the company"
+msgstr "Gerente de la compañía"
+
+#. module: odoo_security_exercise
+#: model:res.groups,name:odoo_security_exercise.group_chairmans
+msgid "Chairman"
+msgstr "Gerente"
+
+#. module: odoo_security_exercise
+#: model:res.groups,name:odoo_security_exercise.group_executives
+msgid "Executive"
+msgstr "Ejecutivo"
+
+#. module: odoo_security_exercise
+#: model:res.groups,name:odoo_security_exercise.group_fellows
+msgid "Fellow"
+msgstr "Becario"
+
+#. module: odoo_security_exercise
+#: model:res.groups,name:odoo_security_exercise.group_freelances
+msgid "Freelance"
+msgstr "Autónomos"
+
+#. module: odoo_security_exercise
+#: model:res.groups,comment:odoo_security_exercise.group_freelances
+msgid "Freelancers who can serve at several companies at same time."
+msgstr "Autónomos que pueden servir a varias compañías al mismo tiempo."
+
+#. module: odoo_security_exercise
+#: model:ir.module.category,description:odoo_security_exercise.module_category_odoo_security_exercise_hierarchical
+msgid "Hierarchical category"
+msgstr "Categoría jerárquica"
+
+#. module: odoo_security_exercise
+#: selection:exercise.base.model,treatment:0
+msgid "Madam"
+msgstr "Señora"
+
+#. module: odoo_security_exercise
+#: model:res.groups,comment:odoo_security_exercise.group_managers
+msgid "Manage each group of areas"
+msgstr "Gestionan cada grupo de áreas"
+
+#. module: odoo_security_exercise
+#: model:res.groups,name:odoo_security_exercise.group_managers
+msgid "Manager"
+msgstr "Gestores"
+
+#. module: odoo_security_exercise
+#: model:res.groups,comment:odoo_security_exercise.group_executives
+msgid "Members of the executive board"
+msgstr "Miembros de la junta directiva"
+
+#. module: odoo_security_exercise
+#: selection:exercise.base.model,treatment:0
+msgid "Mister"
+msgstr "Señor"
+
+#. module: odoo_security_exercise
+#: model:ir.model,name:odoo_security_exercise.model_exercise_base_model
+msgid "Model which extends parent funcionality with a new field"
+msgstr "Modelo que extenderá la funcionalidad del padre con un nuevo campo"
+
+#. module: odoo_security_exercise
+#: model:ir.module.category,description:odoo_security_exercise.module_category_odoo_security_exercise_flat
+msgid "Non hierarchical category"
+msgstr "Categoría no jerárquica"
+
+#. module: odoo_security_exercise
+#: model:ir.module.category,name:odoo_security_exercise.module_category_odoo_security_exercise_flat
+#: model:ir.module.category,name:odoo_security_exercise.module_category_odoo_security_exercise_hierarchical
+msgid "Odoo security exercise"
+msgstr "Ejercicio de seguridad en Odoo"
+
+#. module: odoo_security_exercise
+#: model:res.groups,name:odoo_security_exercise.group_supervisors
+msgid "Supervisor"
+msgstr "Supervisor"
+
+#. module: odoo_security_exercise
+#: field:exercise.base.model,treatment:0
+msgid "Treatment"
+msgstr "Tratamiento"
+
+#. module: odoo_security_exercise
+#: help:exercise.base.model,treatment:0
+msgid "Treatment applicable to each person"
+msgstr "Tratamiento aplicable a cada persona"
+
+#. module: odoo_security_exercise
+#: model:res.groups,comment:odoo_security_exercise.group_fellows
+msgid "Workers paid by the public administration"
+msgstr "Trabajadores pagados pora la aministración pública"
+
+#. module: odoo_security_exercise
+#: model:res.groups,comment:odoo_security_exercise.group_supervisors
+msgid "Área managers"
+msgstr "Responsables de área"

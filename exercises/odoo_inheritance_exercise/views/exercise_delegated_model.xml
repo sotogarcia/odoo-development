@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openerp>
+    <data noupdate="0">
+
+        <!-- SIMPLIFIED VIEWS FOR DELEGATED MODEL
+
+            - Views will show `inherited_id`and `color` fields
+         - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+        <record model="ir.ui.view" id="view_exercise_delegated_model_tree">
+            <field name="name">view.exercise.delegated.model.tree</field>
+            <field name="model">exercise.delegated.model</field>
+            <field name="type">tree</field>
+            <field name="mode">primary</field>
+            <field name="priority" eval="16" />
+            <field name="active" eval="True" />
+            <field name="arch" type="xml">
+                <tree string="Delegated model" create="1" delete="1" edit="1">
+                    <field name="inherited_id" />
+                    <field name="color" />
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_exercise_delegated_model_form">
+            <field name="name">view.exercise.delegated.model.form</field>
+            <field name="model">exercise.delegated.model</field>
+            <field name="type">form</field>
+            <field name="mode">primary</field>
+            <field name="priority" eval="16" />
+            <field name="active" eval="True" />
+            <field name="arch" type="xml">
+                <form string="Delegated model" create="1" delete="1" edit="1">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="inherited_id" class="oe_edit_only"/>
+                            <h1><field name="inherited_id" placeholder="Parent item..."/></h1>
+                            <group col="4">
+                                <field name="color" />
+                            </group>
+                        </div>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <!-- EXTENDED VIEWS FOR DELEGATED MODEL
+
+            - Views will show all fields from delegated and parent model
+         - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+        <record model="ir.ui.view" id="view_exercise_delegated_model_tree_full">
+            <field name="name">view.exercise.delegated.model.tree.full</field>
+            <field name="model">exercise.delegated.model</field>
+            <field name="type">tree</field>
+            <field name="mode">primary</field>
+            <field name="priority" eval="16" />
+            <field name="inherit_id" ref="view_exercise_inherited_model_tree" />
+            <field name="active" eval="True" />
+            <field name="arch" type="xml">
+                <xpath expr="//tree" position="attributes">
+                    <attribute name="create">0</attribute>
+                    <attribute name="edit">0</attribute>
+                </xpath>
+                <xpath expr="//field[@name='profit_margin']" position="after">
+                    <field name="color" />
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_exercise_delegated_model_form_full">
+            <field name="name">view.exercise.delegated.model.form.full</field>
+            <field name="model">exercise.delegated.model</field>
+            <field name="type">form</field>
+            <field name="mode">primary</field>
+            <field name="priority" eval="16" />
+            <field name="inherit_id" ref="view_exercise_inherited_model_form" />
+            <field name="active" eval="True" />
+            <field name="arch" type="xml">
+                <xpath expr="//form" position="attributes">
+                    <attribute name="create">0</attribute>
+                    <attribute name="edit">0</attribute>
+                </xpath>
+                <xpath expr="//field[@name='delegated_ids']/.." position="replace">
+                    <group col="2">
+                        <field name="color" />
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- DELEGATED MODEL ACTIONS
+         - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+        <record model="ir.actions.act_window" id="action_delegated_model_act_window">
+            <field name="type">ir.actions.act_window</field>
+            <field name="name">Delegated model</field>
+            <field name="res_model">exercise.delegated.model</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+            <field name="target">current</field>
+            <field name="limit" eval="80" />
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+            <field name="auto_search" eval="True" />
+            <field name="search_view_id" ref="view_exercise_inherited_model_search" />
+        </record>
+
+         <record model="ir.actions.act_window" id="action_delegated_model_full_view__act_window">
+             <field name="type">ir.actions.act_window</field>
+             <field name="name">Delegated model (full view)</field>
+             <field name="res_model">exercise.delegated.model</field>
+             <field name="view_mode">tree,form</field>
+             <field name="view_type">form</field>
+             <field name="target">current</field>
+             <field name="limit" eval="80" />
+             <field name="domain">[]</field>
+             <field name="context">{}</field>
+             <field name="auto_search" eval="True" />
+             <field name="search_view_id" ref="view_exercise_inherited_model_search" />
+         </record>
+
+         <record model="ir.actions.act_window.view" id="action_delegated_model_view_exercise_delegated_model_tree_full">
+             <field name="sequence" eval="1" />
+             <field name="act_window_id" ref="action_delegated_model_full_view__act_window" />
+             <field name="view_id" ref="view_exercise_delegated_model_tree_full" />
+             <field name="view_mode">tree</field>
+             <field name="multi" eval="False" />
+         </record>
+
+         <record model="ir.actions.act_window.view" id="action_delegated_model_view_exercise_delegated_model_form_full">
+             <field name="sequence" eval="1" />
+             <field name="act_window_id" ref="action_delegated_model_full_view__act_window" />
+             <field name="view_id" ref="view_exercise_delegated_model_form_full" />
+             <field name="view_mode">form</field>
+             <field name="multi" eval="False" />
+         </record>
+
+        <!-- DELEGATED MODEL MENUS
+         - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+        <record model="ir.ui.menu" id="menu_delegated_model">
+            <field name="name">Delegated model</field>
+            <field name="parent_id" ref="menu_exercise_views" />
+            <field name="sequence" eval="10" />
+        </record>
+
+        <record model="ir.ui.menu" id="menu_simplied_view" >
+            <field name="name">Simplied view</field>
+            <field name="action" ref="action_delegated_model_act_window" />
+            <field name="parent_id" ref="menu_delegated_model" />
+            <field name="sequence" eval="10" />
+        </record>
+
+        <record model="ir.ui.menu" id="menu_full_view" >
+            <field name="name">Full view</field>
+            <field name="action" ref="action_delegated_model_full_view__act_window" />
+            <field name="parent_id" ref="menu_delegated_model" />
+            <field name="sequence" eval="10" />
+        </record>
+
+    </data>
+</openerp>
