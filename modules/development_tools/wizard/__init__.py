@@ -5,3 +5,4 @@
 ###############################################################################
 
 from . import dev_domain_tester
+from . import dev_code_tester

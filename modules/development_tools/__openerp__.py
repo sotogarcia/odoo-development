@@ -67,6 +67,7 @@ Included components:
         'views/report_groups_models.xml',
 
         'wizard/dev_domain_tester.xml',
+        'wizard/dev_code_tester.xml',
     ],
     'demo': [
         'demo/ir_module_category.xml',

@@ -24,8 +24,20 @@ class DevDomainTester(models.TransientModel):
     _name = 'dev.domain.tester'
     _description = _(u'Usefull wizard to test diferent domains and contexts')
 
-    _rec_name = 'id'
-    _order = 'id ASC'
+    _rec_name = 'name'
+    _order = 'name ASC'
+
+    # -----------------------------ENTITY FIELDS-------------------------------
+
+    name = fields.Char(
+        string='Name',
+        required=True,
+        readonly=True,
+        default=_('Domain tester'),
+        help="Wizard name",
+        size=25,
+        translate=True
+    )
 
     model_id = fields.Many2one(
         string='Model',
@@ -67,6 +79,8 @@ class DevDomainTester(models.TransientModel):
         translate=False
     )
 
+    # ------------------------AUXILIARY FIELD METHODS--------------------------
+
     def _default_model_id(self):
         """ Gets the ir.model record which contains the res.partner model
             information.
@@ -98,8 +112,10 @@ class DevDomainTester(models.TransientModel):
             'domain': {'view_id': [('model', '=', model_model)]}
         }
 
+    # ----------------------------PUBLIC METHODS-------------------------------
+
     @api.multi
-    def cmd_execute(self):
+    def cmd_execute(self, values):
         """ Shows the choosen ir.ui.view for selected ir.model and closes this
             wizard.
 
@@ -115,6 +131,8 @@ class DevDomainTester(models.TransientModel):
             result = self._build_act_window()
 
         return result
+
+    # ---------------------------AUXILIARY METHODS-----------------------------
 
     def _log_entered_values(self):
         """ Outputs the values entered to the log file """
@@ -142,12 +160,12 @@ class DevDomainTester(models.TransientModel):
         return {
             'model': 'ir.actions.act_window',
             'type': 'ir.actions.act_window',
-            'name': _('Testing domain for {}').format(self.model_id.model),
+            'name': self.model_id.model,
             'res_model': self.model_id.model,
             'view_mode': self.view_id.type,
             'view_type': 'form',
             'view_id': self.view_id.id,
-            'target': 'inline',
+            'target': 'form',
             'domain': self.domain_string or '[]',
             'context': self.context_string or '{}'
         } if self.model_id and self.view_id else False
