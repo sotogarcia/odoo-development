@@ -145,7 +145,7 @@ class ModelName(models.Model):
                     ir_module_module."id" AS module_id,
                     ir_module_module."name" AS module_name,
                     ir_model."id" AS model_id,
-                    ir_model."model" AS model_name,
+                    ir_model."name" AS model_name,
                     unique_model_data."name" AS model_xml_id,
                     CONCAT (
                         ir_module_module."name",
