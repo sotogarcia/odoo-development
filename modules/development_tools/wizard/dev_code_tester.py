@@ -114,7 +114,8 @@ class DevDomainTester(models.TransientModel):
         return self.info_format.format(
             self.model_id.model if self.model_id else '',
             'logging.getLogger(__name__)',
-            self.env.context
+            self.env.context,
+            'self.stdout = \'\''
         )
 
     # --------------------------- PUBLIC METHODS ------------------------------
@@ -134,44 +135,69 @@ class DevDomainTester(models.TransientModel):
             self._log_entered_values()
             # result = self._build_ir_action_server()
 
-        self._safe_exec()
+        if self.is_action:
+            self._call_action()
+        else:
+            self._safe_exec()
 
         return result
 
     # -------------------------- AUXILIARY METHODS ----------------------------
 
-    def _capture_std(self):
+    def _call_action(self):
+        action_xid = 'developement_tools.action_development_code_tester_server'
+        action = self.env.ref(action_xid)
+        ctx = self.env.context().copy()
+        ctx.update({'active_model': self.model_id})
+        action.with_context(ctx).run()
+
+    def _begin_execute(self):
+        """ Switch encoding to UTF-8 and capture stdout to an StringIO object
+
+            :return: current captured sys.stdout
+        """
+
         new_stdout = StringIO()
+
+        self._encoding = sys.getdefaultencoding()
+        reload(sys)
+        sys.setdefaultencoding('utf-8')
 
         self._stdout = sys.stdout
         sys.stdout = new_stdout
 
         return new_stdout
 
-    def _release_std(self):
+    def _restore_encoding(self):
+        """ Restores previous encoding and release stdout
+        """
+
         if hasattr(self, '_stdout') and self._stdout:
             sys.stdout = self._stdout
 
-    def to_ascii(self, cr, uid, text):
-        """Converts special characters such as those with accents to their ASCII equivalents"""
-        old_chars = ['á','é','í','ó','ú','à','è','ì','ò','ù','ä','ë','ï','ö','ü','â','ê','î','ô','û','Á','É','Í','Ú','Ó','À','È','Ì','Ò','Ù','Ä','Ë','Ï','Ö','Ü','Â','Ê','Î','Ô','Û','ñ','Ñ','ç','Ç','ª','º']
-        new_chars = ['a','e','i','o','u','a','e','i','o','u','a','e','i','o','u','a','e','i','o','u','A','E','I','U','O','A','E','I','O','U','A','E','I','O','U','A','E','I','O','U','n','N','c','C','a','o']
-        for old, new in zip(old_chars, new_chars):
-            text = text.replace(unicode(old,'UTF-8'), new)
-        return text
+        if hasattr(self, '_encoding') and self._encoding:
+            reload(sys)
+            sys.setdefaultencoding(self._encoding)
+
+    def _clear(self):
+        """ Clears the stdout field content """
+
+        self.stdout = ''
 
     def _safe_exec(self):
+        """ Executes the code entered """
 
         self.exception = None
-        stdout = self._capture_std()
+        stdout = self._begin_execute()
 
         try:
             # Available variables
             ctx = self.env.context.copy()
-            obj = self.model_id or self
+            obj = self.env[self.model_id.model] if self.model_id else None
             log = _logger
+            clear = self._clear
 
-            exec(self.to_ascii(self.code))
+            exec(self.code.encode('utf-8'))
 
             self.stdout += stdout.getvalue()
 
@@ -180,6 +206,7 @@ class DevDomainTester(models.TransientModel):
 
         self.info = self._default_info()
         sys.stdout = stdout
+        self._restore_encoding()
 
     def _log_entered_values(self):
         """ Outputs the values entered to the log file """
@@ -215,6 +242,12 @@ class DevDomainTester(models.TransientModel):
                 <tr>
                     <td class="oe_form_group_cell oe_form_group_cell_label">
                         <b>ctx</b>
+                    </td>
+                    <td class="oe_form_group_cell">{}</td>
+                </tr>
+                <tr>
+                    <td class="oe_form_group_cell oe_form_group_cell_label">
+                        <b>clear()</b>
                     </td>
                     <td class="oe_form_group_cell">{}</td>
                 </tr>

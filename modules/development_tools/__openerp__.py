@@ -59,6 +59,8 @@ Included components:
     },
 
     'data': [
+        'data/ir_actions_server.xml',
+
         'security/ir_model_access.xml',
 
         'views/ir_ui_menu.xml',

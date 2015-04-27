@@ -144,7 +144,7 @@ msgstr "Código"
 #. module: development_tools
 #: model:ir.ui.menu,name:development_tools.menu_act_window_code_tests
 msgid "Code tester"
-msgstr "Porbador de código"
+msgstr "Probador de código"
 
 #. module: development_tools
 #: help:dev.code.tester,code:0
