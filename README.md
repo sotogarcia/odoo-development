@@ -37,11 +37,16 @@ Odoo is an extensible system which can be extended adding new modules to it, the
 
 ### development_tools
 
-This module provides some technical reports listed bellow:
+This module provides some technical reports listed below:
 
 - **Groups implied**: pivot table which shows the dependencies between the existing groups.
 - **Users by groups**: pivot table which shows which users belong to each group.
-- **Modules by groups** `[WIP]`: pivot table which shows model access rules to each group.
+- **Modules by groups** pivot table which shows model access rules to each group.
+
+This module also provides some test tools listed below:
+
+- **Domain tester**: wizard which allows user to test domains over any existing model.
+- **Code tester**: wizard which allows user to entered python code and test it.
 
 ## Scaffolds
 
