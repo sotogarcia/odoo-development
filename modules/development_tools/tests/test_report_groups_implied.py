@@ -26,8 +26,8 @@ class ReportGroupsImplied(TransactionCase):
         """ Checks if results of the SQL query which serves as report source
             matches with the field implied_ids in all the res.groups
 
-            Loads all groups in database
-            By each group:
+            1. Loads all groups in database
+            2. By each group:
                 - Searches for reports records which the same group_id
                 - CHECKS: at least one record must exist
                 - Gets a SORTED list with all report implied ids

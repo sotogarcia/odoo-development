@@ -5,3 +5,4 @@
 ###############################################################################
 
 from . import test_report_groups_implied
+from . import test_report_groups_users
