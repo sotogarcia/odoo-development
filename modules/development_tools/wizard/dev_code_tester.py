@@ -31,6 +31,9 @@ class DevDomainTester(models.TransientModel):
     _rec_name = 'id'
     _order = 'id ASC'
 
+    _server_act_xid = 'development_tools.action_development_code_tester_server'
+    _default_code_text = 'print (\'Hola mundo!\')'
+
     # ---------------------------- ENTITY FIELDS ------------------------------
 
     model_id = fields.Many2one(
@@ -55,7 +58,7 @@ class DevDomainTester(models.TransientModel):
         string='Code',
         required=True,
         readonly=False,
-        default='print (\'Hola mundo!\')',
+        default=lambda self: self._default_code(),
         help='Code will be executed',
         translate=False
     )
@@ -97,6 +100,14 @@ class DevDomainTester(models.TransientModel):
         for record in self:
             record.info = self._default_info()
 
+    @api.onchange('is_action')
+    def _onchange_is_action(self):
+        if self.is_action:
+            if self.code == self._default_code_text:
+                action = self._get_server_action()
+                if action.code:
+                    self.code = action.code
+
     @api.multi
     @api.depends('model_id')
     def _compute_info(self):
@@ -106,6 +117,9 @@ class DevDomainTester(models.TransientModel):
     @api.returns('ir.model')
     def _default_model_id(self):
         return self.env.ref('base.model_res_partner')
+
+    def _default_code(self):
+        return self._default_code_text
 
     def _default_context(self):
         return self.env.context or '{}'
@@ -130,13 +144,14 @@ class DevDomainTester(models.TransientModel):
         self.ensure_one()
 
         result = False
+        self.exception = None
 
         if self.model_id and self.code:
             self._log_entered_values()
             # result = self._build_ir_action_server()
 
         if self.is_action:
-            self._call_action()
+            self._run_server_action()
         else:
             self._safe_exec()
 
@@ -144,12 +159,56 @@ class DevDomainTester(models.TransientModel):
 
     # -------------------------- AUXILIARY METHODS ----------------------------
 
-    def _call_action(self):
-        action_xid = 'developement_tools.action_development_code_tester_server'
-        action = self.env.ref(action_xid)
-        ctx = self.env.context().copy()
-        ctx.update({'active_model': self.model_id})
-        action.with_context(ctx).run()
+    def _get_server_action(self):
+        """ Loads the server action will be used to test entered code. This
+            action is defined in module XML data files and it's loaded into
+            the database when module is installed.
+
+            This method also adds the selected model to the action context, so
+            it must be called last time just before action is invoked.
+
+            :return (ir.actions.server): the server action
+        """
+
+        ctx = self.env.context.copy()
+        ctx.update({
+            'active_model': self.model_id.model
+        })
+
+        return self.with_context(ctx).env.ref(self._server_act_xid)
+
+    def _update_server_action(self, action):
+        """ Change the model and the code in the server action. This must be
+            called just before action is invoked.
+        """
+        action.code = self.code
+        action.model_id = self.model_id
+
+    def _run_server_action(self):
+        """ Runs the server action. This calls `_get_server_action` which
+            updates the action context and `_update_server_action` which
+            updates the model_id and code in action, setting the selected.
+
+            Note:
+            - If an error occurs, the exception will be captured and it will
+            set as the self.exception value, showing it in "Exception" tab in
+            the view.
+
+            :return: returns the result of the call to server action if there
+            was no errors or False otherwise.
+        """
+
+        result = False
+
+        action = self._get_server_action()
+        self._update_server_action(action)
+
+        try:
+            result = action.run()
+        except Exception as ex:
+            self.exception = ex
+
+        return result
 
     def _begin_execute(self):
         """ Switch encoding to UTF-8 and capture stdout to an StringIO object
@@ -187,11 +246,10 @@ class DevDomainTester(models.TransientModel):
     def _safe_exec(self):
         """ Executes the code entered """
 
-        self.exception = None
         stdout = self._begin_execute()
 
         try:
-            # Available variables
+            # Wizard available variables - DO NOT REMOVE THEM -
             ctx = self.env.context.copy()
             obj = self.env[self.model_id.model] if self.model_id else None
             log = _logger
@@ -225,6 +283,10 @@ class DevDomainTester(models.TransientModel):
     # ------------------------ LONG TEXT ATTRIBUTES ---------------------------
 
     info_format = u"""
+        <p>
+            The following objects are available to run code outside a server
+            action.
+        </p>
         <table class="oe_form_group">
             <tbody>
                 <tr class="oe_form_group_row">
