@@ -1,0 +1,16 @@
+| Item      | module | table                | model           |
+| --------- | ------ | -------------------- | --------------- |
+| Almacén   | stock  | stock_warehouse      | stock.warehouse |
+| Ubicación | stock  | stock_location       | stock.location  |
+| Ruta      | stock  | stock_location_route | stock.location.route
+Albarán
+Lote
+Quant
+Producto
+Inventario
+Reglas de reabastecimiento
+Trazabilidad
+
+
+Icoterm interno españa
+CMR internacional
