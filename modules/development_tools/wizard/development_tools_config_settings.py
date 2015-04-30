@@ -55,10 +55,11 @@ class DevelopmentToolsConfigSettings(models.TransientModel):
 
     @api.model
     def get_default_email_values(self, fields):
+        record = self.env.ref(self._external_id)
 
         return {
-            'email_to': False,
-            'email_capture': False,
+            'email_to': record.email_to,
+            'email_capture': record.email_capture,
         }
 
     @api.one

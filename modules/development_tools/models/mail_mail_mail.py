@@ -22,6 +22,8 @@ class MailMail(models.Model):
     _capture_msg = _('Email to {} has been captured and sent to {}')
     _external_id = 'development_tools.development_tools_config_settings_data'
 
+    # ------------------------- OVERWRITTEN METHODS ---------------------------
+
     @api.model
     def send_get_mail_to(self, mail, partner=None):
         """ Returns an overwritten `mail_to` and outputs the real value
@@ -38,6 +40,8 @@ class MailMail(models.Model):
                 self._capture_msg.format(real_mail_to, fake_mail_to))
 
         return fake_mail_to or real_mail_to
+
+    # -------------------------- AUXILIARY METHODS ----------------------------
 
     @api.model
     def _get_email_config_settings(self):
