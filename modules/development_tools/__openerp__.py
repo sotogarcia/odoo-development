@@ -51,7 +51,8 @@ Included components:
     'category': 'Technical Settings',
 
     'depends': [
-        'base'
+        'base',
+        'base_action_rule'
     ],
     'external_dependencies': {
         'python': [
@@ -59,6 +60,7 @@ Included components:
     },
 
     'data': [
+        'data/development_tools_config_settings.xml',
         'data/ir_actions_server.xml',
 
         'security/ir_model_access.xml',
@@ -70,6 +72,9 @@ Included components:
 
         'wizard/dev_domain_tester.xml',
         'wizard/dev_code_tester.xml',
+        'wizard/development_tools_config_settings.xml'
+
+        # 'report/report_module_details.xml'
     ],
     'demo': [
         'demo/ir_module_category.xml',

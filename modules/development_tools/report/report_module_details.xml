@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openerp>
+    <data noupdate="0">
+
+        <!-- Main template -->
+        <!-- <template id="report_res_partner">
+            <t t-call="report.html_container">
+                <t t-foreach="doc_ids" t-as="doc_id">
+                    <t t-raw="translate_doc(doc_id, doc_model, 'lang', 'development_tools.report_res_partner_document')"/>
+                </t>
+            </t>
+        </template> -->
+
+        <record model="ir.ui.view" id="report_res_partner">
+            <field name="name">report_res_partner3</field>
+            <field name="model">res.partner</field>
+            <field name="type">qweb</field>
+            <field name="mode">primary</field>
+            <field name="priority" eval="16" />
+            <field name="active" eval="True" />
+            <field name="arch" type="xml">
+                <t t-name="development_tools.report_res_partner">
+                    <t t-call="report.html_container">
+                        <t t-call="report.external_layout">
+                            <div class="page">
+                                <p>Oh!</p>
+                            </div>
+                        </t>
+                    </t>
+                </t>
+            </field>
+        </record>
+
+        <record model="ir.actions.report.xml" id="action_report_ir_model_report">
+            <field name="name">Technical method</field>
+            <field name="model">res.partner</field>
+            <field name="report_type">qweb-html</field>
+            <field name="report_name">development_tools.report_res_partner</field>
+            <field name="attachment_use" eval="False" />
+            <field name="attachment">object.name+'.pdf'</field>
+            <field name="paperformat_id" ref="report.paperformat_euro" />
+        </record>
+
+        <record model="ir.values" id="technical_method_values_values">
+            <field name="name">Technical method values</field>
+            <field name="model_id" ref="base.model_res_partner" />
+            <field name="model">res.partner</field>
+            <field name="value" eval="'ir.actions.report.xml,' +str(ref('action_report_ir_model_report'))" />
+            <field name="key">action</field>
+            <field name="key2">client_print_multi</field>
+        </record>
+
+
+        <record model="ir.actions.act_window" id="action_technical_method_window_act_window">
+            <field name="type">ir.actions.act_window</field>
+            <field name="name">Technical method window</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_mode">form</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="report_res_partner" />
+            <field name="target">current</field>
+            <field name="limit" eval="80" />
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+            <field name="auto_search" eval="True" />
+        </record>
+
+        <record model="ir.ui.menu" id="menu_technical_method_menu" >
+            <field name="name">Technical method menu</field>
+            <field name="action" ref="action_technical_method_window_act_window" />
+            <field name="parent_id" ref="menu_technical_reporting" />
+            <field name="sequence" eval="10" />
+        </record>
+
+    </data>
+</openerp>
