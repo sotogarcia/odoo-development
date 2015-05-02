@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openerp>
+    <data noupdate="0">
+
+        <record id="run_server_action_values" model="ir.values">
+            <field name="name">Execute server action</field>
+            <field name="model">ir.actions.server</field>
+            <field name="key">action</field>
+            <field name="key2">client_action_multi</field>
+            <field name="value" eval="'ir.actions.server,'+str(ref('action_run_server_action_server'))" />
+        </record>
+
+        <record id="run_planned_action_values" model="ir.values">
+            <field name="name">Execute planned action</field>
+            <field name="model">ir.cron</field>
+            <field name="key">action</field>
+            <field name="key2">client_action_multi</field>
+            <field name="value" eval="'ir.actions.server,'+str(ref('action_run_planned_action_server'))" />
+        </record>
+
+        <record id="run_act_window_action_values" model="ir.values">
+            <field name="name">Execute window action</field>
+            <field name="model">ir.actions.act_window</field>
+            <field name="key">action</field>
+            <field name="key2">client_action_multi</field>
+            <field name="value" eval="'ir.actions.server,'+str(ref('action_run_act_window_server'))" />
+        </record>
+
+    </data>
+</openerp>
+
+
+<!-- if context.get('active_model') == 'ir.cron' and context.get('active_ids'):
+    for id in context['active_ids']:
+        cron = pool.get('ir.cron').browse(cr, uid, id, context=context)
+        cron._callback(cron.model, cron.function, cron.args, id) -->
+
+
+<!--
+    this_item = self.pool.get('ir.model.data').get_object(cr, uid, 'development_tools', 'action_run_server_action_server')
+
+if context.get('active_model') == 'ir.actions.server' and context.get('active_ids'):
+    for id in context['active_ids']:
+        self.run(cr, uid, [id], context=context)
+-->

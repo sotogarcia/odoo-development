@@ -52,7 +52,8 @@ Included components:
 
     'depends': [
         'base',
-        'base_action_rule'
+        'base_action_rule',
+        'mail'
     ],
     'external_dependencies': {
         'python': [
@@ -62,8 +63,15 @@ Included components:
     'data': [
         'data/development_tools_config_settings.xml',
         'data/ir_actions_server.xml',
+        'data/ir_values.xml',
 
         'security/ir_model_access.xml',
+
+        'demo/development_tools_config_settings.xml',
+        'demo/ir_module_category.xml',
+        'demo/res_groups.xml',
+        'demo/ir_filters.xml',
+
 
         'views/ir_ui_menu.xml',
         'views/report_groups_implied.xml',

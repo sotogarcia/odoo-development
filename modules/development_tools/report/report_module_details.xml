@@ -51,7 +51,6 @@
             <field name="key2">client_print_multi</field>
         </record>
 
-
         <record model="ir.actions.act_window" id="action_technical_method_window_act_window">
             <field name="type">ir.actions.act_window</field>
             <field name="name">Technical method window</field>

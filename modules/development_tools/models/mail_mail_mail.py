@@ -36,7 +36,7 @@ class MailMail(models.Model):
         capture, fake_mail_to = self._get_email_config_settings()
 
         if capture:
-            _logger.warning(
+            _logger.info(
                 self._capture_msg.format(real_mail_to, fake_mail_to))
 
         return fake_mail_to or real_mail_to

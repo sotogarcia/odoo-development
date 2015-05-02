@@ -6,28 +6,28 @@
         <record model="res.groups" id="group_bishops">
             <field name="name">Bishops</field>
             <field name="comment">Directors of each one of the regional delegations</field>
-            <field name="category_id" ref="module_category_technical_reporting"/>
+            <field name="category_id" ref="module_category_development_tools"/>
             <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
         </record>
 
         <record model="res.groups" id="group_archbishops">
             <field name="name">Archbishops</field>
             <field name="comment">Coordinators among regional delegations</field>
-            <field name="category_id" ref="module_category_technical_reporting"/>
+            <field name="category_id" ref="module_category_development_tools"/>
             <field name="implied_ids" eval="[(4, ref('group_bishops'))]"/>
         </record>
 
         <record model="res.groups" id="group_cardinals">
             <field name="name">Cardinals</field>
             <field name="comment">Members of the executive board</field>
-            <field name="category_id" ref="module_category_technical_reporting"/>
+            <field name="category_id" ref="module_category_development_tools"/>
             <field name="implied_ids" eval="[(4, ref('group_archbishops'))]"/>
         </record>
 
         <record model="res.groups" id="group_pope">
             <field name="name">Pope</field>
             <field name="comment">Company CEO</field>
-            <field name="category_id" ref="module_category_technical_reporting"/>
+            <field name="category_id" ref="module_category_development_tools"/>
             <field name="implied_ids" eval="[(4, ref('group_cardinals'))]"/>
         </record>
 

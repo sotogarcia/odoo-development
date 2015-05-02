@@ -5,8 +5,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0-20150121\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-25 19:17+0000\n"
-"PO-Revision-Date: 2015-04-25 21:48+0100\n"
+"POT-Creation-Date: 2015-04-30 09:38+0000\n"
+"PO-Revision-Date: 2015-04-30 11:44+0100\n"
 "Last-Translator: Jorge Soto Garcia <sotogarcia@gmail.com>\n"
 "Language-Team: Jorge Soto Garcia <sotogarcia@gmail.com>\n"
 "Language: es_ES\n"
@@ -16,6 +16,11 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Generator: Poedit 1.7.5\n"
+
+#. module: development_tools
+#: help:development_tools.config.settings,email_to:0
+msgid "Address will be used to send captured email messages"
+msgstr "Dirección que será usada para capturar los mensajes de correo"
 
 #. module: development_tools
 #: model:res.groups,name:development_tools.group_archbishops
@@ -29,18 +34,21 @@ msgstr "Obispos"
 
 #. module: development_tools
 #: model:ir.filters,name:development_tools.filter_report_groups_implied_group_by_categories
+#: model:ir.filters,name:development_tools.filter_report_groups_models_group_by_categories
 #: model:ir.filters,name:development_tools.filter_report_groups_users_group_by_categories
 msgid "By categories"
 msgstr "Por categorías"
 
 #. module: development_tools
 #: model:ir.filters,name:development_tools.filter_report_groups_implied_categories_external
+#: model:ir.filters,name:development_tools.filter_report_groups_models_categories_external
 #: model:ir.filters,name:development_tools.filter_report_groups_users_categories_external
 msgid "By categories  (External)"
 msgstr "Por categorías (Externo)"
 
 #. module: development_tools
 #: model:ir.filters,name:development_tools.filter_report_groups_implied_identifiers
+#: model:ir.filters,name:development_tools.filter_report_groups_models_identifiers
 #: model:ir.filters,name:development_tools.filter_report_groups_users_identifiers
 msgid "By database IDs"
 msgstr "Por IDs de la base de datos"
@@ -56,21 +64,33 @@ msgstr ""
 
 #. module: development_tools
 #: model:ir.filters,name:development_tools.filter_report_groups_implied_group_by_module
+#: model:ir.filters,name:development_tools.filter_report_groups_models_group_by_module
 #: model:ir.filters,name:development_tools.filter_report_groups_users_group_by_module
 msgid "By modules"
 msgstr "Por módulos"
 
 #. module: development_tools
 #: model:ir.filters,name:development_tools.filter_report_groups_implied_modules_external
+#: model:ir.filters,name:development_tools.filter_report_groups_models_modules_external
 #: model:ir.filters,name:development_tools.filter_report_groups_users_modules_external
 msgid "By modules (External)"
 msgstr "Por módulos (Externo)"
+
+#. module: development_tools
+#: view:development_tools.config.settings:development_tools.view_development_tools_config_settings_form
+msgid "Cancel"
+msgstr "Cancelar"
 
 #. module: development_tools
 #: view:dev.code.tester:development_tools.view_dev_code_tester_form
 #: view:dev.domain.tester:development_tools.view_dev_domain_tester_form
 msgid "Caption"
 msgstr "Etiqueta"
+
+#. module: development_tools
+#: field:development_tools.config.settings,email_capture:0
+msgid "Capture emails"
+msgstr "Capturar correos"
 
 #. module: development_tools
 #: model:res.groups,name:development_tools.group_cardinals
@@ -102,13 +122,18 @@ msgid "Category to which implied group belongs"
 msgstr "Categoría a la que pertenecen los grupos implícitos"
 
 #. module: development_tools
-#: model:ir.module.category,description:development_tools.module_category_technical_reporting
+#: model:ir.module.category,description:development_tools.module_category_development_tools
 msgid ""
-"Category with the groups defined in Technical Reporting module with "
+"Category with the groups defined in Development Tools module with "
 "demonstration purposes only"
 msgstr ""
-"Categoría con los groups definidos en el módulo Technical Reporting con "
+"Categoria con los grupos definidos en el módulo Development Tools sólo con "
 "propósitos de demostración"
+
+#. module: development_tools
+#: help:development_tools.config.settings,email_capture:0
+msgid "Check it to capture outgoing email messages"
+msgstr "Marque para capturar los mensajes de correo salientes"
 
 #. module: development_tools
 #: help:report.groups.implied,group_xml_id:0
@@ -178,11 +203,13 @@ msgstr "Crear, leer, actualizar, eliminar (decimal)"
 
 #. module: development_tools
 #: field:dev.code.tester,create_uid:0 field:dev.domain.tester,create_uid:0
+#: field:development_tools.config.settings,create_uid:0
 msgid "Created by"
 msgstr "Creado por"
 
 #. module: development_tools
 #: field:dev.code.tester,create_date:0 field:dev.domain.tester,create_date:0
+#: field:development_tools.config.settings,create_date:0
 msgid "Created on"
 msgstr "Creado en"
 
@@ -193,12 +220,10 @@ msgstr "Crud"
 
 #. module: development_tools
 #: model:ir.model,name:development_tools.model_report_groups_models
-msgid ""
-"Data of model access by each group (and implied) to be used in pivot table "
-"reports"
+msgid "Data of models by group (and implied) to be used in pivot table reports"
 msgstr ""
-"Datos de acceso a modelos por grupo (e implícitos) para ser usados en "
-"informes de tabla dinámica"
+"Datos de modelos por grupo (e implicados) para ser usados en informes de "
+"tablas dinámicas"
 
 #. module: development_tools
 #: model:ir.model,name:development_tools.model_report_groups_users
@@ -226,11 +251,6 @@ msgid "Delete"
 msgstr "Borrar"
 
 #. module: development_tools
-#: model:ir.filters,name:development_tools.filter_report_groups_implied_demostration_groups
-msgid "Demostration groups"
-msgstr "Grupos de demostración"
-
-#. module: development_tools
 #: help:report.groups.implied,involving_itself:0
 #: help:report.groups.models,involving_itself:0
 #: help:report.groups.users,involving_itself:0
@@ -241,6 +261,32 @@ msgstr "Determina cuando el grupo se está involucrando a sí mismo"
 #: model:ir.ui.menu,name:development_tools.menu_developement_tools
 msgid "Developement"
 msgstr "Desarrollo"
+
+#. module: development_tools
+#: model:ir.filters,name:development_tools.filter_development_tools_groups_implied_demostration
+msgid "Development Tools (demo groups)"
+msgstr "Herramientas de desarrollo (grupos demo)"
+
+#. module: development_tools
+#: model:ir.module.category,name:development_tools.module_category_development_tools
+msgid "Development Tools (demo only)"
+msgstr "Herramientas de desarrollo (demo)"
+
+#. module: development_tools
+#: model:ir.actions.server,name:development_tools.action_development_code_tester_server
+msgid "Development code tester"
+msgstr "Probador de codigo en desarrollo"
+
+#. module: development_tools
+#: view:development_tools.config.settings:development_tools.view_development_tools_config_settings_form
+#: model:ir.ui.menu,name:development_tools.menu_development_tools
+msgid "Development tools"
+msgstr "Herramientas de desarrollo"
+
+#. module: development_tools
+#: model:ir.actions.act_window,name:development_tools.action_development_tools_config_settings_act_window
+msgid "Development tools config settings"
+msgstr "Configuración de Herramientas de Desarrollo"
 
 #. module: development_tools
 #: model:res.groups,comment:development_tools.group_bishops
@@ -258,6 +304,22 @@ msgstr "Dominio"
 #, python-format
 msgid "Domain tester"
 msgstr "Probador de dominios"
+
+#. module: development_tools
+#: view:development_tools.config.settings:development_tools.view_development_tools_config_settings_form
+msgid "Email capture"
+msgstr "Capturar correos"
+
+#. module: development_tools
+#: field:development_tools.config.settings,email_to:0
+msgid "Email to"
+msgstr "Correo para"
+
+#. module: development_tools
+#: code:addons\development_tools\models\mail_mail_mail.py:22
+#, python-format
+msgid "Email to {} has been captured and sent to {}"
+msgstr "El correo para {} ha sido capturado y enviado a {}"
 
 #. module: development_tools
 #: view:dev.code.tester:development_tools.view_dev_code_tester_form
@@ -456,6 +518,7 @@ msgstr "Ocultar los autoimplícitos"
 
 #. module: development_tools
 #: field:dev.code.tester,id:0 field:dev.domain.tester,id:0
+#: field:development_tools.config.settings,id:0
 #: field:report.groups.implied,id:0 field:report.groups.models,id:0
 #: field:report.groups.users,id:0
 msgid "ID"
@@ -548,11 +611,13 @@ msgstr "Usado para contar grupos implícitos en tablas dinámicas"
 
 #. module: development_tools
 #: field:dev.code.tester,write_uid:0 field:dev.domain.tester,write_uid:0
+#: field:development_tools.config.settings,write_uid:0
 msgid "Last Updated by"
 msgstr "Última actualización por"
 
 #. module: development_tools
 #: field:dev.code.tester,write_date:0 field:dev.domain.tester,write_date:0
+#: field:development_tools.config.settings,write_date:0
 msgid "Last Updated on"
 msgstr "Última actualización en"
 
@@ -650,6 +715,11 @@ msgid "Models by group"
 msgstr "Modelos por grupo"
 
 #. module: development_tools
+#: model:ir.model,name:development_tools.model_development_tools_config_settings
+msgid "Module config settings"
+msgstr "Configuración del módulo"
+
+#. module: development_tools
 #: help:report.groups.implied,group_module_id:0
 #: help:report.groups.models,group_module_id:0
 #: help:report.groups.users,group_module_id:0
@@ -699,6 +769,11 @@ msgid "Non empty"
 msgstr "No vacía"
 
 #. module: development_tools
+#: model:ir.model,name:development_tools.model_mail_mail
+msgid "Outgoing Mails"
+msgstr "Correos salientes"
+
+#. module: development_tools
 #: view:dev.code.tester:development_tools.view_dev_code_tester_form
 #: field:dev.code.tester,stdout:0
 msgid "Output"
@@ -721,6 +796,11 @@ msgid "Read"
 msgstr "Leer"
 
 #. module: development_tools
+#: view:development_tools.config.settings:development_tools.view_development_tools_config_settings_form
+msgid "Save"
+msgstr "Guardar"
+
+#. module: development_tools
 #: field:dev.code.tester,is_action:0
 msgid "Server action"
 msgstr "Acción de servidor"
@@ -734,11 +814,6 @@ msgstr "Sincretistas"
 #: model:ir.ui.menu,name:development_tools.menu_technical_reporting
 msgid "Technical Reporting"
 msgstr "Informes técnicos"
-
-#. module: development_tools
-#: model:ir.module.category,name:development_tools.module_category_technical_reporting
-msgid "Technical reporting (demo only)"
-msgstr "Informes técnicos (sólo demostración)"
 
 #. module: development_tools
 #: model:ir.actions.act_window,name:development_tools.action_dev_code_tester_act_window
@@ -858,6 +933,11 @@ msgid "Write the domain which will be tested"
 msgstr "Escribir el dominio que será probado"
 
 #. module: development_tools
+#: view:development_tools.config.settings:development_tools.view_development_tools_config_settings_form
+msgid "or"
+msgstr "o"
+
+#. module: development_tools
 #: view:report.groups.models:development_tools.view_report_groups_models_search
 msgid "report.groups.models.search"
 msgstr "report.groups.models.search"
@@ -872,14 +952,28 @@ msgstr "report.groups.search"
 msgid "report.groups.users.search"
 msgstr "report.groups.users.search"
 
-#~ msgid "Cancel"
-#~ msgstr "Cancelar"
+#~ msgid ""
+#~ "Category with the groups defined in Technical Reporting module with "
+#~ "demonstration purposes only"
+#~ msgstr ""
+#~ "Categoría con los groups definidos en el módulo Technical Reporting con "
+#~ "propósitos de demostración"
+
+#~ msgid ""
+#~ "Data of model access by each group (and implied) to be used in pivot "
+#~ "table reports"
+#~ msgstr ""
+#~ "Datos de acceso a modelos por grupo (e implícitos) para ser usados en "
+#~ "informes de tabla dinámica"
+
+#~ msgid "Demostration groups"
+#~ msgstr "Grupos de demostración"
+
+#~ msgid "Technical reporting (demo only)"
+#~ msgstr "Informes técnicos (sólo demostración)"
 
 #~ msgid "Testing domain for {}"
 #~ msgstr "Prodando dominio para {}"
 
 #~ msgid "models by group"
 #~ msgstr "modelos por grupo"
-
-#~ msgid "or"
-#~ msgstr "o"
