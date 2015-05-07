@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openerp>
+    <data noupdate="0">
+
+        <record id="view_soccer_league_tree" model="ir.ui.view">
+            <field name="name">view.soccer.league.tree</field>
+            <field name="model">soccer.league</field>
+            <field name="type">tree</field>
+            <field name="mode">primary</field>
+            <field name="priority" eval="16" />
+            <field name="active" eval="True" />
+            <field name="arch" type="xml">
+                <tree string="Soccer league" create="1" delete="1" edit="1">
+                    <field name="display_name" />
+                    <field name="kind" />
+                    <field name="country_id" />
+                    <field name="begin_date" />
+                    <field name="end_date" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_soccer_league_form" model="ir.ui.view">
+            <field name="name">view.soccer.league.form</field>
+            <field name="model">soccer.league</field>
+            <field name="type">form</field>
+            <field name="mode">primary</field>
+            <field name="priority" eval="16" />
+            <field name="active" eval="True" />
+            <field name="arch" type="xml">
+                <form string="Soccer league" create="1" delete="1" edit="1">
+                    <sheet>
+                        <field name="id" invisible="1" />
+                        <div class="oe_title" attrs="{'invisible': [('id','&gt;', 0)]}">
+                            <group col="4">
+                                <field name="template_id" />
+                                <field name="season_id" />
+                            </group>
+                        </div>
+                        <div class="oe_title" attrs="{'invisible': [('id','&lt;=', 0)]}">
+                            <label for="display_name" class="oe_edit_only"/>
+                            <h1><field name="display_name" placeholder="Name of the league"/></h1>
+                        </div>
+                        <group col="2">
+                            <group col="2">
+                                <field name="kind" readonly="1" />
+                                <field name="country_id" readonly="1" />
+                            </group>
+                            <group col="2">
+                                <field name="begin_date" />
+                                <field name="end_date" />
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Teams">
+                                <field name="team_ids" />
+                            </page>
+                            <page string="Rounds">
+                                <!-- <field name="round_ids" /> -->
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_soccer_league_search" model="ir.ui.view">
+            <field name="name">view.soccer.league.search</field>
+            <field name="model">soccer.league</field>
+            <field name="type">search</field>
+            <field name="mode">primary</field>
+            <field name="priority" eval="16" />
+            <field name="active" eval="True" />
+            <field name="arch" type="xml">
+                <search string="Soccer league">
+
+                </search>
+            </field>
+        </record>
+
+        <record id="action_soccer_leagues_act_window" model="ir.actions.act_window">
+            <field name="type">ir.actions.act_window</field>
+            <field name="name">Soccer leagues</field>
+            <field name="res_model">soccer.league</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+            <field name="target">current</field>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+            <field name="search_view_id" ref="view_soccer_league_search" />
+        </record>
+
+        <record id="menu_soccer_leagues" model="ir.ui.menu" >
+            <field name="name">Soccer leagues</field>
+            <field name="action" ref="action_soccer_leagues_act_window" />
+            <field name="parent_id" ref="menu_soccer_sweepstake_configuration" />
+            <field name="sequence" eval="10" />
+        </record>
+
+    </data>
+</openerp>

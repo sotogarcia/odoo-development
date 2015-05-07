@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openerp>
+    <data noupdate="1">
+
+        <!-- <record model="res.groups" id="group_soccer_sweepstake">
+            <field name="name">soccer_sweepstake</field>
+            <field name="comment">Module base group</field>
+            <field name="category_id" ref="module_category_soccer_sweepstake"/>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+            <field name="users" eval="[(5, ref('base.user_root'))]" />
+        </record> -->
+
+    </data>
+</openerp>

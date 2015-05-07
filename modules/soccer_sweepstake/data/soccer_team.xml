@@ -1,0 +1,685 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openerp>
+    <data noupdate="0">
+
+        <record id="soccer_team_spain_0001" model="soccer.team">
+            <field name="name">Real Club Recreativo de Huelva</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0002" model="soccer.team">
+            <field name="name">Sevilla Fútbol Club</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0003" model="soccer.team">
+            <field name="name">Athletic Club</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0004" model="soccer.team">
+            <field name="name">Fútbol Club Barcelona</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0005" model="soccer.team">
+            <field name="name">Real Club Deportivo Español</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0006" model="soccer.team">
+            <field name="name">Real Madrid Club de Fútbol</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0007" model="soccer.team">
+            <field name="name">Centre d'Esports Sabadell Futbol Club</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0008" model="soccer.team">
+            <field name="name">Club Atlético de Madrid</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0009" model="soccer.team">
+            <field name="name">Real Avilés Club de Fútbol</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0010" model="soccer.team">
+            <field name="name">Real Sporting de Gijón</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0011" model="soccer.team">
+            <field name="name">Real Club Deportivo de La Coruña</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0012" model="soccer.team">
+            <field name="name">Club Esportiu Europa</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0013" model="soccer.team">
+            <field name="name">Real Betis Balompié</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0014" model="soccer.team">
+            <field name="name">Gimnástica de Torrelavega</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0015" model="soccer.team">
+            <field name="name">Real Murcia Club de Fútbol</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0016" model="soccer.team">
+            <field name="name">Real Sociedad de Fútbol</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0017" model="soccer.team">
+            <field name="name">Levante Unión Deportiva</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0018" model="soccer.team">
+            <field name="name">Arenas Club de Guecho</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0019" model="soccer.team">
+            <field name="name">Cádiz Club de Fútbol</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0020" model="soccer.team">
+            <field name="name">Real Balompédica Linense</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0021" model="soccer.team">
+            <field name="name">Algeciras Club de Fútbol</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0022" model="soccer.team">
+            <field name="name">Club Deportivo Tenerife</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0023" model="soccer.team">
+            <field name="name">Real Racing Club de Santander</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0024" model="soccer.team">
+            <field name="name">Club Gimnàstic de Tarragona</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0025" model="soccer.team">
+            <field name="name">Hércules de Alicante Club de Fútbol</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0026" model="soccer.team">
+            <field name="name">Real Unión Club</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0027" model="soccer.team">
+            <field name="name">Real Club Deportivo Carabanchel</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0028" model="soccer.team">
+            <field name="name">Real Club Deportivo Mallorca</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0029" model="soccer.team">
+            <field name="name">Barakaldo Club de Fútbol</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0030" model="soccer.team">
+            <field name="name">Alicante Club de Fútbol</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0031" model="soccer.team">
+            <field name="name">Caudal Deportivo</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0032" model="soccer.team">
+            <field name="name">Cartagena Fútbol Club</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0033" model="soccer.team">
+            <field name="name">Unió Esportiva Figueres</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0034" model="soccer.team">
+            <field name="name">Club Polideportivo Cacereño</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0035" model="soccer.team">
+            <field name="name">Valencia Club de Fútbol</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0036" model="soccer.team">
+            <field name="name">Racing Club de Ferrol</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0037" model="soccer.team">
+            <field name="name">Club Atlético Osasuna</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0038" model="soccer.team">
+            <field name="name">Deportivo Alavés</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0039" model="soccer.team">
+            <field name="name">Club Deportivo Castellón</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0040" model="soccer.team">
+            <field name="name">Elche Club de Fútbol</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0041" model="soccer.team">
+            <field name="name">Sociedad Deportiva Ponferradina</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0042" model="soccer.team">
+            <field name="name">Tolosa Club de Fútbol</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0043" model="soccer.team">
+            <field name="name">Cultural y Deportiva Leonesa</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0044" model="soccer.team">
+            <field name="name">Real Club Celta de Vigo</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0045" model="soccer.team">
+            <field name="name">Rayo Vallecano de Madrid</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0046" model="soccer.team">
+            <field name="name">Club Deportivo Izarra</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0047" model="soccer.team">
+            <field name="name">Unió Esportiva Sant Andreu</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0048" model="soccer.team">
+            <field name="name">Real Oviedo</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0049" model="soccer.team">
+            <field name="name">Club Deportivo Mirandés</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0050" model="soccer.team">
+            <field name="name">Real Valladolid Club de Fútbol</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0051" model="soccer.team">
+            <field name="name">Club Deportivo Leganés</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0052" model="soccer.team">
+            <field name="name">Club Deportivo Alcoyano</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0053" model="soccer.team">
+            <field name="name">Carrión Balompie</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0054" model="soccer.team">
+            <field name="name">Real Jaén Club de Fútbol</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0055" model="soccer.team">
+            <field name="name">Girona Futbol Club</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0056" model="soccer.team">
+            <field name="name">Granada Club de Fútbol</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0057" model="soccer.team">
+            <field name="name">Club Marino de Luanco</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0058" model="soccer.team">
+            <field name="name">Real Zaragoza</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0059" model="soccer.team">
+            <field name="name">Albacete Balompié</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0060" model="soccer.team">
+            <field name="name">Pontevedra Club de Fútbol</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0061" model="soccer.team">
+            <field name="name">Sociedad Deportiva Eibar</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0062" model="soccer.team">
+            <field name="name">Valencia Club de Fútbol Mestalla</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0063" model="soccer.team">
+            <field name="name">Club Deportivo Numancia de Soria</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0064" model="soccer.team">
+            <field name="name">Real Madrid Castilla Club de Fútbol</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0065" model="soccer.team">
+            <field name="name">Villarreal Club de Fútbol</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0066" model="soccer.team">
+            <field name="name">Xerez Club Deportivo</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0067" model="soccer.team">
+            <field name="name">Club Deportivo Guadalajara</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0068" model="soccer.team">
+            <field name="name">Granada Club de Fútbol "B"</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0069" model="soccer.team">
+            <field name="name">Club Deportivo Puertollano</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0070" model="soccer.team">
+            <field name="name">Unión Deportiva Las Palmas</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0071" model="soccer.team">
+            <field name="name">Club Deportivo Ourense</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0072" model="soccer.team">
+            <field name="name">Club Deportivo Lugo</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0073" model="soccer.team">
+            <field name="name">Córdoba Club de Fútbol</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0074" model="soccer.team">
+            <field name="name">Club Atlético de Ceuta</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0075" model="soccer.team">
+            <field name="name">Sociedad Deportiva Huesca</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0076" model="soccer.team">
+            <field name="name">Unión Popular de Langreo</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0077" model="soccer.team">
+            <field name="name">Club Atlético de Madrid "B"</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0078" model="soccer.team">
+            <field name="name">Bilbao Athletic</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0079" model="soccer.team">
+            <field name="name">Unión Deportiva Logroñés</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0080" model="soccer.team">
+            <field name="name">Fútbol Club Barcelona "B"</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0081" model="soccer.team">
+            <field name="name">Agrupación Deportiva Alcorcón</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0082" model="soccer.team">
+            <field name="name">Montilla Club de Fútbol</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0083" model="soccer.team">
+            <field name="name">Getafe Club de Fútbol</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0084" model="soccer.team">
+            <field name="name">Real Burgos Club de Fútbol</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0085" model="soccer.team">
+            <field name="name">Unión Deportiva Almería</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0086" model="soccer.team">
+            <field name="name">Mérida Unión Deportiva</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0087" model="soccer.team">
+            <field name="name">Málaga Club de Fútbol</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0088" model="soccer.team">
+            <field name="name">Burgos Club de Fútbol</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0089" model="soccer.team">
+            <field name="name">Fútbol Club Cartagena</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0090" model="soccer.team">
+            <field name="name">Sestao River Club</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0091" model="soccer.team">
+            <field name="name">Sociedad Deportiva Compostela S.A.D.</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0092" model="soccer.team">
+            <field name="name">Extremadura Unión Deportiva</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0093" model="soccer.team">
+            <field name="name">Sociedad Deportiva Logroñés</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0094" model="soccer.team">
+            <field name="name">Tarrasa Olímpica 2010</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0095" model="soccer.team">
+            <field name="name">Club Lleida Esportiu</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0096" model="soccer.team">
+            <field name="name">Club Deportivo Badajoz 1905</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0097" model="soccer.team">
+            <field name="name">Salamanca Athletic Club</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0098" model="soccer.team">
+            <field name="name">Club Deportivo Málaga</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0099" model="soccer.team">
+            <field name="name">Club Deportivo Badajoz</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0100" model="soccer.team">
+            <field name="name">Tarrasa Fútbol Club</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0101" model="soccer.team">
+            <field name="name">Sestao Sport Club</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0102" model="soccer.team">
+            <field name="name">Agrupación Deportiva Ferroviaria</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0103" model="soccer.team">
+            <field name="name">Club Polideportivo Mérida</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0104" model="soccer.team">
+            <field name="name">Unión Deportiva Salamanca</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0105" model="soccer.team">
+            <field name="name">Club de Fútbol Extremadura</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0106" model="soccer.team">
+            <field name="name">Unió Esportiva Lleida</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0107" model="soccer.team">
+            <field name="name">Club Deportivo Logroñés</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0108" model="soccer.team">
+            <field name="name">Club Getafe Deportivo</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0109" model="soccer.team">
+            <field name="name">Sociedad Deportiva Compostela</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0110" model="soccer.team">
+            <field name="name">Club Polideportivo Ejido</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0111" model="soccer.team">
+            <field name="name">Agrupación Deportiva Almería</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0112" model="soccer.team">
+            <field name="name">Lorca Atlético Club de Fútbol</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+        <record id="soccer_team_spain_0113" model="soccer.team">
+            <field name="name">Granada 74 Club de Fútbol</field>
+            <field name="country_id" ref="base.es" />
+            <field name="kind">CT</field>
+        </record>
+
+    </data>
+</openerp>
