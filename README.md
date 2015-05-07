@@ -6,6 +6,7 @@ This project contains several Odoo projects in which I have been working, these 
 │   └───odoo_security_exercise
 │
 ├───modules     # Modules to extend the Odoo funcionality
+│   ├───soccer_sweepstake
 │   └───development_tools
 │
 ├───scaffolds   # Scaffold templates which can be used whith odoo.py scaffold -t
@@ -34,6 +35,10 @@ Module to illustrate how to use res.groups, ir.model.access and ir.rule in Odoo 
 ## Modules
 
 Odoo is an extensible system which can be extended adding new modules to it, the following are available in this project:
+
+### soccer_sweepstake
+
+- Module which can be used to bet based on results of football matches.
 
 ### development_tools
 
