@@ -36,5 +36,49 @@
             <field name="active" eval="True" />
         </record>
 
+        <record id="access_report_module_detail_base_group_no_one" model="ir.model.access">
+            <field name="name">report_module_detail base_group_no_one</field>
+            <field name="model_id" ref="development_tools.model_report_module_detail"/>
+            <field name="group_id" ref="base.group_no_one"/>
+            <field name="perm_read" eval="True" />
+            <field name="perm_create" eval="False" />
+            <field name="perm_write" eval="False" />
+            <field name="perm_unlink" eval="False" />
+            <field name="active" eval="True" />
+        </record>
+
+        <record id="access_report_model_detail_base_group_no_one" model="ir.model.access">
+            <field name="name">report_model_detail base_group_no_one</field>
+            <field name="model_id" ref="development_tools.model_report_model_detail"/>
+            <field name="group_id" ref="base.group_no_one"/>
+            <field name="perm_read" eval="True" />
+            <field name="perm_create" eval="False" />
+            <field name="perm_write" eval="False" />
+            <field name="perm_unlink" eval="False" />
+            <field name="active" eval="True" />
+        </record>
+
+        <record id="access_report_field_detail_base_group_no_one" model="ir.model.access">
+            <field name="name">report_field_detail base_group_no_one</field>
+            <field name="model_id" ref="development_tools.model_report_field_detail"/>
+            <field name="group_id" ref="base.group_no_one"/>
+            <field name="perm_read" eval="True" />
+            <field name="perm_create" eval="False" />
+            <field name="perm_write" eval="False" />
+            <field name="perm_unlink" eval="False" />
+            <field name="active" eval="True" />
+        </record>
+
+        <record id="access_report_module_contribution_base_group_no_one" model="ir.model.access">
+            <field name="name">report_module_contribution base_group_no_one</field>
+            <field name="model_id" ref="development_tools.model_report_module_contribution"/>
+            <field name="group_id" ref="base.group_no_one"/>
+            <field name="perm_read" eval="True" />
+            <field name="perm_create" eval="False" />
+            <field name="perm_write" eval="False" />
+            <field name="perm_unlink" eval="False" />
+            <field name="active" eval="True" />
+        </record>
+
     </data>
 </openerp>

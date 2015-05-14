@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openerp>
+    <data noupdate="0">
+
+        <!-- REPORT: "Field details"
+
+            - Module: development_tools    Model: report.field.detail
+            - Language field used to translate it: lang
+            - Report uses attachment: False
+            - Report paperformat: report.paperformat_euro
+            - View priority: 16    Active: True
+            - Action help: Detailed information about fields
+        - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+        <!-- Report "Field details" document template -->
+        <record id="view_report_field_detail_document_qweb" model="ir.ui.view">
+            <field name="name">Field details</field>
+            <field name="model">report.field.detail</field>
+            <field name="type">qweb</field>
+            <field name="mode">primary</field>
+            <field name="priority" eval="16" />
+            <field name="active" eval="True" />
+            <field name="arch" type="xml">
+                <t t-name="development_tools.view_report_field_detail_document_qweb">
+                    <tr>
+                        <td class="small"><t t-esc="o.field_description" /></td>
+                        <td class="small"><t t-esc="o.name" /></td>
+                        <td class="small"><t t-esc="o.ttype" /></td>
+                        <td class="small text-center"><t t-if="o.required">X</t></td>
+                        <td class="small text-center"><t t-if="o.readonly">X</t></td>
+                        <td class="small text-center"><t t-if="o.select_level &lt;&gt; '0'">X</t></td>
+                        <td class="small text-center"><t t-if="o.store">X</t></td>
+                        <td class="small text-center"><t t-if="o.company_dependent">X</t></td>
+                        <td class="small"><t t-esc="o.initial" /></td>
+                        <td class="small text-right"><t t-if="o.size > 0"><t t-esc="o.size" /></t></td>
+                        <td class="small text-center"><t t-if="o.translate">X</t></td>
+                        <td class="small text-right"><t t-esc="o.digits" /></td>
+                    </tr>
+                </t>
+            </field>
+        </record>
+<!--
+
+
+
+-->
+        <!-- Report "Field details" translate_doc template -->
+        <record id="view_report_field_detail_qweb" model="ir.ui.view">
+            <field name="name">Field details</field>
+            <field name="model">report.field.detail</field>
+            <field name="type">qweb</field>
+            <field name="mode">primary</field>
+            <field name="priority" eval="16" />
+            <field name="active" eval="True" />
+            <field name="arch" type="xml">
+                <t t-name="development_tools.view_report_field_detail_qweb">
+                    <t t-call="report.html_container">
+                        <t t-call="report.layout">
+                            <div class="page">
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <table class="table table-bordered table-striped table-condensed small">
+                                            <thead>
+                                                <tr>
+                                                    <th class="small">String</th>
+                                                    <th class="small">Name</th>
+                                                    <th class="small">Type</th>
+                                                    <th class="small">Required</th>
+                                                    <th class="small">Readonly</th>
+                                                    <th class="small">Index</th>
+                                                    <th class="small">Store</th>
+                                                    <th class="small">Company</th>
+                                                    <th class="small">Default</th>
+                                                    <th class="small">Size</th>
+                                                    <th class="small">Translate</th>
+                                                    <th class="small">Digits</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <t t-foreach="doc_ids" t-as="doc_id">
+                                                    <t t-raw="translate_doc(doc_id, doc_model, 'lang', 'development_tools.view_report_field_detail_document_qweb')"/>
+                                                </t>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </t>
+                </t>
+            </field>
+        </record>
+
+        <!-- Report action to show: "Field details" -->
+        <record id="action_report_field_details" model="ir.actions.report.xml">
+            <field name="name">Field details</field>
+            <field name="model">report.field.detail</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">development_tools.view_report_field_detail_qweb</field>
+            <field name="attachment_use" eval="False" />
+            <field name="attachment">(object.name+'.pdf')</field>
+            <field name="paperformat_id" ref="report.paperformat_euro" />
+            <field name="help">Detailed information about fields</field>
+        </record>
+
+        <!-- Button to print the report: "Field details" -->
+        <record id="field_details_values" model="ir.values">
+            <field name="name">Field details</field>
+            <field name="model_id" ref="base.model_ir_model_fields" />
+            <field name="model">ir.model.fields</field>
+            <field name="value" eval="'ir.actions.report.xml,' +str(ref('action_report_field_details'))" />
+            <field name="key">action</field>
+            <field name="key2">client_print_multi</field>
+        </record>
+
+    </data>
+</openerp>

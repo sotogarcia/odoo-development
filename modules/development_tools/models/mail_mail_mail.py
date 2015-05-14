@@ -20,7 +20,6 @@ class MailMail(models.Model):
     _inherit = ['mail.mail']
 
     _capture_msg = _('Email to {} has been captured and sent to {}')
-    _external_id = 'development_tools.development_tools_config_settings_data'
 
     # ------------------------- OVERWRITTEN METHODS ---------------------------
 
@@ -45,19 +44,23 @@ class MailMail(models.Model):
 
     @api.model
     def _get_email_config_settings(self):
-        config = self.env.ref(self._external_id)
+        """ Overwrites parent method to return the alternative email to collect
+            the outgoing mails
+        """
+
+        config = self.env['development_tools.config.settings']
 
         email_to = False
 
-        if config.email_capture:
-            if config.email_to:
-                email_to = config.email_to
-            else:
+        email_capture = config.get_email_capture()
+        if email_capture:
+            email_to = config.get_email_to()
+            if not email_to:
                 admin = self.env.ref('base.user_root')
                 if admin.email:
                     email_to = admin.email
 
         return (
-            config.email_capture and email_to,
+            email_capture and email_to,
             [unicode(email_to)] if email_to else False
         )
