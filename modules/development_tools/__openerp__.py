@@ -61,28 +61,32 @@ Included components:
     },
 
     'data': [
-        'data/development_tools_config_settings.xml',
         'data/ir_actions_server.xml',
         'data/ir_values.xml',
+        'data/report_paperformat.xml',
+        'data/ir_filters.xml',
 
         'security/ir_model_access.xml',
 
-        'demo/development_tools_config_settings.xml',
         'demo/ir_module_category.xml',
         'demo/res_groups.xml',
         'demo/ir_filters.xml',
 
-
+        'views/assets_backend.xml',
         'views/ir_ui_menu.xml',
         'views/report_groups_implied.xml',
         'views/report_groups_users.xml',
         'views/report_groups_models.xml',
+        'views/base_view_view_tree.xml',
+        'views/base_ir_module_module.xml',
 
         'wizard/dev_domain_tester.xml',
         'wizard/dev_code_tester.xml',
-        'wizard/development_tools_config_settings.xml'
+        'wizard/development_tools_config_settings.xml',
 
-        # 'report/report_module_details.xml'
+        'report/report_module_details.xml',
+        'report/report_model_details.xml',
+        'report/report_field_details.xml'
     ],
     'demo': [
         'demo/ir_module_category.xml',
@@ -90,10 +94,13 @@ Included components:
         'demo/ir_filters.xml',
     ],
     'js': [
+        'static/src/js/base_views.js'
     ],
     'css': [
+        'static/src/css/styles-backend.css'
     ],
     'qweb': [
+        'static/src/xml/base_base.xml',
     ],
     'images': [
     ],

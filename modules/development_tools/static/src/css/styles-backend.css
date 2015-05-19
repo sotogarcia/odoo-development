@@ -1,0 +1,19 @@
+@charset "utf-8";
+
+.oe_notebook_page {
+    padding-top: 1.5em;
+}
+
+
+/* module kanban view, module name and description paragraph */
+.oe_module_name {
+    height: 4.5em;
+    overflow: hidden;
+}
+
+.oe_module_desc h4,
+.oe_module_desc h4 a {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}

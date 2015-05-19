@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<templates id="template" xml:space="preserve">
+    <t t-extend="ViewManagerDebugViewLog">
+        <t t-jquery="table" t-operation="after">
+            <button
+                class="oe_button oe_form_button oe_highlight"
+                onclick="oe_debug_view_log()">
+                Reload
+            </button>
+        </t>
+    </t>
+</templates>

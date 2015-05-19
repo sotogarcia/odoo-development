@@ -24,10 +24,8 @@
                             <group col="2" colspan="2">
                                 <field name="model_id" />
                             </group>
-                            <group>
+                            <group col="4">
                                 <separator />
-                            </group>
-                            <group col="2">
                                 <field name="is_action" class="or_right" />
                             </group>
                         </group>

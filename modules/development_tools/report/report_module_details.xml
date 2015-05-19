@@ -3,73 +3,169 @@
 <openerp>
     <data noupdate="0">
 
-        <!-- Main template -->
-        <!-- <template id="report_res_partner">
-            <t t-call="report.html_container">
-                <t t-foreach="doc_ids" t-as="doc_id">
-                    <t t-raw="translate_doc(doc_id, doc_model, 'lang', 'development_tools.report_res_partner_document')"/>
-                </t>
-            </t>
-        </template> -->
+        <!-- REPORT: "Module details"
 
-        <record model="ir.ui.view" id="report_res_partner">
-            <field name="name">report_res_partner3</field>
-            <field name="model">res.partner</field>
+            - Module: development_tools    Model: report.module.detail
+            - Language field used to translate it: lang
+            - Report uses attachment: False
+            - Report paperformat: report.paperformat_euro
+            - View priority: 16    Active: True   Header: True
+            - Action help: Detailed information about modules
+        - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+        <!-- Report "Module details" document template -->
+        <record id="view_report_module_detail_document_qweb" model="ir.ui.view">
+            <field name="name">Module details</field>
+            <field name="model">report.module.detail</field>
             <field name="type">qweb</field>
             <field name="mode">primary</field>
             <field name="priority" eval="16" />
             <field name="active" eval="True" />
             <field name="arch" type="xml">
-                <t t-name="development_tools.report_res_partner">
-                    <t t-call="report.html_container">
-                        <t t-call="report.external_layout">
-                            <div class="page">
-                                <p>Oh!</p>
+                <t t-name="development_tools.view_report_module_detail_document_qweb">
+                    <t t-call="report.layout">
+                        <div class="page">
+                            <div class="row">
+                                <div class="col-xs-12" style="height: 60px;">
+
+                                </div>
                             </div>
+                            <div class="row">
+                                <div class="col-xs-4 col-xs-offset-8" style="height: 85px; ">
+                                    <img class="img-responsive" style="max-height: 100%" src="/development_tools/static/src/img/odoo-260x80.png" alt="Odoo" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12" style="height: 200px;">
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-3 col-xs-offset-1" style="height: 250px; ">
+                                    <img class="img-thumbnail" style="width: 240px; height: auto; max-height: 100%;" t-att-src="o.icon" t-att-alt="o.shortdesc"/>.
+                                </div>
+                                <div class="col-xs-8">
+                                    <h1>
+                                        <span class="oe_form_field oe_form_field_char oe_form_field_translatable">
+                                            <span class="oe_form_char_content"><t t-esc="o.shortdesc" /></span>
+                                        </span>
+                                    </h1>
+                                    <h3 class="oe_fade">
+                                        By
+                                        <span class="oe_form_field oe_form_field_char oe_inline">
+                                            <span class="oe_form_char_content">OpenERP SA</span>
+                                        </span>
+                                    </h3>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12" style="height: 100px">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-8 col-xs-offset-3" style="height: 300px">
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td style="padding: 3px 15px 3px 6px;"><strong>Technical name:</strong></td>
+                                                <td><t t-esc="o.name" /></td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 3px 15px 3px 6px;"><strong>License:</strong></td>
+                                                <td><t t-esc="o.license" /></td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 3px 15px 3px 6px;"><strong>Versión:</strong></td>
+                                                <td><t t-esc="o.latest_version" /></td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 3px 15px 3px 6px;"><strong>Web page:</strong></td>
+                                                <td><t t-esc="o.website" /></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12" style="background-color: #6199AE">
+                                    <div class="row">
+                                        <div class="col-xs-12" style="margin-top: 5px; height: 72px; background-color: #2D5361">
+                                        </div>
+                                    </div>
+                                    <div class="row" style="padding-top: 30px;">
+                                         <div class="col-xs-3 col-xs-offset-1" style="height: 300px">
+                                            <t t-if="o.contribution_ids">
+                                                <h3>Contributors</h3>
+                                                <ul style="list-style-position: inside;">
+                                                    <t t-foreach="o.contribution_ids" t-as="contribution_id">
+                                                        <li><t t-esc="contribution_id.name" /></li>
+                                                    </t>
+                                                </ul>
+                                            </t>
+                                        </div>
+                                         <div class="col-xs-3 col-xs-offset-1">
+                                            <t t-if="o.maintainer">
+                                                <h3>Maintainer</h3>
+                                                <ul style="list-style-position: inside;">
+                                                    <li><t t-esc="o.maintainer" /></li>
+                                                </ul>
+                                            </t>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <img src="/development_tools/static/src/img/development-tools-250x250.png" alt="Development Tools" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="page">
+                            Hola
+                        </div>
+                    </t>
+                </t>
+            </field>
+        </record>
+
+        <!-- Report "Module details" translate_doc template -->
+        <record id="view_report_module_detail_qweb" model="ir.ui.view">
+            <field name="name">Module details</field>
+            <field name="model">report.module.detail</field>
+            <field name="type">qweb</field>
+            <field name="mode">primary</field>
+            <field name="priority" eval="16" />
+            <field name="active" eval="True" />
+            <field name="arch" type="xml">
+                <t t-name="development_tools.view_report_module_detail_qweb">
+                    <t t-call="report.html_container">
+                        <t t-foreach="doc_ids" t-as="doc_id">
+                            <t t-raw="translate_doc(doc_id, doc_model, 'lang', 'development_tools.view_report_module_detail_document_qweb')"/>
                         </t>
                     </t>
                 </t>
             </field>
         </record>
 
-        <record model="ir.actions.report.xml" id="action_report_ir_model_report">
-            <field name="name">Technical method</field>
-            <field name="model">res.partner</field>
-            <field name="report_type">qweb-html</field>
-            <field name="report_name">development_tools.report_res_partner</field>
+        <!-- Report action to show: "Module details" -->
+        <record id="action_report_module_details" model="ir.actions.report.xml">
+            <field name="name">Module details</field>
+            <field name="model">report.module.detail</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">development_tools.view_report_module_detail_qweb</field>
             <field name="attachment_use" eval="False" />
-            <field name="attachment">object.name+'.pdf'</field>
-            <field name="paperformat_id" ref="report.paperformat_euro" />
+            <field name="attachment">(object.name+'.pdf')</field>
+            <field name="paperformat_id" ref="paperformat_iso_216_din_476_serie_a_4_no_margins_" />
+            <field name="help">Detailed information about modules</field>
         </record>
 
-        <record model="ir.values" id="technical_method_values_values">
-            <field name="name">Technical method values</field>
-            <field name="model_id" ref="base.model_res_partner" />
-            <field name="model">res.partner</field>
-            <field name="value" eval="'ir.actions.report.xml,' +str(ref('action_report_ir_model_report'))" />
+        <!-- Button to print the report: "Module details" -->
+        <record id="module_details_values" model="ir.values">
+            <field name="name">Module details</field>
+            <field name="model_id" ref="base.model_ir_module_module" />
+            <field name="model">ir.module.module</field>
+            <field name="value" eval="'ir.actions.report.xml,' +str(ref('action_report_module_details'))" />
             <field name="key">action</field>
             <field name="key2">client_print_multi</field>
-        </record>
-
-        <record model="ir.actions.act_window" id="action_technical_method_window_act_window">
-            <field name="type">ir.actions.act_window</field>
-            <field name="name">Technical method window</field>
-            <field name="res_model">res.partner</field>
-            <field name="view_mode">form</field>
-            <field name="view_type">form</field>
-            <field name="view_id" ref="report_res_partner" />
-            <field name="target">current</field>
-            <field name="limit" eval="80" />
-            <field name="domain">[]</field>
-            <field name="context">{}</field>
-            <field name="auto_search" eval="True" />
-        </record>
-
-        <record model="ir.ui.menu" id="menu_technical_method_menu" >
-            <field name="name">Technical method menu</field>
-            <field name="action" ref="action_technical_method_window_act_window" />
-            <field name="parent_id" ref="menu_technical_reporting" />
-            <field name="sequence" eval="10" />
         </record>
 
     </data>

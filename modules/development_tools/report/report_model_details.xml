@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openerp>
+    <data noupdate="0">
+
+        <!-- REPORT: "Model details"
+
+            - Module: development_tools    Model: report.model.detail
+            - Language field used to translate it: lang
+            - Report uses attachment: False
+            - Report paperformat: report.paperformat_euro
+            - View priority: 16    Active: True   Header: True
+            - Action help: Detailed information about models
+        - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+        <!-- Report "Model details" document template -->
+        <record id="view_report_model_detail_document_qweb" model="ir.ui.view">
+            <field name="name">Model details</field>
+            <field name="model">report.model.detail</field>
+            <field name="type">qweb</field>
+            <field name="mode">primary</field>
+            <field name="priority" eval="16" />
+            <field name="active" eval="True" />
+            <field name="arch" type="xml">
+                <t t-name="development_tools.view_report_model_detail_document_qweb">
+                    <t t-call="report.layout">
+                        <div class="page">
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <table class="table">
+                                        <tbody>
+                                            <tr>
+                                                <td>Name:</td>
+                                                <td><t t-esc="o.name" /></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Model:</td>
+                                                <td><t t-esc="o.model" /></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="col-xs-6">
+                                    <table class="table">
+                                        <tbody>
+                                            <tr>
+                                                <td>Type:</td>
+                                                <td><t t-esc="o.state" /></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Transient:</td>
+                                                <td><t t-esc="osv_memory" /></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </field>
+        </record>
+
+        <!-- Report "Model details" translate_doc template -->
+        <record id="view_report_model_detail_qweb" model="ir.ui.view">
+            <field name="name">Model details</field>
+            <field name="model">report.model.detail</field>
+            <field name="type">qweb</field>
+            <field name="mode">primary</field>
+            <field name="priority" eval="16" />
+            <field name="active" eval="True" />
+            <field name="arch" type="xml">
+                <t t-name="development_tools.view_report_model_detail_qweb">
+                    <t t-call="report.html_container">
+                        <t t-foreach="doc_ids" t-as="doc_id">
+                            <t t-raw="translate_doc(doc_id, doc_model, 'lang', 'development_tools.view_report_model_detail_document_qweb')"/>
+                        </t>
+                    </t>
+                </t>
+            </field>
+        </record>
+
+        <!-- Report action to show: "Model details" -->
+        <record id="action_report_model_details" model="ir.actions.report.xml">
+            <field name="name">Model details</field>
+            <field name="model">report.model.detail</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">development_tools.view_report_model_detail_qweb</field>
+            <field name="attachment_use" eval="False" />
+            <field name="attachment">(object.name+'.pdf')</field>
+            <field name="paperformat_id" ref="report.paperformat_euro" />
+            <field name="help">Detailed information about models</field>
+        </record>
+
+        <!-- Button to print the report: "Model details" -->
+        <record id="model_details_values" model="ir.values">
+            <field name="name">Model details</field>
+            <field name="model_id" ref="base.model_ir_model" />
+            <field name="model">ir.model</field>
+            <field name="value" eval="'ir.actions.report.xml,' +str(ref('action_report_model_details'))" />
+            <field name="key">action</field>
+            <field name="key2">client_print_multi</field>
+        </record>
+
+    </data>
+</openerp>

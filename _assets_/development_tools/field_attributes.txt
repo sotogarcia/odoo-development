@@ -1,0 +1,49 @@
+* name
+string                  field_description   complete_name
+* ttype
+type
+* required
+* readonly
+sortable
+searchable
+store
+
+* relation
+* relation_field
+* domain
+* on_delete
+
+selection
+
+* size
+* translate
+
+digits
+                        selectable
+company_dependent       select_level
+* groups                  serialization_field_id
+depends                 state
+help                    change_default
+                        manual
+                        context
+
+complete_name
+display_name
+* domain
+field_description
+* groups
+modules
+* name
+* on_delete
+* readonly
+* relation
+* relation_field
+* required
+select_level
+selectable
+selection
+serialization_field_id
+* size
+state
+* translate
+* ttype
