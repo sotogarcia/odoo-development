@@ -5,87 +5,87 @@
 
         <!-- NATIONAL LEAGUES
         - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-        <record id="league_template_spanish_A" model="league.template">
+        <record id="soccer_league_template_spanish_A" model="soccer.league.template">
             <field name="name">Primera división</field>
             <field name="country_id" ref="base.es" />
         </record>
 
-        <record id="league_template_spanish_B" model="league.template">
+        <record id="soccer_league_template_spanish_B" model="soccer.league.template">
             <field name="name">Segunda división</field>
             <field name="country_id" ref="base.es" />
         </record>
 
-        <record id="league_template_united_kingdom_A" model="league.template">
+        <record id="soccer_league_template_united_kingdom_A" model="soccer.league.template">
             <field name="name">Premier League</field>
             <field name="country_id" ref="base.uk" />
         </record>
 
-        <record id="league_template_united_kingdom_B" model="league.template">
+        <record id="soccer_league_template_united_kingdom_B" model="soccer.league.template">
             <field name="name">Football League Championship</field>
             <field name="country_id" ref="base.uk" />
         </record>
 
-        <record id="league_template_italy_A" model="league.template">
+        <record id="soccer_league_template_italy_A" model="soccer.league.template">
             <field name="name">Serie A</field>
             <field name="country_id" ref="base.it" />
         </record>
 
-        <record id="league_template_italy_B" model="league.template">
+        <record id="soccer_league_template_italy_B" model="soccer.league.template">
             <field name="name">Serie B</field>
             <field name="country_id" ref="base.it" />
         </record>
 
-        <record id="league_template_germany_A" model="league.template">
+        <record id="soccer_league_template_germany_A" model="soccer.league.template">
             <field name="name">Fußball-Bundesliga</field>
             <field name="country_id" ref="base.de" />
         </record>
 
-        <record id="league_template_germany_B" model="league.template">
+        <record id="soccer_league_template_germany_B" model="soccer.league.template">
             <field name="name">Zweite Bundesliga</field>
             <field name="country_id" ref="base.de" />
         </record>
 
-        <record id="league_template_argentina_A" model="league.template">
+        <record id="soccer_league_template_argentina_A" model="soccer.league.template">
             <field name="name">Primera división de Argentina</field>
             <field name="country_id" ref="base.ar" />
         </record>
 
-        <record id="league_template_argentina_B" model="league.template">
+        <record id="soccer_league_template_argentina_B" model="soccer.league.template">
             <field name="name">Primera B Nacional</field>
             <field name="country_id" ref="base.ar" />
         </record>
 
-        <record id="league_template_brazil_A" model="league.template">
+        <record id="soccer_league_template_brazil_A" model="soccer.league.template">
             <field name="name">Campeonato Brasileño de Serie A</field>
             <field name="country_id" ref="base.br" />
         </record>
 
-        <record id="league_template_brazil_B" model="league.template">
+        <record id="soccer_league_template_brazil_B" model="soccer.league.template">
             <field name="name">Campeonato Brasileño de Serie B</field>
             <field name="country_id" ref="base.br" />
         </record>
 
         <!-- INTERNATIONAL LEAGUES
         - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-        <record id="league_template_uefa_A" model="league.template">
+        <record id="soccer_league_template_uefa_A" model="soccer.league.template">
             <field name="name">UEFA Champions League</field>
             <field name="kind">ILC</field>
             <field name="country_id"></field>
         </record>
 
-        <record id="league_template_uefa_B" model="league.template">
+        <record id="soccer_league_template_uefa_B" model="soccer.league.template">
             <field name="name">UEFA Europa League</field>
             <field name="kind">ILC</field>
             <field name="country_id"></field>
         </record>
 
-        <record id="league_template_conmebol_A" model="league.template">
+        <record id="soccer_league_template_conmebol_A" model="soccer.league.template">
             <field name="name">Copa Libertadores de América</field>
             <field name="kind">ILC</field>
             <field name="country_id"></field>
         </record>
 
-        <record id="league_template_conmebol_B" model="league.template">
+        <record id="soccer_league_template_conmebol_B" model="soccer.league.template">
             <field name="name">Copa Sudamericana</field>
             <field name="kind">ILC</field>
             <field name="country_id"></field>
@@ -94,19 +94,19 @@
 
         <!-- INTERNATIONAL LEAGUES
         - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-        <record id="league_template_world_championship" model="league.template">
+        <record id="soccer_league_template_world_championship" model="soccer.league.template">
             <field name="name">FIFA World Cup</field>
             <field name="kind">ILN</field>
             <field name="country_id"></field>
         </record>
 
-        <record id="league_template_european_championship" model="league.template">
+        <record id="soccer_league_template_european_championship" model="soccer.league.template">
             <field name="name">UEFA European Championship</field>
             <field name="kind">ILN</field>
             <field name="country_id"></field>
         </record>
 
-        <record id="league_template_conmebol_A" model="league.template">
+        <record id="soccer_league_template_conmebol_A" model="soccer.league.template">
             <field name="name">Copa América</field>
             <field name="kind">ILN</field>
             <field name="country_id"></field>

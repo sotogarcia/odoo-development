@@ -3,9 +3,9 @@
 <openerp>
     <data noupdate="0">
 
-        <record id="view_league_match_tree" model="ir.ui.view">
-            <field name="name">view.league.match.tree</field>
-            <field name="model">league.match</field>
+        <record id="view_soccer_match_tree" model="ir.ui.view">
+            <field name="name">view.soccer.match.tree</field>
+            <field name="model">soccer.match</field>
             <field name="type">tree</field>
             <field name="mode">primary</field>
             <field name="priority" eval="16" />
@@ -22,9 +22,9 @@
             </field>
         </record>
 
-        <record id="view_league_match_form" model="ir.ui.view">
-            <field name="name">view.league.match.form</field>
-            <field name="model">league.match</field>
+        <record id="view_soccer_match_form" model="ir.ui.view">
+            <field name="name">view.soccer.match.form</field>
+            <field name="model">soccer.match</field>
             <field name="type">form</field>
             <field name="mode">primary</field>
             <field name="priority" eval="16" />
@@ -61,9 +61,9 @@
             </field>
         </record>
 
-        <record id="view_league_match_search" model="ir.ui.view">
-            <field name="name">view.league.match.search</field>
-            <field name="model">league.match</field>
+        <record id="view_soccer_match_search" model="ir.ui.view">
+            <field name="name">view.soccer.match.search</field>
+            <field name="model">soccer.match</field>
             <field name="type">search</field>
             <field name="mode">primary</field>
             <field name="priority" eval="16" />
@@ -75,21 +75,21 @@
             </field>
         </record>
 
-        <record id="action_league_matches_act_window" model="ir.actions.act_window">
+        <record id="action_soccer_matches_act_window" model="ir.actions.act_window">
             <field name="type">ir.actions.act_window</field>
             <field name="name">League matches</field>
-            <field name="res_model">league.match</field>
+            <field name="res_model">soccer.match</field>
             <field name="view_mode">tree,form</field>
             <field name="view_type">form</field>
             <field name="target">current</field>
             <field name="domain">[]</field>
             <field name="context">{}</field>
-            <field name="search_view_id" ref="view_league_match_search" />
+            <field name="search_view_id" ref="view_soccer_match_search" />
         </record>
 
         <record id="menu_league_menu" model="ir.ui.menu" >
             <field name="name">League matches</field>
-            <field name="action" ref="action_league_matches_act_window" />
+            <field name="action" ref="action_soccer_matches_act_window" />
             <field name="parent_id" ref="menu_soccer_sweepstake_configuration" />
             <field name="sequence" eval="10" />
         </record>

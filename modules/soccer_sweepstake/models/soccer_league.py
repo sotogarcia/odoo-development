@@ -15,11 +15,13 @@ _logger = getLogger(__name__)
 
 
 class SoccerLeague(models.Model):
-    """ League of soccer
+    """ League of the soccer
 
     Fields:
-      name (Char): Human readable name which will identify each record.
-
+        template_id (soccer.league.template): parent model
+        season_id (soccer.season): parent model
+        team_ids (soccer.team): parcicipan teams in the league
+        display_name (char): name of the league
     """
 
     _name = 'soccer.league'
@@ -28,7 +30,7 @@ class SoccerLeague(models.Model):
     _inherit = ['mail.thread']
 
     _inherits = {
-        'league.template': 'template_id',
+        'soccer.league.template': 'template_id',
         'soccer.season': 'season_id'
     }
 
@@ -36,13 +38,13 @@ class SoccerLeague(models.Model):
     _order = 'id ASC'
 
     template_id = fields.Many2one(
-        string='Template',
+        string='League template',
         required=True,
         readonly=False,
         index=True,
-        default=None,
-        help=False,
-        comodel_name='league.template',
+        default=lambda self: self._default_template_id(),
+        help='Template on which it is based',
+        comodel_name='soccer.league.template',
         domain=[],
         context={},
         ondelete='restrict',
@@ -53,8 +55,8 @@ class SoccerLeague(models.Model):
         required=True,
         readonly=False,
         index=True,
-        default=None,
-        help=False,
+        default=lambda self: self._default_season_id(),
+        help='Season in which it is disputed',
         comodel_name='soccer.season',
         domain=[],
         context={},
@@ -69,9 +71,9 @@ class SoccerLeague(models.Model):
         default=None,
         help='Teams which will play in this league',
         comodel_name='soccer.team',
-        # relation='model_name_this_model_rel',
-        # column1='model_name_id}',
-        # column2='this_model_id',
+        relation='soccer_league_soccer_team_rel',
+        column1='soccer_league_id',
+        column2='soccer_team_id',
         domain=[],
         context={},
         limit=None
@@ -90,11 +92,65 @@ class SoccerLeague(models.Model):
         store=False
     )
 
-    def _get_display_name(self):
-        s_name = self.season_id.name if self.season_id else ''
-        t_name = self.template_id.name if self.template_id else ''
+    _sql_constraints = [
+        (
+            'code_company_uniq',
+            'unique (template_id, season_id)',
+            _(u'League already registered for this season')
+        )
+    ]
 
-        return u'{} ({})'.format(t_name, s_name) if t_name and s_name else None
+    def _default_template_id(self):
+        """ Gets default league template, it will be the first league played in
+            the country of the current user/company
+
+            return: soccer.league.template->id or None
+        """
+
+        result = None
+
+        # STEP 1: Getting current user and ensure one
+        user_obj = self.env['res.users']
+        user_set = user_obj.browse(self.env.uid)
+
+        user_set.ensure_one()
+
+        # STEP 2: Getting country from user (first) or company (alternative)
+        if user_set.country_id:
+            country_id = user_set.country_id
+        elif user_set.company_id:
+            country_id = user_set.company_id.country_id
+        else:
+            country_id = None
+
+        # STEP 3: Getting first league from country
+        if country_id:
+            template_domain = [('country_id', '=', country_id.id)]
+            template_obj = self.env['soccer.league.template']
+            template_set = template_obj.search(template_domain, limit=1)
+
+            if template_set:
+                result = template_set.id
+
+        return result
+
+    def _default_season_id(self):
+        """ Gets default season, it will be the first season currently active
+
+            return: soccer.season->id or None
+        """
+
+        today = fields.Date.today()
+
+        season_domain = [
+            '&',
+            ('begin_date', '<=', today),
+            ('end_date', '>=', today)
+        ]
+        season_obj = self.env['soccer.season']
+        season_set = season_obj.search(season_domain, limit=1)
+
+        return season_set.id if season_set else None
 
     @api.multi
     @api.depends('season_id', 'template_id')
@@ -112,7 +168,7 @@ class SoccerLeague(models.Model):
             if parts:
                 length = len(parts)
                 if length > 0:
-                    t_ids = self._get_ids_by_name('league.template', parts[0])
+                    t_ids = self._get_ids_by_name('soccer.league.template', parts[0])
                     if t_ids:
                         domain.append(('template_id', 'in', t_ids))
 
@@ -127,6 +183,18 @@ class SoccerLeague(models.Model):
             """.format(value, domain))
 
         return domain
+
+    def _get_display_name(self):
+        """ Gets the name for league, it will consist in name from template
+            followed by season name in brackets.
+        """
+
+        self.ensure_one()
+
+        s_name = self.season_id.shortdesc if self.season_id else ''
+        t_name = self.template_id.name if self.template_id else ''
+
+        return u'{} ({})'.format(t_name, s_name) if t_name and s_name else None
 
     def _get_ids_by_name(self, model_name, name):
         model_domain = [('name', '=', name)]

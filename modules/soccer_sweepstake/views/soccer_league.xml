@@ -78,7 +78,11 @@
             <field name="active" eval="True" />
             <field name="arch" type="xml">
                 <search string="Soccer league">
-
+                    <field name="display_name" />
+                    <field name="country_id" />
+                    <field name="kind" />
+                    <field name="begin_date" />
+                    <field name="end_date" />
                 </search>
             </field>
         </record>

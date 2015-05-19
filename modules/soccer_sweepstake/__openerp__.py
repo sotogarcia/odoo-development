@@ -62,7 +62,7 @@ Features:
     },
 
     'data': [
-        'data/league_template.xml',
+        'data/soccer_league_template.xml',
         'data/soccer_team.xml',
         'data/soccer_season.xml',
         'data/soccer_league.xml',
@@ -72,11 +72,11 @@ Features:
         'security/ir_rule.xml',
 
         'views/ir_ui_menu.xml',
-        'views/league_template.xml',
+        'views/soccer_league_template.xml',
         'views/soccer_team.xml',
         'views/soccer_season.xml',
         'views/soccer_league.xml',
-        'views/league_match.xml'
+        'views/soccer_match.xml'
 
     ],
     'demo': [

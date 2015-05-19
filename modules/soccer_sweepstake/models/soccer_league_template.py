@@ -12,7 +12,7 @@ from logging import getLogger
 _logger = getLogger(__name__)
 
 
-class LeagueTemplate(models.Model):
+class SoccerLeagueTemplate(models.Model):
     """ Stores information about leagues
 
     Fields:
@@ -20,7 +20,7 @@ class LeagueTemplate(models.Model):
 
     """
 
-    _name = 'league.template'
+    _name = 'soccer.league.template'
     _description = u'League template'
 
     _inherit = ['mail.thread']

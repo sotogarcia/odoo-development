@@ -27,10 +27,10 @@ class SoccerSeason(models.Model):
 
     _inherit = ['mail.thread']
 
-    _rec_name = 'name'
-    _order = 'name ASC'
+    _rec_name = 'shortdesc'
+    _order = 'shortdesc ASC'
 
-    name = fields.Char(
+    shortdesc = fields.Char(
         string='Name',
         required=True,
         readonly=False,

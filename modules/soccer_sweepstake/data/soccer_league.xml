@@ -4,13 +4,13 @@
     <data noupdate="0">
 
         <record id="soccer_league_spain_A" model="soccer.league">
-            <field name="template_id" ref="league_template_spanish_A" />
+            <field name="template_id" ref="soccer_league_template_spanish_A" />
             <field name="season_id" ref="soccer_season_01" />
             <field name="team_ids" eval="[(4, ref('soccer_team_spain_0006')), (4, ref('soccer_team_spain_0004')), (4, ref('soccer_team_spain_0078'))]" />
         </record>
 
         <record id="soccer_league_spain_B" model="soccer.league">
-            <field name="template_id" ref="league_template_spanish_B" />
+            <field name="template_id" ref="soccer_league_template_spanish_B" />
             <field name="season_id" ref="soccer_season_01" />
             <field name="team_ids" eval="[(4, ref('soccer_team_spain_0036'))]" />
         </record>

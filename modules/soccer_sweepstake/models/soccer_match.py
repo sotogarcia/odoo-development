@@ -12,7 +12,7 @@ from logging import getLogger
 _logger = getLogger(__name__)
 
 
-class LeagueMatch(models.Model):
+class SoccerMatch(models.Model):
     """ Match between two teams from the same league
 
     Fields:
@@ -20,7 +20,7 @@ class LeagueMatch(models.Model):
 
     """
 
-    _name = 'league.match'
+    _name = 'soccer.match'
     _description = u'League match'
 
     _inherit = ['mail.thread']

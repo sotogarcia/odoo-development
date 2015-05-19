@@ -4,8 +4,8 @@
 #    __openerp__.py file at the root folder of this module.                   #
 ###############################################################################
 
-from . import league_template
+from . import soccer_league_template
 from . import soccer_team
 from . import soccer_season
 from . import soccer_league
-from . import league_match
+from . import soccer_match
