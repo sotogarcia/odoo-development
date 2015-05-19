@@ -61,7 +61,6 @@ Included components:
     },
 
     'data': [
-        'data/ir_config_parameter.xml',
         'data/ir_actions_server.xml',
         'data/ir_values.xml',
         'data/report_paperformat.xml',
@@ -73,12 +72,13 @@ Included components:
         'demo/res_groups.xml',
         'demo/ir_filters.xml',
 
-
         'views/assets_backend.xml',
         'views/ir_ui_menu.xml',
         'views/report_groups_implied.xml',
         'views/report_groups_users.xml',
         'views/report_groups_models.xml',
+        'views/base_view_view_tree.xml',
+        'views/base_ir_module_module.xml',
 
         'wizard/dev_domain_tester.xml',
         'wizard/dev_code_tester.xml',
@@ -94,11 +94,13 @@ Included components:
         'demo/ir_filters.xml',
     ],
     'js': [
+        'static/src/js/base_views.js'
     ],
     'css': [
         'static/src/css/styles-backend.css'
     ],
     'qweb': [
+        'static/src/xml/base_base.xml',
     ],
     'images': [
     ],

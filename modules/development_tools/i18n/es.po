@@ -5,8 +5,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0-20150121\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-30 09:38+0000\n"
-"PO-Revision-Date: 2015-04-30 11:44+0100\n"
+"POT-Creation-Date: 2015-05-15 00:49+0000\n"
+"PO-Revision-Date: 2015-05-15 03:05+0100\n"
 "Last-Translator: Jorge Soto Garcia <sotogarcia@gmail.com>\n"
 "Language-Team: Jorge Soto Garcia <sotogarcia@gmail.com>\n"
 "Language: es_ES\n"
@@ -18,6 +18,57 @@ msgstr ""
 "X-Generator: Poedit 1.7.5\n"
 
 #. module: development_tools
+#: code:addons\development_tools\models\base_ir_cron.py:82
+#, python-format
+msgid ""
+"\n"
+"        An error has occurred when Odoo was trying to execute a planned "
+"action.\n"
+"        Action: {} / {}\n"
+"        Exception: {}\n"
+"    "
+msgstr ""
+"\n"
+"        Se ha producido un error cuando Odoo estaba tratando de ejecutar una "
+"acción planificada.\n"
+"        Acción: {} / { } \n"
+"        Excepción: {} \n"
+
+#. module: development_tools
+#: code:addons\development_tools\models\base_ir_actions_server.py:82
+#, python-format
+msgid ""
+"\n"
+"        An error has occurred when Odoo was trying to execute a server "
+"action.\n"
+"        Action: {} / {}\n"
+"        Exception: {}\n"
+"    "
+msgstr ""
+"\n"
+"        Se ha producido un error cuando Odoo estaba tratando de ejecutar una "
+"acción de servidor.\n"
+"        Acción: {} / { } \n"
+"        Excepción: {} \n"
+
+#. module: development_tools
+#: code:addons\development_tools\models\base_ir_action_act_window.py:84
+#, python-format
+msgid ""
+"\n"
+"        An error has occurred when Odoo was trying to run a act_window "
+"action.\n"
+"        Action: {} / {}\n"
+"        Exception: {}\n"
+"    "
+msgstr ""
+"\n"
+"        Se ha producido un error cuando Odoo estaba tratando de ejecutar una "
+"acción act_window .\n"
+"        Acción: {} / { } \n"
+"        Excepción: {} \n"
+
+#. module: development_tools
 #: help:development_tools.config.settings,email_to:0
 msgid "Address will be used to send captured email messages"
 msgstr "Dirección que será usada para capturar los mensajes de correo"
@@ -26,6 +77,12 @@ msgstr "Dirección que será usada para capturar los mensajes de correo"
 #: model:res.groups,name:development_tools.group_archbishops
 msgid "Archbishops"
 msgstr "Arzobispos"
+
+#. module: development_tools
+#: code:addons\development_tools\controllers\web_main.py:54
+#, python-format
+msgid "Auto-redirect to enter in debug mode"
+msgstr "Autoredirección para entrar en modo desarrollo"
 
 #. module: development_tools
 #: model:res.groups,name:development_tools.group_bishops
@@ -177,6 +234,11 @@ msgid "Code will be executed"
 msgstr "Código que será ejecutado"
 
 #. module: development_tools
+#: view:website:development_tools.view_report_field_detail_qweb
+msgid "Company"
+msgstr "Compañía"
+
+#. module: development_tools
 #: model:res.groups,comment:development_tools.group_pope
 msgid "Company CEO"
 msgstr "Gerente de la compañía"
@@ -187,9 +249,29 @@ msgid "Context"
 msgstr "Contexto"
 
 #. module: development_tools
+#: field:report.module.detail,contribution_ids:0
+msgid "Contributions"
+msgstr "Contribuciones"
+
+#. module: development_tools
+#: view:website:development_tools.view_report_module_detail_document_qweb
+msgid "Contributors"
+msgstr "Contribuidores"
+
+#. module: development_tools
 #: model:res.groups,comment:development_tools.group_archbishops
 msgid "Coordinators among regional delegations"
 msgstr "Coordinadores entre delegaciones regionales"
+
+#. module: development_tools
+#: code:addons\development_tools\wizard\development_tools_config_settings.py:359
+#, python-format
+msgid ""
+"Could not retrive value for field `{}`\n"
+"System has said: {}"
+msgstr ""
+"No se pudo recuperar el valor para el campo `{}`\n"
+"El sistema ha dicho: {}"
 
 #. module: development_tools
 #: field:report.groups.models,perm_create:0
@@ -246,9 +328,29 @@ msgid "Database identifier of the implied group"
 msgstr "Identificador del grupo implícito"
 
 #. module: development_tools
+#: view:website:development_tools.view_report_field_detail_qweb
+msgid "Default"
+msgstr "Predeterminado"
+
+#. module: development_tools
 #: field:report.groups.models,perm_unlink:0
 msgid "Delete"
 msgstr "Borrar"
+
+#. module: development_tools
+#: model:ir.actions.report.xml,help:development_tools.action_report_field_details
+msgid "Detailed information about fields"
+msgstr "Información detallada sobre campos"
+
+#. module: development_tools
+#: model:ir.actions.report.xml,help:development_tools.action_report_model_details
+msgid "Detailed information about models"
+msgstr "Información detallada sobre modelos"
+
+#. module: development_tools
+#: model:ir.actions.report.xml,help:development_tools.action_report_module_details
+msgid "Detailed information about modules"
+msgstr "Información detallada sobre módulos"
 
 #. module: development_tools
 #: help:report.groups.implied,involving_itself:0
@@ -261,6 +363,16 @@ msgstr "Determina cuando el grupo se está involucrando a sí mismo"
 #: model:ir.ui.menu,name:development_tools.menu_developement_tools
 msgid "Developement"
 msgstr "Desarrollo"
+
+#. module: development_tools
+#: model:ir.filters,name:development_tools.filter_model_name_whithout_module_development_modules
+msgid "Developing modules"
+msgstr "Módulos de desarrollo"
+
+#. module: development_tools
+#: view:website:development_tools.view_report_module_detail_document_qweb
+msgid "Development Tools"
+msgstr "Herramientas de desarrollo"
 
 #. module: development_tools
 #: model:ir.filters,name:development_tools.filter_development_tools_groups_implied_demostration
@@ -279,14 +391,30 @@ msgstr "Probador de codigo en desarrollo"
 
 #. module: development_tools
 #: view:development_tools.config.settings:development_tools.view_development_tools_config_settings_form
+msgid "Development mode"
+msgstr "Módo de desarrollo"
+
+#. module: development_tools
+#: field:development_tools.config.settings,development_mode:0
+msgid "Development mode as default"
+msgstr "Módo de desarrollo como predeterminado"
+
+#. module: development_tools
+#: view:development_tools.config.settings:development_tools.view_development_tools_config_settings_form
 #: model:ir.ui.menu,name:development_tools.menu_development_tools
 msgid "Development tools"
 msgstr "Herramientas de desarrollo"
 
 #. module: development_tools
 #: model:ir.actions.act_window,name:development_tools.action_development_tools_config_settings_act_window
+#: model:ir.model,name:development_tools.model_development_tools_config_settings
 msgid "Development tools config settings"
 msgstr "Configuración de Herramientas de Desarrollo"
+
+#. module: development_tools
+#: view:website:development_tools.view_report_field_detail_qweb
+msgid "Digits"
+msgstr "Dígitos"
 
 #. module: development_tools
 #: model:res.groups,comment:development_tools.group_bishops
@@ -306,6 +434,16 @@ msgid "Domain tester"
 msgstr "Probador de dominios"
 
 #. module: development_tools
+#: field:report.module.contribution,email:0
+msgid "Email"
+msgstr "Correo electrónico"
+
+#. module: development_tools
+#: help:report.module.contribution,email:0
+msgid "Email address of the contributor"
+msgstr "Dirección de correo electrónico del contribuidor"
+
+#. module: development_tools
 #: view:development_tools.config.settings:development_tools.view_development_tools_config_settings_form
 msgid "Email capture"
 msgstr "Capturar correos"
@@ -322,6 +460,12 @@ msgid "Email to {} has been captured and sent to {}"
 msgstr "El correo para {} ha sido capturado y enviado a {}"
 
 #. module: development_tools
+#: help:development_tools.config.settings,search_default_app:0
+msgid "Enable search_default_app filter in the Local modules view"
+msgstr ""
+"Habilitar el filtro de módulos oficiales en la vista de módulos locales"
+
+#. module: development_tools
 #: view:dev.code.tester:development_tools.view_dev_code_tester_form
 #: field:dev.code.tester,exception:0
 msgid "Exception"
@@ -330,6 +474,9 @@ msgstr "Excepción"
 #. module: development_tools
 #: view:dev.code.tester:development_tools.view_dev_code_tester_form
 #: view:dev.domain.tester:development_tools.view_dev_domain_tester_form
+#: model:ir.actions.server,name:development_tools.action_run_act_window_server
+#: model:ir.actions.server,name:development_tools.action_run_planned_action_server
+#: model:ir.actions.server,name:development_tools.action_run_server_action_server
 msgid "Execute"
 msgstr "Ejecutar"
 
@@ -337,6 +484,24 @@ msgstr "Ejecutar"
 #: help:dev.code.tester,is_action:0
 msgid "Execute entered code in a ir.action.server"
 msgstr "Ejecutar el código introducido en un ir.action.server"
+
+#. module: development_tools
+#: code:addons\development_tools\models\base_ir_action_act_window.py:82
+#, python-format
+msgid "Executing the act_window action: {} / {}"
+msgstr "Ejecutar acción act_window: {} / {}"
+
+#. module: development_tools
+#: code:addons\development_tools\models\base_ir_cron.py:80
+#, python-format
+msgid "Executing the planned action: {} / {}"
+msgstr "Ejecutar acción planificada: : {} / {}"
+
+#. module: development_tools
+#: code:addons\development_tools\models\base_ir_actions_server.py:80
+#, python-format
+msgid "Executing the server action: {} / {}"
+msgstr "Ejecutar la acción de servidor: {} / {}"
 
 #. module: development_tools
 #: help:report.groups.models,model_module_xml_id:0
@@ -364,6 +529,21 @@ msgstr ""
 #: help:report.groups.users,user_module_xml_id:0
 msgid "External Key/Identifier of the module in which user was defined"
 msgstr "Identificador externo del módulo en el que fue definido el usuario"
+
+#. module: development_tools
+#: field:report.field.detail,field_id:0 field:report.model.detail,model_id:0
+msgid "Field"
+msgstr "Campo"
+
+#. module: development_tools
+#: model:ir.actions.report.xml,name:development_tools.action_report_field_details
+msgid "Field details"
+msgstr "Detalles de campo"
+
+#. module: development_tools
+#: field:report.model.detail,field_ids:0
+msgid "Fields"
+msgstr "Campos"
 
 #. module: development_tools
 #: model:res.groups,comment:development_tools.group_eclectics
@@ -517,10 +697,16 @@ msgid "Hide those that are involved themselves"
 msgstr "Ocultar los autoimplícitos"
 
 #. module: development_tools
+#: view:website:development_tools.view_report_module_detail_document_qweb
+msgid "Hola"
+msgstr "Hola"
+
+#. module: development_tools
 #: field:dev.code.tester,id:0 field:dev.domain.tester,id:0
-#: field:development_tools.config.settings,id:0
+#: field:development_tools.config.settings,id:0 field:report.field.detail,id:0
 #: field:report.groups.implied,id:0 field:report.groups.models,id:0
-#: field:report.groups.users,id:0
+#: field:report.groups.users,id:0 field:report.model.detail,id:0
+#: field:report.module.contribution,id:0 field:report.module.detail,id:0
 msgid "ID"
 msgstr "ID"
 
@@ -599,9 +785,19 @@ msgid "Implied module external ID"
 msgstr "ID externo del módulo del implícito"
 
 #. module: development_tools
+#: view:website:development_tools.view_report_field_detail_qweb
+msgid "Index"
+msgstr "Índice"
+
+#. module: development_tools
 #: view:dev.code.tester:development_tools.view_dev_code_tester_form
 msgid "Information"
 msgstr "Información"
+
+#. module: development_tools
+#: help:report.module.detail,contribution_ids:0
+msgid "Information about contributions"
+msgstr "Información sobre contribuidores"
 
 #. module: development_tools
 #: help:report.groups.implied,present:0 help:report.groups.models,present:0
@@ -620,6 +816,16 @@ msgstr "Última actualización por"
 #: field:development_tools.config.settings,write_date:0
 msgid "Last Updated on"
 msgstr "Última actualización en"
+
+#. module: development_tools
+#: view:website:development_tools.view_report_module_detail_document_qweb
+msgid "License:"
+msgstr "Licencia:"
+
+#. module: development_tools
+#: view:development_tools.config.settings:development_tools.view_development_tools_config_settings_form
+msgid "Local modules filter"
+msgstr "Filtro de módulos locales"
 
 #. module: development_tools
 #: view:dev.domain.tester:development_tools.view_dev_domain_tester_form
@@ -653,6 +859,11 @@ msgstr ""
 "tortor sapien, tempor iaculis lacus eu, euismod tempor purus."
 
 #. module: development_tools
+#: view:website:development_tools.view_report_module_detail_document_qweb
+msgid "Maintainer"
+msgstr "Mantenido por"
+
+#. module: development_tools
 #: model:res.groups,comment:development_tools.group_cardinals
 msgid "Members of the executive board"
 msgstr "Miembros de la junta directiva"
@@ -671,6 +882,11 @@ msgstr "ID del modelo"
 #: help:report.groups.models,model_id:0
 msgid "Model database identifier"
 msgstr "Identificador del modelo"
+
+#. module: development_tools
+#: model:ir.actions.report.xml,name:development_tools.action_report_model_details
+msgid "Model details"
+msgstr "Detalles del modelo"
 
 #. module: development_tools
 #: field:report.groups.models,model_xml_id:0
@@ -708,6 +924,11 @@ msgid "Model will be used in server action"
 msgstr "Modelo quer será usado en la acción de servidor"
 
 #. module: development_tools
+#: view:website:development_tools.view_report_model_detail_document_qweb
+msgid "Model:"
+msgstr "Modelo:"
+
+#. module: development_tools
 #: model:ir.actions.act_window,name:development_tools.action_report_groups_models_graph_act_window
 #: model:ir.ui.menu,name:development_tools.menu_models_by_group
 #: view:report.groups.models:development_tools.view_report_groups_models_graph
@@ -715,9 +936,15 @@ msgid "Models by group"
 msgstr "Modelos por grupo"
 
 #. module: development_tools
-#: model:ir.model,name:development_tools.model_development_tools_config_settings
-msgid "Module config settings"
-msgstr "Configuración del módulo"
+#: field:report.module.contribution,module_id:0
+#: field:report.module.detail,module_id:0
+msgid "Module"
+msgstr "Módulo"
+
+#. module: development_tools
+#: model:ir.actions.report.xml,name:development_tools.action_report_module_details
+msgid "Module details"
+msgstr "Detalles del módulo"
 
 #. module: development_tools
 #: help:report.groups.implied,group_module_id:0
@@ -725,6 +952,11 @@ msgstr "Configuración del módulo"
 #: help:report.groups.users,group_module_id:0
 msgid "Module in which child group was defined"
 msgstr "Módulo en el cual fue definido el grupo hijo"
+
+#. module: development_tools
+#: help:report.module.contribution,module_id:0
+msgid "Module in which he has contributed"
+msgstr "Módulo en el cual ha contribuido"
 
 #. module: development_tools
 #: help:report.groups.implied,implied_module_id:0
@@ -744,7 +976,8 @@ msgid "Module in which user was defined"
 msgstr "Módulo en el cual fue definido el usuario"
 
 #. module: development_tools
-#: field:dev.domain.tester,name:0
+#: field:dev.domain.tester,name:0 field:report.module.contribution,name:0
+#: view:website:development_tools.view_report_field_detail_qweb
 msgid "Name"
 msgstr "Nombre"
 
@@ -756,6 +989,11 @@ msgid "Name of the child group"
 msgstr "Nombre del grupo hijo"
 
 #. module: development_tools
+#: help:report.module.contribution,name:0
+msgid "Name of the contributor"
+msgstr "Nombre del contribuidor"
+
+#. module: development_tools
 #: help:report.groups.implied,implied_name:0
 #: help:report.groups.models,implied_name:0
 #: help:report.groups.users,implied_name:0
@@ -763,10 +1001,25 @@ msgid "Name of the implied group"
 msgstr "Nombre del grupo implícito"
 
 #. module: development_tools
+#: view:website:development_tools.view_report_model_detail_document_qweb
+msgid "Name:"
+msgstr "Nombre:"
+
+#. module: development_tools
 #: view:report.groups.models:development_tools.view_report_groups_models_search
 #: view:report.groups.users:development_tools.view_report_groups_users_search
 msgid "Non empty"
 msgstr "No vacía"
+
+#. module: development_tools
+#: view:website:development_tools.view_report_module_detail_document_qweb
+msgid "Odoo"
+msgstr "Odoo"
+
+#. module: development_tools
+#: view:website:development_tools.view_report_module_detail_document_qweb
+msgid "OpenERP SA"
+msgstr "OpenERP SA"
 
 #. module: development_tools
 #: model:ir.model,name:development_tools.model_mail_mail
@@ -796,14 +1049,79 @@ msgid "Read"
 msgstr "Leer"
 
 #. module: development_tools
+#: view:website:development_tools.view_report_field_detail_qweb
+msgid "Readonly"
+msgstr "Sólo lectura"
+
+#. module: development_tools
+#: model:ir.model,name:development_tools.model_report_field_detail
+msgid "Report field detail"
+msgstr "Informe detallado de campo"
+
+#. module: development_tools
+#: model:ir.model,name:development_tools.model_report_model_detail
+msgid "Report model detail"
+msgstr "Informe detallado de modelo"
+
+#. module: development_tools
+#: model:ir.model,name:development_tools.model_report_module_contribution
+msgid "Report module contribution"
+msgstr "Informe de contribuciones al módulo"
+
+#. module: development_tools
+#: model:ir.model,name:development_tools.model_report_module_detail
+msgid "Report module detail"
+msgstr "Informe detallado de módulo"
+
+#. module: development_tools
+#: view:website:development_tools.view_report_field_detail_qweb
+msgid "Required"
+msgstr "Requerido"
+
+#. module: development_tools
 #: view:development_tools.config.settings:development_tools.view_development_tools_config_settings_form
 msgid "Save"
 msgstr "Guardar"
 
 #. module: development_tools
+#: field:development_tools.config.settings,search_default_app:0
+msgid "Search default app filter"
+msgstr "Filtro de aplicaciones oficiales"
+
+#. module: development_tools
 #: field:dev.code.tester,is_action:0
 msgid "Server action"
 msgstr "Acción de servidor"
+
+#. module: development_tools
+#: field:development_tools.config.settings,developing_modules_enabled:0
+msgid "Set as default filter"
+msgstr "Establecer como filtro predeterminado"
+
+#. module: development_tools
+#: help:development_tools.config.settings,development_mode:0
+msgid "Set development mode by default"
+msgstr "Establecer el modo desarrollador como predeterminado"
+
+#. module: development_tools
+#: help:development_tools.config.settings,developing_modules_enabled:0
+msgid "Sets the filter as default filter in Local modules views"
+msgstr "Establecer el filtro como predeterminado in la vista Módulos locales"
+
+#. module: development_tools
+#: view:website:development_tools.view_report_field_detail_qweb
+msgid "Size"
+msgstr "Tamaño"
+
+#. module: development_tools
+#: view:website:development_tools.view_report_field_detail_qweb
+msgid "Store"
+msgstr "Guardar"
+
+#. module: development_tools
+#: view:website:development_tools.view_report_field_detail_qweb
+msgid "String"
+msgstr "Cadena"
 
 #. module: development_tools
 #: model:res.groups,name:development_tools.group_eclectics
@@ -814,6 +1132,11 @@ msgstr "Sincretistas"
 #: model:ir.ui.menu,name:development_tools.menu_technical_reporting
 msgid "Technical Reporting"
 msgstr "Informes técnicos"
+
+#. module: development_tools
+#: view:website:development_tools.view_report_module_detail_document_qweb
+msgid "Technical name:"
+msgstr "Nombre técnico:"
 
 #. module: development_tools
 #: model:ir.actions.act_window,name:development_tools.action_dev_code_tester_act_window
@@ -829,6 +1152,56 @@ msgstr "Probando dominios y contextos"
 #: model:ir.ui.menu,name:development_tools.menu_testing_tools
 msgid "Testing tools"
 msgstr "Herramientas de pruebas"
+
+#. module: development_tools
+#: code:addons\development_tools\controllers\web_main.py:56
+#, python-format
+msgid ""
+"The debug response could not be built.\n"
+"System has said: {}"
+msgstr ""
+"La respuesta de depuración no se pudo construir.\n"
+"El sistema ha dicho : {}"
+
+#. module: development_tools
+#: code:addons\development_tools\wizard\development_tools_config_settings.py:349
+#, python-format
+msgid ""
+"The value `{}` could not be retrieved\n"
+"System has said: {}"
+msgstr ""
+"El valor `{ } ' no pudo ser recuperado\n"
+"El sistema ha dicho : {}"
+
+#. module: development_tools
+#: code:addons\development_tools\wizard\development_tools_config_settings.py:354
+#, python-format
+msgid ""
+"The value `{}` could not be set\n"
+"System has said: {}"
+msgstr ""
+"El valor `{ } ' no se pudo configurar\n"
+"El sistema ha dicho : {}"
+
+#. module: development_tools
+#: view:website:development_tools.view_report_model_detail_document_qweb
+msgid "Transient:"
+msgstr "Transitorio:"
+
+#. module: development_tools
+#: view:website:development_tools.view_report_field_detail_qweb
+msgid "Translate"
+msgstr "Traducir"
+
+#. module: development_tools
+#: view:website:development_tools.view_report_field_detail_qweb
+msgid "Type"
+msgstr "Tipo"
+
+#. module: development_tools
+#: view:website:development_tools.view_report_model_detail_document_qweb
+msgid "Type:"
+msgstr "Tipo:"
 
 #. module: development_tools
 #: field:report.groups.models,perm_write:0
@@ -908,9 +1281,29 @@ msgid "Users by group"
 msgstr "Usuarios por grupo"
 
 #. module: development_tools
+#: code:addons\development_tools\wizard\development_tools_config_settings.py:340
+#, python-format
+msgid ""
+"Value '{}' could not be evaluated\n"
+"System has said: {}"
+msgstr ""
+"El valor '{ }' no se pudo evaluar\n"
+"El sistema ha dicho : {}"
+
+#. module: development_tools
+#: view:website:development_tools.view_report_module_detail_document_qweb
+msgid "Versión:"
+msgstr "Versión:"
+
+#. module: development_tools
 #: field:dev.domain.tester,view_id:0
 msgid "View"
 msgstr "Vistas"
+
+#. module: development_tools
+#: view:website:development_tools.view_report_module_detail_document_qweb
+msgid "Web page:"
+msgstr "Página web:"
 
 #. module: development_tools
 #: help:dev.domain.tester,name:0
@@ -933,6 +1326,13 @@ msgid "Write the domain which will be tested"
 msgstr "Escribir el dominio que será probado"
 
 #. module: development_tools
+#: code:addons\development_tools\wizard\development_tools_config_settings.py:345
+#, python-format
+msgid "Wrong type value `{}`, one of the following was expected: `{}`"
+msgstr ""
+"Tipo de valor incorrecto `{ } ' , se esperaba uno de los siguientes : ` { } `"
+
+#. module: development_tools
 #: view:development_tools.config.settings:development_tools.view_development_tools_config_settings_form
 msgid "or"
 msgstr "o"
@@ -951,6 +1351,9 @@ msgstr "report.groups.search"
 #: view:report.groups.users:development_tools.view_report_groups_users_search
 msgid "report.groups.users.search"
 msgstr "report.groups.users.search"
+
+#~ msgid "Module config settings"
+#~ msgstr "Configuración del módulo"
 
 #~ msgid ""
 #~ "Category with the groups defined in Technical Reporting module with "

@@ -14,6 +14,7 @@
             <field name="arch" type="xml">
                 <xpath expr="." position="inside">
                     <link rel="stylesheet" href="/development_tools/static/src/css/styles-backend.css" />
+                    <script type="text/javascript" src="/development_tools/static/src/js/base_views.js" />
                 </xpath>
             </field>
         </record>

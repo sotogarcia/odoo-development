@@ -53,7 +53,7 @@ class DevelopmentToolsConfigSettings(models.TransientModel):
         required=False,
         readonly=False,
         index=False,
-        default=False,
+        default=True,
         help='Check it to capture outgoing email messages',
     )
 
@@ -62,7 +62,7 @@ class DevelopmentToolsConfigSettings(models.TransientModel):
         required=False,
         readonly=False,
         index=False,
-        default=False,
+        default=False,  # filter_model_name_whithout_module_development_modules
         help='Sets the filter as default filter in Local modules views'
     )
 
@@ -91,6 +91,15 @@ class DevelopmentToolsConfigSettings(models.TransientModel):
         help='Enable search_default_app filter in the Local modules view'
     )
 
+    development_mode = fields.Boolean(
+        string='Development mode as default',
+        required=False,
+        readonly=False,
+        index=False,
+        default=True,
+        help='Set development mode by default'
+    )
+
     # ----------------------- COMPUTED FIELD METHODS --------------------------
 
     def _compute_developing_module_ids(self):
@@ -116,6 +125,7 @@ class DevelopmentToolsConfigSettings(models.TransientModel):
             developing_modules_enabled=self.get_developing_modules_enabled(),
             developing_module_ids=self.get_developing_module_ids(),
             search_default_app=self.get_search_default_app(),
+            development_mode=self.get_debug_mode(),
         )
 
     @api.one
@@ -125,12 +135,13 @@ class DevelopmentToolsConfigSettings(models.TransientModel):
         self._set_developing_modules_enabled()
         self._set_developing_module_ids()
         self._set_search_default_app()
+        self._set_debug_mode()
 
     # ------------------------- GETTERS AND SETTERS ---------------------------
 
     def get_email_to(self):
         param = self._get_parameter('email_to')
-        return param.value if param else None
+        return param.value if param else self._defaults['email_to']
 
     def _set_email_to(self):
         param = self._get_parameter('email_to', force=True)
@@ -138,14 +149,20 @@ class DevelopmentToolsConfigSettings(models.TransientModel):
 
     def get_email_capture(self):
         param = self._get_parameter('email_capture')
-        return self._safe_eval(param.value, bool) if param else None
+
+        if param:
+            value = self._safe_eval(param.value, bool)
+        else:
+            value = self._defaults['email_capture']
+
+        return value
 
     def _set_email_capture(self):
         param = self._get_parameter('email_capture', force=True)
         param.value = unicode(self.email_capture)
 
     def get_developing_modules_enabled(self):
-        value = None
+        value = False
 
         try:
             name = 'filter_model_name_whithout_module_development_modules'
@@ -191,7 +208,7 @@ class DevelopmentToolsConfigSettings(models.TransientModel):
             _logger.error(msg)
 
     def get_search_default_app(self):
-        value = False
+        value = None
 
         try:
             action_set = self.env.ref('base.open_module_tree')
@@ -216,6 +233,20 @@ class DevelopmentToolsConfigSettings(models.TransientModel):
         except Exception as ex:
             msg = self._not_set.format('search_default_app', ex)
             _logger.error(msg)
+
+    def get_debug_mode(self):
+        param = self._get_parameter('development_mode')
+
+        if param:
+            value = self._safe_eval(param.value, bool)
+        else:
+            value = self._defaults['development_mode']
+
+        return value
+
+    def _set_debug_mode(self):
+        param = self._get_parameter('development_mode', force=True)
+        param.value = unicode(self.development_mode)
 
     # --------------------------- #PUBLIC METHODS -----------------------------
 

@@ -78,6 +78,7 @@ class SoccerTeam(models.Model):
         context={},
         limit=None
     )
+
     def _default_country_id(self):
         """ Returns the country of the default company of the current user
 

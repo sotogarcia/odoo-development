@@ -11,3 +11,5 @@ from . import report_field_detail
 from . import report_module_detail
 from . import report_model_detail
 from . import report_module_contribution
+from . import base_ir_ui_view
+from . import base_ir_model
