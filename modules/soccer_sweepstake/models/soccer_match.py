@@ -8,6 +8,7 @@ from openerp import models, fields, api
 from openerp.tools.translate import _
 from logging import getLogger
 
+import re
 
 _logger = getLogger(__name__)
 
@@ -27,6 +28,8 @@ class SoccerMatch(models.Model):
 
     _rec_name = 'name'
     _order = 'match_day ASC'
+
+    # ---------------------------- ENTITY FIELDS ------------------------------
 
     league_id = fields.Many2one(
         string='League',
@@ -88,6 +91,17 @@ class SoccerMatch(models.Model):
         help='Goals scored by the visiting team'
     )
 
+    match_day = fields.Date(
+        string='Match day',
+        required=False,
+        readonly=False,
+        index=False,
+        default=lambda self: self._default_match_day(),
+        help='Day in which the match will be played'
+    )
+
+    # -------------------------- MANAGEMENT FIELDS ----------------------------
+
     name = fields.Char(
         string='Name',
         required=False,
@@ -100,34 +114,34 @@ class SoccerMatch(models.Model):
         search=lambda self, oper, val: self._search_name(oper, val)
     )
 
-    match_day = fields.Date(
-        string='Match day',
-        required=False,
-        readonly=False,
-        index=False,
-        default=lambda self: self._default_match_day(),
-        help='Day in which the match will be played'
-    )
+    # --------------------------- SQL CONSTRAINTS -----------------------------
 
-    league_selected = fields.Boolean(
-        string='League was selected',
-        required=False,
-        readonly=True,
-        index=False,
-        default=False,
-        help='Check if league has been selected',
-        compute=lambda self: self._compute_league_selected()
-    )
+    _sql_constraints = [
+        (
+            'two_diferente_teams',
+            'CHECK (local_id <> away_id)',
+            _(u'Two diferent teams are needed for play a match')
+        ),
+        (
+            'positive_number_of_goals',
+            'CHECK (local_goals >= 0 and away_goals >= 0)',
+            _(u'The number of goals must be greater or equal than zero')
+        ),
+    ]
+
+    # ----------------------- AUXILIARY FIELD METHODS -------------------------
 
     @api.onchange('league_id')
     def _onchange_league_id(self):
-        self.league_selected =  bool(self.league_id)
+        """ When league has been changed, the domain for local and away tems
+            must be changed too, new domains will allow to choose teams from
+            the selected league.
+        """
 
-        if self.league_id and self.league_id.team_ids:
-            team_ids = [team.id for team in self.league_id.team_ids]
-        else:
-            team_ids = [-1]
+        self.local_id = None
+        self.away_id = None
 
+        team_ids = self._get_team_ids()
         return {
             'domain': {
                 'local_id': [('id', 'in', team_ids)],
@@ -138,48 +152,133 @@ class SoccerMatch(models.Model):
     @api.multi
     @api.depends('local_id', 'away_id')
     def _compute_name(self):
+        """ Compute the value for `name` field, it will be the local and away
+            team names separated by a dash (long dash)
+        """
+
         for record in self:
-            record.name = record._get_name()
-
-    def _get_name(self):
-        local = self.local_id
-        away = self.away_id
-        result = ''
-
-        if local and local.name and away and away.name:
-            result = u'{} — {}'.format(local.name, away.name)
-
-        return result
+            record.name = self._get_name()
 
     @api.model
     def _search_name(self, operator, value):
-
+        """ Builds a valid domain using ids from selected teams instead
+            this computed name
+        """
         domain = []
 
-        if value:
-            parts = re.split(r'[—]', value)
-            if parts:
-                length = len(parts)
-                if length > 1:
-                    l_ids = self._get_ids_by_name('soccer.team', parts[0])
-                    a_ids = self._get_ids_by_name('soccer.team', parts[1])
-                    domain.append(('local_id', 'in', l_ids))
-                    domain.append(('away_id', 'in', a_ids))
+        # STEP 1: Split name in parts using '—' as separator
+        try:
+            parts = re.split(r'[—]', value)  # TODO try with value.split
+        except Exception as ex:
+            msg_f = _(u'Search error ({}, {}). System has said: {}')
+            self._log(2, msg_f, 'name', 'value', ex)
+        else:
+            length = len(parts)
 
-        _logger.warning("""
-            value: {}
-            domain: {}
-            """.format(value, domain))
+        # - STEP 2: if field has two parts, & and the second test are added
+            if length > 1 and parts[1]:
+                domain.append('&')
+
+                team_domain = [('name', '=', parts[1])]
+                team_obj = self.env['soccer.team']
+                team_set = team_obj.search(team_domain)
+
+                _ids = [team.id for team in team_set]
+                domain.append(('away_id', 'in', _ids))
+
+        # - STEP 3: if field has at least one part, the first test is added
+            if length > 0 and parts[0]:
+                team_domain = [('name', '=', parts[0])]
+                team_obj = self.env['soccer.team']
+                team_set = team_obj.search(team_domain)
+
+                _ids = [team.id for team in team_set]
+                domain.append(('away_id', 'in', _ids))
 
         return domain
 
+    @api.onchange('local_id')
+    def _onchange_local_id(self):
+        """ Changes de value of the name (compited field) and removes the
+            selected team from the allowed away teams.
+        """
+
+        self.name = self._get_name()
+
+        team_ids = self._get_team_ids()
+        if team_ids and self.local_id:
+            team_ids.remove(self.local_id.id)
+        return {
+            'domain': {
+                'away_id': [('id', 'in', team_ids)]
+            }
+        }
+
+    @api.onchange('away_id')
+    def _onchange_away_id(self):
+        """ Changes de value of the name (compited field) and removes the
+            selected team from the allowed local teams.
+        """
+
+        self.name = self._get_name()
+
+        team_ids = self._get_team_ids()
+        if team_ids and self.away_id:
+            team_ids.remove(self.away_id.id)
+        return {
+            'domain': {
+                'local_id': [('id', 'in', team_ids)]
+            }
+        }
+
     def _default_match_day(self):
+        """ Default value for day of the match, it will be today for new
+            records.
+        """
+
         return fields.Date.context_today(self)
 
-    @api.multi
-    @api.depends('league_id')
-    def _compute_league_selected(self):
-        for record in self:
-            record.league_selected =  bool(self.league_id)
+    # ------------------------- AUXILIARY FUNCTIONS ---------------------------
 
+    def _get_team_ids(self):
+        """ Gets the ids of the all the teams playing in choosen league
+        """
 
+        self.ensure_one()
+
+        if self.league_id and self.league_id.team_ids:
+            team_ids = [team.id for team in self.league_id.team_ids]
+        else:
+            team_ids = [-1]  # No teams
+
+        return team_ids
+
+    def _get_name(self):
+        """ Builds the name (computed field) using the original names of the
+            both teams separated by a (long) dash.
+        """
+
+        self.ensure_one()
+
+        local = self.local_id
+        away = self.away_id
+
+        if local and local.name and away and away.name:
+            result = u'{} — {}'.format(local.name, away.name)
+        else:
+            result = _(u'New match')
+
+        return result
+
+    def _log(self, level, msg_format, *args, **kwargs):
+        """ Outputs an formated string in log
+
+            :param level (int): 1=> debug, 2=> info, 3=> warning, 4=> error
+            :param message (basestring): name of the message
+        """
+
+        methods = ['debug', 'info', 'warning', 'error']
+        log = getattr(_logger, methods[level])
+
+        msg = msg_format.format(*args, **kwargs)
+        log(msg)

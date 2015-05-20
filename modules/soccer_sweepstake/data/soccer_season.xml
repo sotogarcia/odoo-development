@@ -4,31 +4,31 @@
     <data noupdate="0">
 
         <record id="soccer_season_01" model="soccer.season">
-            <field name="name" eval="'Season ' + str((DateTime.today() + relativedelta(years=-1)).year) + '-' + str((DateTime.today() + relativedelta(years=0)).year)" />
+            <field name="shortdesc" eval="'Season ' + str((DateTime.today() + relativedelta(years=-1)).year) + '-' + str((DateTime.today() + relativedelta(years=0)).year)" />
             <field name="begin_date" eval=" (DateTime.today() - relativedelta(years=1)).strftime('%Y-08-01')" />
             <field name="end_date" eval=" DateTime.today().strftime('%Y-07-31')" />
         </record>
 
         <record id="soccer_season_02" model="soccer.season">
-            <field name="name" eval="'Season ' + str((DateTime.today() + relativedelta(years=0)).year) + '-' + str((DateTime.today() + relativedelta(years=1)).year)" />
+            <field name="shortdesc" eval="'Season ' + str((DateTime.today() + relativedelta(years=0)).year) + '-' + str((DateTime.today() + relativedelta(years=1)).year)" />
             <field name="begin_date" eval=" (DateTime.today()).strftime('%Y-08-01')" />
             <field name="end_date" eval=" (DateTime.today() + relativedelta(years=1)).strftime('%Y-07-31')" />
         </record>
 
         <record id="soccer_season_03" model="soccer.season">
-            <field name="name" eval="'Season ' + str((DateTime.today() + relativedelta(years=1)).year) + '-' + str((DateTime.today() + relativedelta(years=2)).year)" />
+            <field name="shortdesc" eval="'Season ' + str((DateTime.today() + relativedelta(years=1)).year) + '-' + str((DateTime.today() + relativedelta(years=2)).year)" />
             <field name="begin_date" eval=" (DateTime.today() + relativedelta(years=1)).strftime('%Y-08-01')" />
             <field name="end_date" eval=" (DateTime.today() + relativedelta(years=2)).strftime('%Y-07-31')" />
         </record>
 
         <record id="soccer_season_04" model="soccer.season">
-            <field name="name" eval="'Season ' + str((DateTime.today() + relativedelta(years=2)).year) + '-' + str((DateTime.today() + relativedelta(years=3)).year)" />
+            <field name="shortdesc" eval="'Season ' + str((DateTime.today() + relativedelta(years=2)).year) + '-' + str((DateTime.today() + relativedelta(years=3)).year)" />
             <field name="begin_date" eval=" (DateTime.today() + relativedelta(years=2)).strftime('%Y-08-01')" />
             <field name="end_date" eval=" (DateTime.today() + relativedelta(years=3)).strftime('%Y-07-31')" />
         </record>
 
         <record id="soccer_season_05" model="soccer.season">
-            <field name="name" eval="'Season ' + str((DateTime.today() + relativedelta(years=3)).year) + '-' + str((DateTime.today() + relativedelta(years=4)).year)" />
+            <field name="shortdesc" eval="'Season ' + str((DateTime.today() + relativedelta(years=3)).year) + '-' + str((DateTime.today() + relativedelta(years=4)).year)" />
             <field name="begin_date" eval=" (DateTime.today() + relativedelta(years=3)).strftime('%Y-08-01')" />
             <field name="end_date" eval=" (DateTime.today() + relativedelta(years=4)).strftime('%Y-07-31')" />
         </record>

@@ -45,7 +45,7 @@
                         <group col="2">
                             <group col="2">
                                 <field name="kind" readonly="1" />
-                                <field name="country_id" readonly="1" />
+                                <field name="country_id" readonly="1" attrs="{'invisible': [('kind', '&lt;&gt;', 'NLC')]}" />
                             </group>
                             <group col="2">
                                 <field name="begin_date" />

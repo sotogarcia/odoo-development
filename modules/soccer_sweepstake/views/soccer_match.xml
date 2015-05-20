@@ -32,24 +32,24 @@
             <field name="arch" type="xml">
                 <form string="League match" create="1" delete="1" edit="1">
                     <sheet>
-                        <field name="league_selected" invisible="1" />
-                        <div class="oe_title" attrs="{'invisible': [('league_selected','=', True)]}">
+                        <field name="id" invisible="1" />
+                        <div class="oe_title" attrs="{'invisible': [('league_id','&lt;&gt;', False)]}">
                             <group col="2">
                                 <field name="league_id" />
                             </group>
                         </div>
-                        <div class="oe_title" attrs="{'invisible': [('league_selected','=', False)]}">
+                        <div class="oe_title" attrs="{'invisible': [('league_id','=', False)]}">
                             <label for="name" class="oe_edit_only"/>
                             <h1><field name="name" placeholder="Name of the match"/></h1>
                         </div>
                         <group col="2">
                             <group col="2">
-                                <field name="local_id" />
-                                <field name="local_goals" />
+                                <field name="local_id" attrs="{'readonly': ['|', ('league_id', '=', False), ('id', '>', '0')]}" />
+                                <field name="local_goals" attrs="{'readonly': [('local_id', '=', False)]}" />
                             </group>
                             <group col="2">
-                                <field name="away_id" />
-                                <field name="away_goals" />
+                                <field name="away_id" attrs="{'readonly': ['|', ('league_id', '=', False), ('id', '>', '0')]}" />
+                                <field name="away_goals" attrs="{'readonly': [('away_id', '=', False)]}" />
                             </group>
                         </group>
                     </sheet>
@@ -70,7 +70,10 @@
             <field name="active" eval="True" />
             <field name="arch" type="xml">
                 <search string="Name">
-
+                    <field name="league_id" />
+                    <field name="local_id" />
+                    <field name="away_id" />
+                    <field name="match_day" />
                 </search>
             </field>
         </record>

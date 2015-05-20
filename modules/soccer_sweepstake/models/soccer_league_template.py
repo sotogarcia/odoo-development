@@ -13,11 +13,14 @@ _logger = getLogger(__name__)
 
 
 class SoccerLeagueTemplate(models.Model):
-    """ Stores information about leagues
+    """ Stores information about leagues, this will be used as template for
+        new `soccer.league` records.
 
     Fields:
       name (Char): Human readable name which will identify each record.
-
+      country_id (Many2one): country in which league is played
+      kind (Selection): Clubs, Clubs (Internacional), Naciones
+      league_ids (One2many): List of the leagues created from this
     """
 
     _name = 'soccer.league.template'
@@ -27,6 +30,8 @@ class SoccerLeagueTemplate(models.Model):
 
     _rec_name = 'name'
     _order = 'name ASC'
+
+    # ---------------------------- ENTITY FIELDS ------------------------------
 
     name = fields.Char(
         string='Name',
@@ -67,6 +72,8 @@ class SoccerLeagueTemplate(models.Model):
         ]
     )
 
+    # -------------------------- MANAGEMENT FIELDS ----------------------------
+
     league_ids = fields.One2many(
         string='League',
         required=False,
@@ -81,6 +88,19 @@ class SoccerLeagueTemplate(models.Model):
         auto_join=False,
         limit=None
     )
+
+    # --------------------------- SQL CONSTRAINTS -----------------------------
+
+    _sql_constraints = [
+        (
+            'national_or_no_country',
+            'CHECK (kind=\'NLC\' or country_id is NULL)',
+            _(u'Country must be empty if the league is an international '
+                'tournament')
+        )
+    ]
+
+    # ---------------------- AUXILIARY FIELD FUNCTIONS ------------------------
 
     def _default_country_id(self):
         """ Returns the country of the default company of the current user

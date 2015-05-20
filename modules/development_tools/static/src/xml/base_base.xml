@@ -4,8 +4,8 @@
     <t t-extend="ViewManagerDebugViewLog">
         <t t-jquery="table" t-operation="after">
             <button
-                class="oe_button oe_form_button oe_highlight"
-                onclick="oe_debug_view_log()">
+                id="reload_from_external_id_cmd"
+                class="oe_button oe_form_button oe_highlight">
                 Reload
             </button>
         </t>

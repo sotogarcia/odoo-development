@@ -37,6 +37,8 @@ class SoccerLeague(models.Model):
     _rec_name = 'display_name'
     _order = 'id ASC'
 
+    # ------------------------ DELEGATE INHERITANCE ---------------------------
+
     template_id = fields.Many2one(
         string='League template',
         required=True,
@@ -63,6 +65,8 @@ class SoccerLeague(models.Model):
         ondelete='restrict',
     )
 
+    # ---------------------------- ENTITY FIELDS ------------------------------
+
     team_ids = fields.Many2many(
         string='Teams',
         required=False,
@@ -79,6 +83,8 @@ class SoccerLeague(models.Model):
         limit=None
     )
 
+    # -------------------------- MANAGEMENT FIELDS ----------------------------
+
     display_name = fields.Char(
         string='Name',
         required=False,
@@ -92,13 +98,17 @@ class SoccerLeague(models.Model):
         store=False
     )
 
+    # --------------------------- SQL CONSTRAINTS -----------------------------
+
     _sql_constraints = [
         (
-            'code_company_uniq',
+            'template_season_uniq',
             'unique (template_id, season_id)',
             _(u'League already registered for this season')
         )
     ]
+
+    # --------------------------- FIELD FUNCTIONS -----------------------------
 
     def _default_template_id(self):
         """ Gets default league template, it will be the first league played in
@@ -119,7 +129,7 @@ class SoccerLeague(models.Model):
         if user_set.country_id:
             country_id = user_set.country_id
         elif user_set.company_id:
-            country_id = user_set.company_id.country_id
+            country_id = user_set.company_id.country_id  # Empty allowed
         else:
             country_id = None
 
@@ -134,8 +144,29 @@ class SoccerLeague(models.Model):
 
         return result
 
+    @api.onchange('template_id')
+    def _onchange_template_id(self):
+        domain = []
+
+        if self.template_id:
+            if self.template_id.kind == 'NLC':
+                if self.template_id.country_id:
+                    _id = self.template_id.country_id.id
+                    domain = [('country_id', '=', _id)]
+                else:
+                    domain = [('country_id', '!=', False)]
+            else:
+                domain = [('country_id', '=', False)]
+
+        return {
+            'domain': {
+                'team_ids': domain
+            }
+        }
+
     def _default_season_id(self):
         """ Gets default season, it will be the first season currently active
+            (begin_date <= today <= end_date)
 
             return: soccer.season->id or None
         """
@@ -155,50 +186,59 @@ class SoccerLeague(models.Model):
     @api.multi
     @api.depends('season_id', 'template_id')
     def _compute_display_name(self):
+        """ Computes the value for display name field
+        """
+
         for record in self:
-            record.display_name = record._get_display_name()
+            s_name = record.season_id.shortdesc if record.season_id else None
+            t_name = record.template_id.name if record.template_id else None
+
+            if t_name and s_name:
+                record.display_name = u'{} ({})'.format(t_name, s_name)
+            else:
+                record.display_name = None
 
     @api.model
     def _search_display_name(self, operator, value):
+        """ Splits the display name to build a valid domain using original
+            name (soccer.league.template)and shortdesc (soccer.season) fields
+        """
 
         domain = []
 
-        if value:
-            parts = re.split(r'[\(\)]', value)
-            if parts:
-                length = len(parts)
-                if length > 0:
-                    t_ids = self._get_ids_by_name('soccer.league.template', parts[0])
-                    if t_ids:
-                        domain.append(('template_id', 'in', t_ids))
+        # STEP 1: Split display name in parts using '(' as separator
+        try:
+            parts = re.split(r'[\(\)]', value)  # TODO try with value.split
+        except Exception as ex:
+            msg_f = _(u'Search error ({}, {}). System has said: {}')
+            self._log(2, msg_f, 'display_name', 'value', ex)
+        else:
+            length = len(parts)
 
-                if length > 1:
-                    s_ids = self._get_ids_by_name('soccer.season', parts[1])
-                    if s_ids:
-                        domain.append(('season_id', 'in', s_ids))
+        # - STEP 2: if field has two parts, & and the second test are added
+            if length > 1 and parts[1]:
+                domain.append('&')
+                text = u'%{}%'.format(parts[1])
+                domain.append(('shortdesc', 'ilike', text))
 
-        _logger.warning("""
-            value: {}
-            domain: {}
-            """.format(value, domain))
+        # - STEP 3: if field has at least one part, the first test is added
+            if length > 0 and parts[0]:
+                text = u'%{}%'.format(parts[0])
+                domain.append(('name', 'ilike', text))
 
         return domain
 
-    def _get_display_name(self):
-        """ Gets the name for league, it will consist in name from template
-            followed by season name in brackets.
+    # ------------------------- AUXILIARY FUNCTIONS ---------------------------
+
+    def _log(self, level, msg_format, *args, **kwargs):
+        """ Outputs an formated string in log
+
+            :param level (int): 1=> debug, 2=> info, 3=> warning, 4=> error
+            :param message (basestring): name of the message
         """
 
-        self.ensure_one()
+        methods = ['debug', 'info', 'warning', 'error']
+        log = getattr(_logger, methods[level])
 
-        s_name = self.season_id.shortdesc if self.season_id else ''
-        t_name = self.template_id.name if self.template_id else ''
-
-        return u'{} ({})'.format(t_name, s_name) if t_name and s_name else None
-
-    def _get_ids_by_name(self, model_name, name):
-        model_domain = [('name', '=', name)]
-        model_obj = self.env[model_name]
-        model_set = model_obj.search(model_domain)
-
-        return [model.id for model in model_set]
+        msg = msg_format.format(*args, **kwargs)
+        log(msg)

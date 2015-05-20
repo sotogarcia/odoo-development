@@ -28,7 +28,7 @@
             <field name="arch" type="xml">
                 <form string="Soccer team" create="1" delete="1" edit="1">
                     <sheet>
-                        <div class="oe_title" >
+                        <div class="oe_title">
                             <label for="name" class="oe_edit_only" />
                             <h1><field name="name" placeholder="Name of the team"/></h1>
                         </div>
