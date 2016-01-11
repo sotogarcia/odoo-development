@@ -23,11 +23,29 @@
             <field name="priority" eval="16" />
             <field name="active" eval="True" />
             <field name="arch" type="xml">
-                <tree string="at_answer_tree" create="1" delete="1" edit="1" editable="bottom">
-                    <field name="sequence" widget="handle" />
-                    <field name="name" class="oe_field_name" />
+                <tree string="at_answer_tree" create="1" delete="1" edit="1">
                     <field name="is_correct" class="oe_field_is_correct" />
-                    <field name="description" class="oe_field_description" />
+                    <field name="name" class="oe_field_name" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_at_answer_tree_x2many" model="ir.ui.view">
+            <field name="name">view.at.answer.tree.x2many</field>
+            <field name="model">at.answer</field>
+            <field name="type">tree</field>
+            <field name="mode">primary</field>
+            <field name="priority" eval="16" />
+            <field name="active" eval="True" />
+            <field name="arch" type="xml">
+                <tree string="at_answer_tree" create="1" delete="1" edit="1"
+                    editable="bottom" class="view_at_answer_tree_x2many">
+                    <field name="sequence" class="oe_field_sequence" widget="handle"/>
+                    <field name="is_correct" class="oe_field_is_correct" string="C" />
+                    <field name="name" class="oe_field_name"
+                        placeholder="Enter text for name" />
+                    <button name="cmd_open_in_form" string="&#xF044;"
+                         type="object" help="Open in form view" />
                 </tree>
             </field>
         </record>
@@ -52,9 +70,16 @@
                         </div>
                         <group col="2">
                             <field name="is_correct" class="oe_field_is_correct" />
-                            <field name="description" class="oe_field_description"
-                                placeholder="Enter the text for description" />
                         </group>
+                        <notebook>
+                            <page string="Alternative wording" class="oe_page_alternative_wording" accesskey="L">
+                                <field name="alternative_wording_ids" class="oe_field_alternative_wording_ids" />
+                            </page>
+                            <page string="Description" class="oe_page_description" accesskey="D">
+                                <field name="description" class="oe_field_description"
+                                    placeholder="Enter the text for description" />
+                            </page>
+                        </notebook>
                     </sheet>
                 </form>
             </field>

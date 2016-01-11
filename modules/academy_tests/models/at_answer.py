@@ -82,6 +82,21 @@ class AtAnswer(models.Model):
         help='Preference order for this answer'
     )
 
+    alternative_wording_ids = fields.One2many(
+        string='Alternative wording',
+        required=False,
+        readonly=False,
+        index=False,
+        default=None,
+        help='Alternative wording options for this answer',
+        comodel_name='at.alternative.wording',
+        inverse_name='res_id',
+        domain=[('model', '=', 'at.answer')],
+        context={'default_model': 'at.answer'},
+        auto_join=False,
+        limit=None
+    )
+
     # --------------------------- SQL_CONTRAINTS ------------------------------
 
     _sql_constraints = [
@@ -91,3 +106,20 @@ class AtAnswer(models.Model):
             _(u'There are already another answer with the same text')
         )
     ]
+
+    # --------------------------- PUBLIC METHODS ------------------------------
+
+    @api.multi
+    def cmd_open_in_form(self):
+        return {
+            'name': 'Answers',
+            'view_type': 'form',
+            "view_mode": 'form',
+            'res_model': 'at.answer',
+            'type': 'ir.actions.act_window',
+            'res_id': self.id,
+            'target': 'current',
+            'state': 'paid'
+        }
+
+

@@ -37,7 +37,12 @@
         'views/at_topic_view.xml',
         'views/at_category_view.xml',
         'views/at_answer_view.xml',
-        'views/at_level_view.xml'
+        'views/at_level_view.xml',
+        'views/at_alternative_wording_view.xml',
+
+        'wizard/at_test_builder_wizard_view.xml',
+
+        'views/ir_attachment_view.xml'
     ],
     # only loaded in demonstration mode
     'demo': [
@@ -54,3 +59,4 @@
         'static/src/css/styles-backend.css'
     ],
 }
+

@@ -23,10 +23,23 @@
             <field name="priority" eval="16" />
             <field name="active" eval="True" />
             <field name="arch" type="xml">
-                <tree string="at_level_tree" create="1" delete="1" edit="1">
-                    <field name="sequence" widget="handle" />
-                    <field name="name" />
-                    <field name="description" />
+                <tree string="at_level_tree" create="1" delete="1" edit="1" >
+                    <field name="name" class="oe_field_name" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_at_level_tree_sequence" model="ir.ui.view">
+            <field name="name">view.at.level.tree.sequence</field>
+            <field name="model">at.level</field>
+            <field name="type">tree</field>
+            <field name="mode">primary</field>
+            <field name="priority" eval="17" />
+            <field name="active" eval="True" />
+            <field name="arch" type="xml">
+                <tree string="at_level_tree" create="1" delete="1" edit="1" >
+                    <field name="sequence" class="oe_field_sequence" widget="handle" />
+                    <field name="name" class="oe_field_name" />
                 </tree>
             </field>
         </record>
@@ -85,6 +98,9 @@
             <field name="domain">[]</field>
             <field name="context">{}</field>
             <field name="search_view_id" ref="view_at_level_search" />
+            <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('view_at_level_tree_sequence')})]"/>
+            <field name="views">[(False, 'form'), ('view_at_level_tree_sequence', 'tree')]</field>
             <field name="help" type="html">
                 <p class="oe_view_nocontent_create">
                     Any level have been defined yet.

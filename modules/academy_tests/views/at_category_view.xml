@@ -24,9 +24,25 @@
             <field name="active" eval="True" />
             <field name="arch" type="xml">
                 <tree string="at_category_tree" create="1" delete="1" edit="1">
-                    <field name="sequence" widget="handle" />
-                    <field name="name" />
-                    <field name="description" />
+                    <field name="name" class="oe_field_name" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_at_category_tree_x2many" model="ir.ui.view">
+            <field name="name">view.at.category.tree.x2many</field>
+            <field name="model">at.category</field>
+            <field name="type">tree</field>
+            <field name="mode">primary</field>
+            <field name="priority" eval="16" />
+            <field name="active" eval="True" />
+            <field name="arch" type="xml">
+                <tree string="at_category_tree" create="1" delete="1" edit="1" editable="bottom">
+                    <field name="sequence" class="oe_field_sequence" widget="handle" />
+                    <field name="name" class="oe_field_name"
+                        placeholder="Enter text for name" />
+                    <field name="description" class="oe_field_description"
+                        placeholder="Enter text for description" />
                 </tree>
             </field>
         </record>

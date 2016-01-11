@@ -4,11 +4,4 @@
 #    __openerp__.py file at the root folder of this module.                   #
 ###############################################################################
 
-from . import at_topic
-from . import at_category
-from . import at_tag
-from . import at_question
-from . import at_answer
-from . import at_test
-from . import at_level
-from . import at_alternative_wording
+from . import at_test_builder_wizard

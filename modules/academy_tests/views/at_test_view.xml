@@ -24,8 +24,7 @@
             <field name="active" eval="True" />
             <field name="arch" type="xml">
                 <tree string="at_test_tree" create="1" delete="1" edit="1">
-                    <field name="name" />
-                    <field name="description" />
+                    <field name="name" class="oe_field_name" />
                 </tree>
             </field>
         </record>

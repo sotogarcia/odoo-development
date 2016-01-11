@@ -23,10 +23,9 @@
         <field name="priority" eval="16" />
         <field name="active" eval="True" />
         <field name="arch" type="xml">
-            <tree string="at_question_tree" create="1" delete="1" edit="1" class="view_at_question_tree">
+            <tree string="at_question_tree" create="1" delete="1" edit="1">
                 <field name="name" class="oe_field_name" />
-                <field name="description" class="oe_field_description" />
-            </tree>
+           </tree>
         </field>
     </record>
 
@@ -60,7 +59,15 @@
 
                     <notebook>
                         <page string="Answers" class="oe_page_answers" accesskey="A">
-                            <field name="at_answer_ids" class="oe_field_at_answer_ids" />
+                            <field name="at_answer_ids" class="oe_field_at_answer_ids"
+                                context="{'tree_view_ref' : 'academy_tests.view_at_answer_tree_x2many'}" />
+                        </page>
+                        <page string="Alternative wording" class="oe_page_alternative_wording" accesskey="L">
+                            <field name="alternative_wording_ids" class="oe_field_alternative_wording_ids" />
+                        </page>
+                        <page string="Attachments" class="oe_page_attachments" accesskey="T">
+                            <field name="ir_attachment_ids" class="oe_field_ir_attachment_ids"
+                                context="{'tree_view_ref' : 'view_ir_attachment_tree'}" />
                         </page>
                         <page string="Description" class="oe_page_description" accesskey="D">
                             <field name="description" class="oe_field_description"

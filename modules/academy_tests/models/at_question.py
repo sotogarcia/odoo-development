@@ -137,6 +137,37 @@ class AtQuestion(models.Model):
         track_visibility='onchange'
     )
 
+    ir_attachment_ids = fields.Many2many(
+        string='Attachments',
+        required=False,
+        readonly=False,
+        index=False,
+        default=None,
+        help='Attachments needed to solve this question',
+        comodel_name='ir.attachment',
+        relation='ir_attachment_this_model_rel',
+        column1='ir_attachment_id',
+        column2='this_model_id',
+        domain=[],
+        context={},
+        limit=None
+    )
+
+    alternative_wording_ids = fields.One2many(
+        string='Alternative wording',
+        required=False,
+        readonly=False,
+        index=False,
+        default=None,
+        help='Alternative wording options for this question',
+        comodel_name='at.alternative.wording',
+        inverse_name='res_id',
+        domain=[('model', '=', 'at.question')],
+        context={'default_model': 'at.question'},
+        auto_join=False,
+        limit=None
+    )
+
     # ----------------------- AUXILIARY FIELD METHODS -------------------------
 
     def _compute_at_category_ids_domain(self):

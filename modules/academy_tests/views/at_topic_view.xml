@@ -24,8 +24,7 @@
             <field name="active" eval="True" />
             <field name="arch" type="xml">
                 <tree string="at_topic_tree" create="1" delete="1" edit="1">
-                    <field name="name" />
-                    <field name="description" />
+                    <field name="name" class="oe_field_name" />
                 </tree>
             </field>
         </record>
@@ -56,7 +55,8 @@
 
                         <notebook>
                             <page string="Categories" class="oe_page_categories" accesskey="C">
-                                <field name="at_category_ids" class="oe_field_at_category_ids" />
+                                <field name="at_category_ids" class="oe_field_at_category_ids"
+                                    context="{'tree_view_ref': 'academy_tests.view_at_category_tree_x2many'}" />
                             </page>
                         </notebook>
                     </sheet>
