@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openerp>
+    <data noupdate="0">
+
+        <record id="at_answer_what_is_odoo_right" model="at.answer">
+            <field name="name">It's a suite of open-source enterprise management applications</field>
+            <field name="is_correct" eval="True" />
+            <field name="description">This is the right answer</field>
+            <field name="at_question_id" ref="at_question_what_is_odoo" />
+        </record>
+
+        <record id="at_answer_what_is_odoo_wrong" model="at.answer">
+            <field name="name">It's a web page server used to publish blogs and personal pages.</field>
+            <field name="is_correct" eval="False" />
+            <field name="description">This is the wrong answer</field>
+            <field name="at_question_id" ref="at_question_what_is_odoo" />
+        </record>
+
+        <record id="at_answer_which_language_right" model="at.answer">
+            <field name="name">Python</field>
+            <field name="is_correct" eval="True" />
+            <field name="description">This is the right answer</field>
+            <field name="at_question_id" ref="at_question_which_language" />
+        </record>
+
+        <record id="at_answer_which_language_wrong" model="at.answer">
+            <field name="name">Visual Basic</field>
+            <field name="is_correct" eval="False" />
+            <field name="description">This is the wrong answer</field>
+            <field name="at_question_id" ref="at_question_which_language" />
+        </record>
+
+    </data>
+</openerp>

@@ -68,10 +68,6 @@ Included components:
 
         'security/ir_model_access.xml',
 
-        'demo/ir_module_category.xml',
-        'demo/res_groups.xml',
-        'demo/ir_filters.xml',
-
         'views/assets_backend.xml',
         'views/ir_ui_menu.xml',
         'views/report_groups_implied.xml',

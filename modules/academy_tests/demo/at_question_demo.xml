@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openerp>
+    <data noupdate="0">
+
+        <record id="at_question_what_is_odoo" model="at.question">
+            <field name="name">What is Odoo?</field>
+            <field name="description">It's the most basic question about Odoo</field>
+            <field name="at_topic_id" ref="at_topic_odoo" />
+            <field name="at_category_ids" eval="[(4, ref('at_category_odoo_practical'))]" />
+            <field name="at_level_id" ref="at_level_11" />
+            <field name="at_tag_ids" eval="[(4, ref('at_tag_common'))]" />
+        </record>
+
+        <record id="at_question_which_language" model="at.question">
+            <field name="name">In which language Odoo has been written?</field>
+            <field name="description">Question about language has been used to write Odoo</field>
+            <field name="at_topic_id" ref="at_topic_odoo" />
+            <field name="at_category_ids" eval="[(4, ref('at_category_odoo_development'))]" />
+            <field name="at_level_id" ref="at_level_13" />
+        </record>
+
+    </data>
+</openerp>

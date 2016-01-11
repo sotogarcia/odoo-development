@@ -1,0 +1,21 @@
+
+.view_at_question_tree th.oe_list_record_selector {
+    max-width: 25px;
+    width: 25px;
+}
+
+.view_at_question_tree [data-field="name"] {
+    max-width: 0;
+    width: 70%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap!important;
+}
+
+.view_at_question_tree [data-field="description"] {
+    max-width: 0;
+    width: 30%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap!important;
+}

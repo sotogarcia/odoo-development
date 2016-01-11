@@ -1,15 +1,15 @@
-openerp.development_tools = function (openerp) {
-    openerp.web.ViewManagerAction = openerp.web.ViewManagerAction.extend({
-        init: function () {
-            this._super.apply(this, arguments);
-            console.log('Search view initialized');
-        },
-        on_debug_changed: function (evt) {
-            this._super.apply(this, arguments);
-            console.log('Pasé por aquí')
-        }
-    });
-}
+// openerp.development_tools = function (openerp) {
+//     openerp.web.ViewManagerAction = openerp.web.ViewManagerAction.extend({
+//         init: function () {
+//             this._super.apply(this, arguments);
+//             console.log('Search view initialized');
+//         },
+//         on_debug_changed: function (evt) {
+//             this._super.apply(this, arguments);
+//             console.log('Pasé por aquí')
+//         }
+//     });
+// }
 
 
 // function oe_debug_view_log() {
