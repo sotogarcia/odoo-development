@@ -54,7 +54,7 @@
                                     placeholder="Enter new text for description" />
                             </page>
                             <page string="Questions" class="oe_page_questions" accesskey="D">
-                                <field name="at_question_ids" class="oe_field_at_question_ids" />
+                                <field name="at_test_at_question_ids" class="oe_field_at_question_ids" />
                             </page>
                         </notebook>
                     </sheet>

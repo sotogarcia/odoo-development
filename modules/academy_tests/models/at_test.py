@@ -60,19 +60,17 @@ class AtTest(models.Model):
               'hide record without removing it.')
     )
 
-    at_question_ids = fields.Many2many(
+    at_test_at_question_ids = fields.One2many(
         string='Questions',
         required=False,
         readonly=False,
         index=False,
         default=None,
         help=False,
-        comodel_name='at.question',
-        # relation='at_question_this_model_rel',
-        # column1='at_question_id',
-        # column2='this_model_id',
+        comodel_name='at_test_at_question_rel',
+        inverse_name='at_test_id',
         domain=[],
         context={},
+        auto_join=False,
         limit=None
     )
-
