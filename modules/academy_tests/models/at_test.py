@@ -60,17 +60,19 @@ class AtTest(models.Model):
               'hide record without removing it.')
     )
 
-    at_question_ids = fields.Many2one(
+    at_question_ids = fields.Many2many(
         string='Questions',
         required=False,
         readonly=False,
         index=False,
         default=None,
-        help='Questions in test',
+        help=False,
         comodel_name='at.question',
+        # relation='at_question_this_model_rel',
+        # column1='at_question_id',
+        # column2='this_model_id',
         domain=[],
         context={},
-        ondelete='cascade',
-        auto_join=False
+        limit=None
     )
 
