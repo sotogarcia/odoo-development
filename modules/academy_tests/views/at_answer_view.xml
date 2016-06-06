@@ -43,7 +43,7 @@
                     <field name="sequence" class="oe_field_sequence" widget="handle"/>
                     <field name="is_correct" class="oe_field_is_correct" string="C" />
                     <field name="name" class="oe_field_name"
-                        placeholder="Enter text for name" />
+                        placeholder="Enter new text for name" />
                     <button name="cmd_open_in_form" string="&#xF044;"
                          type="object" help="Open in form view" />
                 </tree>
@@ -72,12 +72,9 @@
                             <field name="is_correct" class="oe_field_is_correct" />
                         </group>
                         <notebook>
-                            <page string="Alternative wording" class="oe_page_alternative_wording" accesskey="L">
-                                <field name="alternative_wording_ids" class="oe_field_alternative_wording_ids" />
-                            </page>
                             <page string="Description" class="oe_page_description" accesskey="D">
                                 <field name="description" class="oe_field_description"
-                                    placeholder="Enter the text for description" />
+                                    placeholder="Enter new text for description" />
                             </page>
                         </notebook>
                     </sheet>
@@ -114,9 +111,9 @@
             <field name="search_view_id" ref="view_at_answer_search" />
             <field name="help" type="html">
                 <p class="oe_view_nocontent_create">
-                    Click to add new Answers
+                    Click to add new answers
                 </p><p>
-                    Answers will be shown as questions choice options
+                    Answers will be shown as choice options for questions
                 </p>
             </field>
         </record>

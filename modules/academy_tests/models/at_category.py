@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-#pylint: disable=I0011,W0212,E0611,C0103,R0903,C0111
+#pylint: disable=I0011,W0212,E0611,C0103,R0903,C0111,F0401
 ###############################################################################
 #    License, author and contributors information in:                         #
 #    __openerp__.py file at the root folder of this module.                   #
@@ -25,7 +25,7 @@ class AtCategory(models.Model):
     _description = u'Category of the question'
 
     _rec_name = 'name'
-    _order = 'sequence ASC'
+    _order = 'sequence ASC, name ASC'
 
     # ---------------------------- ENTITY FIEDS -------------------------------
 
@@ -48,6 +48,16 @@ class AtCategory(models.Model):
         default=None,
         help='Something about this category',
         translate=True
+    )
+
+    active = fields.Boolean(
+        string='Active',
+        required=False,
+        readonly=False,
+        index=False,
+        default=True,
+        help=('If the active field is set to false, it will allow you to '
+              'hide record without removing it.')
     )
 
     sequence = fields.Integer(
@@ -94,8 +104,8 @@ class AtCategory(models.Model):
 
     _sql_constraints = [
         (
-            'category_uniq',
-            'UNIQUE(name)',
-            _(u'There are already another category with the same name')
+            'categoryr_by_topic_uniq',
+            'UNIQUE(at_topic_id, name)',
+            _(u'There is already another category with the same name in this topic')
         )
     ]

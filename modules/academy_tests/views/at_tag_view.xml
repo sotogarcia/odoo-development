@@ -45,7 +45,7 @@
                             <h1>
                                 <field name="name" class="oe_field_name"
                                     string="Name" placeholder="Name"
-                                    help="Enter the new value for Name" />
+                                    help="Enter new value for name" />
                             </h1>
                         </div>
 

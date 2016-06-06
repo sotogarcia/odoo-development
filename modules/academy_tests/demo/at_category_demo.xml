@@ -3,17 +3,5 @@
 <openerp>
     <data noupdate="0">
 
-        <record id="at_category_odoo_practical" model="at.category">
-            <field name="name">Practical</field>
-            <field name="description">Learn how to use platform.</field>
-            <field name="at_topic_id" ref="at_topic_odoo" />
-        </record>
-
-        <record id="at_category_odoo_development" model="at.category">
-            <field name="name">Development</field>
-            <field name="description">Learn how develop platform modules.</field>
-            <field name="at_topic_id" ref="at_topic_odoo" />
-        </record>
-
     </data>
 </openerp>

@@ -1,7 +1,13 @@
 [WIP] Working on academy_tests
 
+# Known bugs
+
+- [ ] Duplicate category names don't raise an error
+- [ ] at.category names should can be repeated in distintc topic
+
 # Things to do
 
+- [ ] Icon and description
 - [x] Quit ``description`` field from all the tree views.
 - [x] Button to open ``at.answer`` form view from tree view.
 - [x] Make editable the ``at.category`` tree view inside the ``at.topic`` form view.
@@ -11,9 +17,16 @@
 - [x] Levels default view without sequence, another view with sequence to be used in menu
 - [x] Category default view without sequence, another view with sequence to be used into the topic form view
 - [ ] Finish ``at.test.builder.wizard`` dynamic categories domain
-
-## Settings
-
+- [ ] Check labels and other texts
+- [ ] Check translations
+- [ ] Check unicode strings
+- [ ] Hide default questions and answers
+- [ ] Forbid on fly creation of at.topic, at.category in question views
+- [ ] Topic description in a new tab
+- [ ] Questions in a tab before description in test form view
+- [ ] Questions tree editable in test form view
+- [ ] Domain to limit answers in test question
+- [ ] On change at_test_at_question_rel_id change answers domaind and link to all possible answers
 - [ ] Default ``at_level``
 - [ ] Default ``Neither answer is correct`` text
 - [ ] Default texts for: first, second, third, ...

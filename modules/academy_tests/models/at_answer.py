@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-#pylint: disable=I0011,W0212,E0611,C0103,R0903,C0111
+#pylint: disable=I0011,W0212,E0611,C0103,R0903,C0111,F0401
 ###############################################################################
 #    License, author and contributors information in:                         #
 #    __openerp__.py file at the root folder of this module.                   #
@@ -27,6 +27,8 @@ class AtAnswer(models.Model):
     _rec_name = 'name'
     _order = 'sequence ASC'
 
+    _inherit = ['mail.thread']
+
     # ---------------------------- ENTITY FIELDS ------------------------------
 
     name = fields.Char(
@@ -48,6 +50,16 @@ class AtAnswer(models.Model):
         default=None,
         help='Something about this topic',
         translate=True
+    )
+
+    active = fields.Boolean(
+        string='Active',
+        required=False,
+        readonly=False,
+        index=False,
+        default=True,
+        help=('If the active field is set to false, it will allow you to '
+              'hide record without removing it.')
     )
 
     at_question_id = fields.Many2one(
@@ -82,28 +94,13 @@ class AtAnswer(models.Model):
         help='Preference order for this answer'
     )
 
-    alternative_wording_ids = fields.One2many(
-        string='Alternative wording',
-        required=False,
-        readonly=False,
-        index=False,
-        default=None,
-        help='Alternative wording options for this answer',
-        comodel_name='at.alternative.wording',
-        inverse_name='res_id',
-        domain=[('model', '=', 'at.answer')],
-        context={'default_model': 'at.answer'},
-        auto_join=False,
-        limit=None
-    )
-
     # --------------------------- SQL_CONTRAINTS ------------------------------
 
     _sql_constraints = [
         (
             'answer_by_question_uniq',
             'UNIQUE(name, at_question_id)',
-            _(u'There are already another answer with the same text')
+            _(u'There is already another answer with the same text')
         )
     ]
 

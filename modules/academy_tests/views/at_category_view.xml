@@ -40,9 +40,9 @@
                 <tree string="at_category_tree" create="1" delete="1" edit="1" editable="bottom">
                     <field name="sequence" class="oe_field_sequence" widget="handle" />
                     <field name="name" class="oe_field_name"
-                        placeholder="Enter text for name" />
+                        placeholder="Enter new text for name" />
                     <field name="description" class="oe_field_description"
-                        placeholder="Enter text for description" />
+                        placeholder="Enter new text for description" />
                 </tree>
             </field>
         </record>
@@ -68,7 +68,7 @@
 
                         <group col="2">
                             <field name="description" class="oe_field_description"
-                                placeholder="Enter the text for description" />
+                                placeholder="Enter new text for description" />
                         </group>
                     </sheet>
                 </form>
@@ -103,7 +103,7 @@
             <field name="search_view_id" ref="view_at_category_search" />
             <field name="help" type="html">
                 <p class="oe_view_nocontent_create">
-                    Click to add new Categories
+                    Click to add new category
                 </p><p>
                     Categories are used to group interrelated questions
                 </p>

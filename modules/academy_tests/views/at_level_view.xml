@@ -64,7 +64,7 @@
                         </div>
                         <group col="2">
                             <field name="description" class="oe_field_description"
-                                placeholder="Enter the text for description" />
+                                placeholder="Enter new text for description" />
                         </group>
                     </sheet>
                 </form>
@@ -103,10 +103,10 @@
             <field name="views">[(False, 'form'), ('view_at_level_tree_sequence', 'tree')]</field>
             <field name="help" type="html">
                 <p class="oe_view_nocontent_create">
-                    Any level have been defined yet.
+                    Any level has been defined yet
                 </p>
                 <p>
-                    Levels are usefull to establish the difficulty scale of
+                    Levels are useful to establish the difficulty scale of
                     questions.
                 </p>
             </field>

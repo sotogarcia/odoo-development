@@ -3,10 +3,6 @@
 <openerp>
     <data noupdate="0">
 
-        <record id="at_topic_odoo" model="at.topic">
-            <field name="name">Odoo</field>
-            <field name="description">Odoo (formerly known as OpenERP[1] and before that, TinyERP) is a suite of open-source enterprise management applications</field>
-        </record>
 
     </data>
 </openerp>

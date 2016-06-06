@@ -45,10 +45,18 @@
                             <h1>
                                 <field name="name" class="oe_field_name"
                                     string="Name" placeholder="Name"
-                                    help="Enter the new value for Name" />
+                                    help="Enter new value for name" />
                             </h1>
                         </div>
-                        <!-- ··· -->
+                        <notebook>
+                            <page string="Description" class="oe_page_description" accesskey="D">
+                                <field name="description" class="oe_field_desription"
+                                    placeholder="Enter new text for description" />
+                            </page>
+                            <page string="Questions" class="oe_page_questions" accesskey="D">
+                                <field name="at_question_ids" class="oe_field_at_question_ids" />
+                            </page>
+                        </notebook>
                     </sheet>
                     <div class="oe_chatter">
                         <field name="message_follower_ids" widget="mail_followers"/>

@@ -27,10 +27,13 @@
 
     # always loaded
     'data': [
+        # Module needed data files
         'data/at_level_data.xml',
 
+        # Module general settings
         'views/academy_tests.xml',
 
+        # Module model views
         'views/at_question_view.xml',
         'views/at_tag_view.xml',
         'views/at_test_view.xml',
@@ -38,19 +41,22 @@
         'views/at_category_view.xml',
         'views/at_answer_view.xml',
         'views/at_level_view.xml',
-        'views/at_alternative_wording_view.xml',
 
-        'wizard/at_test_builder_wizard_view.xml',
+        # Overriden external model views
+        'views/ir_attachment_view.xml',
 
-        'views/ir_attachment_view.xml'
+        # Model security files
+        'security/at_answer.xml',
+        'security/at_category.xml',
+        'security/at_level.xml',
+        'security/at_question.xml',
+        'security/at_tag.xml',
+        'security/at_test.xml',
+        'security/at_topic.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
-        'demo/at_topic_demo.xml',
-        'demo/at_category_demo.xml',
-        'demo/at_tag_demo.xml',
-        'demo/at_question_demo.xml',
-        'demo/at_answer_demo.xml'
+
     ],
     'js': [
         'static/src/js/academy_tests.js'

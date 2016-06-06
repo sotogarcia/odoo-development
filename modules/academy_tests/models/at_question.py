@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-#pylint: disable=I0011,W0212,E0611,C0103,R0903,C0111
+#pylint: disable=I0011,W0212,E0611,C0103,R0903,C0111,F0401
 ###############################################################################
 #    License, author and contributors information in:                         #
 #    __openerp__.py file at the root folder of this module.                   #
@@ -57,6 +57,16 @@ class AtQuestion(models.Model):
         translate=True
     )
 
+    active = fields.Boolean(
+        string='Active',
+        required=False,
+        readonly=False,
+        index=False,
+        default=True,
+        help=('If the active field is set to false, it will allow you to '
+              'hide record without removing it.')
+    )
+
     at_topic_id = fields.Many2one(
         string='Topic',
         required=False,
@@ -95,7 +105,7 @@ class AtQuestion(models.Model):
         readonly=False,
         index=False,
         default=None,
-        help='Answers will be shown as this question options',
+        help='Answers will be shown as choice options for this question',
         comodel_name='at.answer',
         inverse_name='at_question_id',
         domain=[],
@@ -153,21 +163,6 @@ class AtQuestion(models.Model):
         limit=None
     )
 
-    alternative_wording_ids = fields.One2many(
-        string='Alternative wording',
-        required=False,
-        readonly=False,
-        index=False,
-        default=None,
-        help='Alternative wording options for this question',
-        comodel_name='at.alternative.wording',
-        inverse_name='res_id',
-        domain=[('model', '=', 'at.question')],
-        context={'default_model': 'at.question'},
-        auto_join=False,
-        limit=None
-    )
-
     # ----------------------- AUXILIARY FIELD METHODS -------------------------
 
     def _compute_at_category_ids_domain(self):
@@ -188,7 +183,7 @@ class AtQuestion(models.Model):
         at_level_set = at_level_obj.search(
             at_level_domain, order="sequence ASC", limit=1)
 
-        return at_level_set[0].level if at_level_set else None
+        return at_level_set[0].id if at_level_set else None
 
     # --------------------------- ONCHANGE EVENTS -----------------------------
 
@@ -223,6 +218,6 @@ class AtQuestion(models.Model):
         (
             'question_uniq',
             'UNIQUE(name)',
-            _(u'There are already another question with the same name')
+            _(u'There is already another question with the same name')
         )
     ]

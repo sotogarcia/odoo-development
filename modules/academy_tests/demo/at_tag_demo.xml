@@ -3,9 +3,5 @@
 <openerp>
     <data noupdate="0">
 
-        <record id="at_tag_common" model="at.tag">
-            <field name="name">Common</field>
-        </record>
-
     </data>
 </openerp>

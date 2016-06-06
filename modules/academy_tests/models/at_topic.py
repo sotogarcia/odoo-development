@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-#pylint: disable=I0011,W0212,E0611,C0103,R0903,C0111
+#pylint: disable=I0011,W0212,E0611,C0103,R0903,C0111,F0401
 ###############################################################################
 #    License, author and contributors information in:                         #
 #    __openerp__.py file at the root folder of this module.                   #
 ###############################################################################
 
-from openerp import models, fields, api
+from openerp import models, fields
 from openerp.tools.translate import _
 from logging import getLogger
 
@@ -52,6 +52,16 @@ class AtTopic(models.Model):
         translate=True
     )
 
+    active = fields.Boolean(
+        string='Active',
+        required=False,
+        readonly=False,
+        index=False,
+        default=True,
+        help=('If the active field is set to false, it will allow you to '
+              'hide record without removing it.')
+    )
+
     at_category_ids = fields.One2many(
         string='Categories',
         required=False,
@@ -73,7 +83,7 @@ class AtTopic(models.Model):
         (
             'category_uniq',
             'UNIQUE(name)',
-            _(u'There are already another topic with the same name')
+            _(u'There is already another topic with the same name')
         )
     ]
 

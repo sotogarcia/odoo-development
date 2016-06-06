@@ -50,7 +50,7 @@
 
                         <group col="2">
                             <field name="description" class="oe_field_description"
-                                placeholder="Enter the text for description" />
+                                placeholder="Enter new text for description" />
                         </group>
 
                         <notebook>
