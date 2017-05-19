@@ -11,7 +11,7 @@
         - Context·······: {}
         - Parent menu ··: academy_tests.menu_academy
         - View priority·: 16    Sequence····: 10
-        - Action help···: There are not any question yet
+        - Action help···: There is not any question yet
     - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
     <!-- Tree view for "at.question" -->
@@ -124,7 +124,7 @@
         <field name="name">Questions</field>
         <field name="sequence" eval="10" />
         <field name="action" ref="action_questions_act_window" />
-        <field name="parent_id" ref="academy_tests.menu_questions_top" />
+        <field name="parent_id" ref="academy_tests.menu_test_top" />
     </record>
 
 

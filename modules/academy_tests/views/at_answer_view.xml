@@ -123,7 +123,7 @@
             <field name="name">Answers</field>
             <field name="sequence" eval="10" />
             <field name="action" ref="action_answers_act_window" />
-            <field name="parent_id" ref="academy_tests.menu_settings_top" />
+            <field name="parent_id" ref="menu_test_settings_tops" />
         </record>
 
     </data>

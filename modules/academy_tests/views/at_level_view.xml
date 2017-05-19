@@ -11,7 +11,7 @@
             - Context·······: {}
             - Parent menu ··: academy_tests.menu_settings_top
             - View priority·: 16    Sequence····: 10
-            - Action help···: There are not any record for name
+            - Action help···: There is not any record for name
         - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
         <!-- Tree view for "at.level" -->
@@ -106,8 +106,7 @@
                     Any level has been defined yet
                 </p>
                 <p>
-                    Levels are useful to establish the difficulty scale of
-                    questions.
+                    Levels are useful to establish the difficulty scale of questions.
                 </p>
             </field>
         </record>

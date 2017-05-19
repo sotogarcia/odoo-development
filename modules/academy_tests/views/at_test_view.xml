@@ -95,11 +95,10 @@
             <field name="search_view_id" ref="view_at_test_search" />
             <field name="help" type="html">
                 <p class="oe_view_nocontent_create">
-                    There are not any stored test.
+                    There is not any stored test.
                 </p>
                 <p>
-                    Tests should be made using wizards, once new test have been
-                    created it will can be saved. Saved test will be shown here.
+                    Tests should be made using wizards, once new test have been created it will can be saved. Saved test will be shown here.
                 </p>
             </field>
         </record>

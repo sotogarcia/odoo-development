@@ -26,7 +26,7 @@
                     <group string="Local modules filter" col="4">
                         <field name="developing_modules_enabled" />
                         <field name="search_default_app" />
-                        <field name="developing_module_ids" widget="many2many_tags" colspan="4"/>
+                        <!-- <field name="developing_module_ids" widget="many2many_tags" colspan="4"/> -->
                     </group>
                     <group string="Development mode" col="4">
                         <field name="development_mode"/>
@@ -51,7 +51,7 @@
         <record model="ir.ui.menu" id="menu_development_tools" >
             <field name="name">Development tools</field>
             <field name="action" ref="action_development_tools_config_settings_act_window" />
-            <field name="parent_id" ref="base.menu_config" />
+            <field name="parent_id" ref="base.menu_administration" />
             <field name="sequence" eval="10" />
         </record>
 

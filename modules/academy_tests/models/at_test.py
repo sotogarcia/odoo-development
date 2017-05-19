@@ -67,7 +67,7 @@ class AtTest(models.Model):
         index=False,
         default=None,
         help=False,
-        comodel_name='at_test_at_question_rel',
+        comodel_name='at.test.at.question.rel',
         inverse_name='at_test_id',
         domain=[],
         context={},

@@ -4,7 +4,7 @@
 #    __openerp__.py file at the root folder of this module.                   #
 ###############################################################################
 
-from openerp import models, fields, api
+from openerp import models, fields, api, api
 from openerp.tools.translate import _
 from openerp.tools import drop_view_if_exists
 from logging import getLogger
@@ -199,7 +199,8 @@ class ReportFieldDetail(models.Model):
 
     # -------------------------- OVERWITEN METHODS ----------------------------
 
-    def init(self, cr):
+    @api.model_cr
+    def init(self):
         """ Build database view which will be used as module origin
 
             :param cr: database cursor
@@ -213,8 +214,8 @@ class ReportFieldDetail(models.Model):
             ORDER BY {}
         """.format(self._name, self._order)
 
-        drop_view_if_exists(cr, self._table)
-        cr.execute(
+        drop_view_if_exists(self._cr, self._table)
+        self._cr.execute(
             'create or replace view {} as ({})'.format(
                 self._table,
                 self._sql_query

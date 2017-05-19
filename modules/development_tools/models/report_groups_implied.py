@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from openerp import models, fields
+from openerp import models, fields, api
 from openerp.tools import drop_view_if_exists
 
 
@@ -169,14 +169,15 @@ class ReportGroupsImplied(models.Model):
 
     # ------------------------- OVERWRITTEN METHODS  -------------------------
 
-    def init(self, cr):
+    @api.model_cr
+    def init(self):
         """ Build database view which will be used as module origin
 
             :param cr: database cursor
         """
 
-        drop_view_if_exists(cr, self._table)
-        cr.execute(
+        drop_view_if_exists(self._cr, self._table)
+        self._cr.execute(
             'create or replace view {} as ({})'.format(
                 self._table,
                 self._sql_query

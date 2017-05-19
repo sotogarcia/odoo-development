@@ -9,9 +9,9 @@
             - _rec_name·····: name
             - Domain········: []
             - Context·······: {}
-            - Parent menu ··: academy_tests.menu_questions_top
+            - Parent menu ··: academy_tests.menu_questions
             - View priority·: 16    Sequence····: 10
-            - Action help···: There are not any record for name
+            - Action help···: There is not any record for name
         - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
         <!-- Tree view for "at.topic" -->
@@ -96,11 +96,10 @@
             <field name="search_view_id" ref="view_at_topic_search" />
             <field name="help" type="html">
                 <p class="oe_view_nocontent_create">
-                    There are not any topic defined.
+                    There is not any topic defined.
                 </p>
                 <p>
-                    Topics are used to group questions, each one of them can
-                    be divided in categories.
+                    Topics are used to group questions, each one of them can be divided in categories.
                 </p>
             </field>
         </record>
@@ -110,7 +109,7 @@
             <field name="name">Topics</field>
             <field name="sequence" eval="10" />
             <field name="action" ref="action_topics_act_window" />
-            <field name="parent_id" ref="academy_tests.menu_questions_top" />
+            <field name="parent_id" ref="menu_test_settings_tops" />
         </record>
 
     </data>

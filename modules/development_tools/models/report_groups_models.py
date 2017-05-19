@@ -1,4 +1,4 @@
-from openerp import models, fields
+from openerp import models, fields, api
 from openerp import tools
 
 
@@ -110,15 +110,16 @@ class ModelName(models.Model):
 
     # --------------------------OVERWRITTEN METHODS----------------------------
 
-    def init(self, cr):
+    @api.model_cr
+    def init(self):
         """ Build database view which will be used as module origin
 
             :param cr: database cursor
         """
 
-        tools.drop_view_if_exists(cr, self._table)
+        tools.drop_view_if_exists(self._cr, self._table)
 
-        cr.execute("""
+        self._cr.execute("""
             create or replace view {} AS (
                 {}
             )
