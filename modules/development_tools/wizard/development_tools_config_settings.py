@@ -35,6 +35,12 @@ class DevelopmentToolsConfigSettings(models.TransientModel):
     _rec_name = 'id'
     _order = 'id ASC'
 
+    _defaults = {
+        'email_to': 'admin@localhost',
+        'email_capture': False,
+        'development_mode': False
+    }
+
     # ---------------------------- ENTITY FIELDS ------------------------------
 
     email_to = fields.Char(
@@ -236,6 +242,8 @@ class DevelopmentToolsConfigSettings(models.TransientModel):
 
     def get_debug_mode(self):
         param = self._get_parameter('development_mode')
+
+        print '243'
 
         if param:
             value = self._safe_eval(param.value, bool)
