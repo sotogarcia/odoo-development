@@ -27,13 +27,16 @@ class IrUiView(models.Model):
 
             :param ids [integer]: list of ir.ui.view identifiers
         """
+        print('reload')
         for view_id in ids:
             view_obj = self.env['ir.ui.view']
             view_set = view_obj.browse(view_id)
 
             if view_set:
+                print('view_set', view_set)
+
                 dict_xml_id = view_set.get_xml_id()
-                xml_id = dict_xml_id and dict_xml_id.itervalues().next()
+                xml_id = dict_xml_id and dict_xml_id[view_id]
 
                 if xml_id:
                     model_obj = self.env['ir.model']
@@ -43,6 +46,10 @@ class IrUiView(models.Model):
             else:
                 self._log(3, 'NOID', view_id)
 
+        return {
+            'type': 'ir.actions.client',
+            'tag': 'reload',
+        }
     # ---------------------------- LOG MESSAGES -------------------------------
 
     def _log(self, level, message, *args, **kwargs):

@@ -26,7 +26,8 @@ class IrModel(models.Model):
     _inherit = 'ir.model'
 
     @api.model
-    def reload(self, model, _id, xml_id):
+    def reload(self, model, _id, xml_id): # pylint: disable=locally-disabled, W0603
+        """ Reload view """
         result = False
 
         m_data_domain = [('model', '=', model), ('res_id', '=', _id)]

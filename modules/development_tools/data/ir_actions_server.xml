@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <openerp>
-    <data noupdate="1">
+    <data noupdate="0">
 
         <record model="ir.actions.server" id="action_development_code_tester_server">
             <field name="type">ir.actions.server</field>
@@ -18,7 +18,8 @@
             <field name="condition" eval="True" />
             <field name="state">code</field>
             <field name="sequence" eval="5" />
-            <field name="code">action = self.safe_execute(cr, uid, context)</field>
+            <field name="code">action = records.safe_execute()</field>
+            <field name="binding_model_id" ref="base.model_ir_cron" />
         </record>
 
         <record id="action_run_server_action_server" model="ir.actions.server">
@@ -28,7 +29,8 @@
             <field name="condition" eval="True" />
             <field name="state">code</field>
             <field name="sequence" eval="5" />
-            <field name="code">action = self.safe_execute(cr, uid, context)</field>
+            <field name="code">action = records.safe_execute()</field>
+            <field name="binding_model_id" ref="base.model_ir_actions_server" />
         </record>
 
         <record id="action_run_act_window_server" model="ir.actions.server">
@@ -38,7 +40,8 @@
             <field name="condition" eval="True" />
             <field name="state">code</field>
             <field name="sequence" eval="5" />
-            <field name="code">action = self.safe_execute(cr, uid, context)</field>
+            <field name="code">action = records.safe_execute()</field>
+            <field name="binding_model_id" ref="base.model_ir_actions_act_window" />
         </record>
 
     </data>

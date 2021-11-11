@@ -31,10 +31,11 @@ class Home(webmain.Home):
         return result or super(Home, self).web_client(s_action, **kw)
 
     def _get_debug_mode(self):
-        config = request.env['development_tools.config.settings']
-        debug = config.get_debug_mode()
+        # config = request.env['development_tools.config.settings']
+        # debug = config.get_debug_mode()
 
-        return debug == True
+        # return debug == True
+        return True
 
     def _build_debug_response(self):
         result = None

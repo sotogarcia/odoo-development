@@ -57,7 +57,7 @@
             <field name="name">Domain tester</field>
             <field name="action" ref="action_dev_domain_tester_act_window" />
             <field name="parent_id" ref="menu_testing_tools" />
-            <field name="sequence" eval="10" />
+            <field name="sequence" eval="20" />
         </record>
 
     </data>

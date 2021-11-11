@@ -7,7 +7,8 @@
 from openerp import models, fields, api, api
 from openerp.tools.translate import _
 from logging import getLogger
-from cStringIO import StringIO
+from io import StringIO
+from importlib import reload
 import sys
 
 _logger = getLogger(__name__)
@@ -218,9 +219,9 @@ class DevDomainTester(models.TransientModel):
 
         new_stdout = StringIO()
 
-        self._encoding = sys.getdefaultencoding()
-        reload(sys)
-        sys.setdefaultencoding('utf-8')
+        # self._encoding = sys.getdefaultencoding()
+        # reload(sys)
+        # sys.setdefaultencoding('utf-8')
 
         self._stdout = sys.stdout
         sys.stdout = new_stdout

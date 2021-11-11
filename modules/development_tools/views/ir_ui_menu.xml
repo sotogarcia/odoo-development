@@ -5,8 +5,6 @@
 
         <record model="ir.ui.menu" id="menu_developement_tools" >
             <field name="name">Developement</field>
-            <!-- <field name="action" ref="" /> -->
-            <!-- <field name="parent_id" ref="base.menu_custom" /> -->
             <field name="sequence" eval="10" />
         </record>
 

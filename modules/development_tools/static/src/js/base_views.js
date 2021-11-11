@@ -1,3 +1,85 @@
+odoo.define('development_tools.DebugManager', function (require) {
+
+    "use strict";
+
+    var core = require("web.core");
+    var DebugManager = require('web.DebugManager');
+
+
+    DebugManager.include({
+
+        start: function () {
+            return this._super.apply(this, arguments);
+        },
+
+        reload_view: function (params, ev) {
+            var self = this;
+            self._rpc({
+                model: 'ir.ui.view',
+                method: 'reload',
+                args: [[params.id]]
+            });
+
+            self.exit();
+        },
+
+        exit: function () {
+            this.do_action({
+                type: 'ir.actions.client',
+                tag: 'reload'
+            });
+        },
+
+    }); // DebugManager.include
+
+});
+/*
+
+var self = this;
+            self._rpc({
+                model: 'ir.actions.act_window',
+                method: 'search_read',
+                domain: [['id', '=', params.id]],
+                fields: ['name', 'model', 'type'],
+                limit: 1,
+            })
+            .then(function (views) {
+                console.log(views);
+            });
+
+name
+type
+view_id
+domain
+context
+res_id
+res_model
+src_model
+target
+view_mode
+view_type
+usage
+view_ids
+views
+limit
+groups_id
+search_view_id
+filter
+auto_search
+search_view
+multi
+xml_id
+help
+binding_model_id
+binding_type
+id
+display_name
+create_uid
+create_date
+write_uid
+write_date
+__last_update*/
+
 // openerp.development_tools = function (openerp) {
 //     openerp.web.ViewManagerAction = openerp.web.ViewManagerAction.extend({
 //         init: function () {
@@ -29,3 +111,4 @@
 //         console.log(err)
 //     }
 // }
+

@@ -3,7 +3,18 @@
 <openerp>
     <data noupdate="0">
 
-        <record id="view_development_tools_assets" model="ir.ui.view">
+        <!-- BACKEND ASSETS
+        - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+        <template id="development_tools_backend_assets" name="website assets for development tools" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <link rel="stylesheet" href="/development_tools/static/src/css/styles-backend.css" />
+                <script type="text/javascript" src="/development_tools/static/src/js/base_views.js" />
+            </xpath>
+        </template>
+
+
+<!--         <record id="view_development_tools_assets" model="ir.ui.view">
             <field name="name">Development tools assets</field>
             <field name="model"></field>
             <field name="type">qweb</field>
@@ -17,7 +28,7 @@
                     <script type="text/javascript" src="/development_tools/static/src/js/base_views.js" />
                 </xpath>
             </field>
-        </record>
+        </record> -->
 
     </data>
 </openerp>
