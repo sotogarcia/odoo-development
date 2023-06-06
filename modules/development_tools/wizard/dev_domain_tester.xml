@@ -45,12 +45,10 @@
             <field name="name">Test domains and contexts</field>
             <field name="res_model">dev.domain.tester</field>
             <field name="view_mode">form</field>
-            <field name="view_type">form</field>
             <field name="target">inline</field>
             <field name="limit" eval="80" />
             <field name="domain">[]</field>
             <field name="context">{}</field>
-            <field name="auto_search" eval="True" />
         </record>
 
         <record model="ir.ui.menu" id="menu_act_window_tests" >

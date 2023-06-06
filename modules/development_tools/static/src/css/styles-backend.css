@@ -17,3 +17,8 @@
     overflow: hidden;
     white-space: nowrap;
 }
+
+.view_dev_code_tester_form .oe_field_code {
+    resize: vertical;
+    min-height: 10em;
+}

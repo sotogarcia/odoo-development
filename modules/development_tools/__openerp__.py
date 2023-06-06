@@ -60,15 +60,7 @@ Included components:
     },
 
     'data': [
-        'data/ir_actions_server.xml',
-        'data/ir_filters.xml',
-
-        'views/assests_backend.xml',
-
-        'views/ir_ui_menu.xml',
-        'views/base_ir_module_module.xml',
-        'views/base_view_view_tree.xml',
-
+        'views/development_tools.xml',
         'wizard/dev_domain_tester.xml',
         'wizard/dev_code_tester.xml',
     ],

@@ -12,13 +12,13 @@
             <field name="groups_id" eval="[4, ref('base.group_no_one')]" />
             <field name="active" eval="True" />
             <field name="arch" type="xml">
-                <form string="Caption" create="1" delete="1" edit="1">
+                <form string="Caption" create="1" delete="1" edit="1" class="view_dev_code_tester_form">
                     <header>
                         <button name="cmd_execute" string="Execute" type="object" class="oe_highlight" />
                     </header>
                     <div style="margin-top: 2em;">
                         <group col="2">
-                            <field name="code" widget="text" nolabel="1" />
+                            <field name="code" class="oe_field_code" widget="text" nolabel="1" />
                         </group>
                         <group col="4">
                             <group col="2" colspan="2">
@@ -56,12 +56,10 @@
             <field name="name">Test codes and contexts</field>
             <field name="res_model">dev.code.tester</field>
             <field name="view_mode">form</field>
-            <field name="view_type">form</field>
             <field name="target">inline</field>
             <field name="limit" eval="80" />
             <field name="domain">[]</field>
             <field name="context">{}</field>
-            <field name="auto_search" eval="True" />
         </record>
 
         <record model="ir.ui.menu" id="menu_act_window_code_tests" >

@@ -4,8 +4,7 @@
 #    __openerp__.py file at the root folder of this module.                   #
 ###############################################################################
 
-from openerp import models, fields, api, api
-from openerp.tools.translate import _
+from odoo import models, fields, api
 from logging import getLogger
 from io import StringIO
 from importlib import reload
@@ -109,7 +108,6 @@ class DevDomainTester(models.TransientModel):
                 if action.code:
                     self.code = action.code
 
-    @api.multi
     @api.depends('model_id')
     def _compute_info(self):
         for record in self:
@@ -135,7 +133,6 @@ class DevDomainTester(models.TransientModel):
 
     # --------------------------- PUBLIC METHODS ------------------------------
 
-    @api.multi
     def cmd_execute(self):
         """ Builds a new server action to execute the inserted in code field.
 

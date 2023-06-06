@@ -114,7 +114,6 @@ class DevDomainTester(models.TransientModel):
 
     # ----------------------------PUBLIC METHODS-------------------------------
 
-    @api.multi
     def cmd_execute(self, values):
         """ Shows the choosen ir.ui.view for selected ir.model and closes this
             wizard.
