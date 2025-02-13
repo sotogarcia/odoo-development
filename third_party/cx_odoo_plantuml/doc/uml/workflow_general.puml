@@ -1,9 +1,0 @@
-@startuml General Workflow
-start
-:Open Apps;
-:Select App;
-:Click "Export PlantUML";
-->Wizard is\n opened;
-:Select;
-stop
-@enduml
