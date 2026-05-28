@@ -16,7 +16,7 @@
                     <header>
                         <button name="cmd_execute" string="Execute" type="object" class="oe_highlight"/>
                     </header>
-                    <div style="margin-top: 2em;">
+                    <div class="mt-2">
                         <group col="4">
                             <field name="model_id"/>
                             <field name="view_id" />
@@ -27,7 +27,7 @@
                         <group col="2">
                             <field name="context_string" widget="text" />
                         </group>
-                        <group string="Help" col="2" style="margin-top: 1em;" invisible="1">
+                        <group string="Help" col="2" class="mt-2" invisible="1">
                             <group>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sit amet scelerisque risus. Curabitur et viverra ex. Morbi pretium ipsum velit. Proin sagittis elit at dui euismod, sit amet maximus velit hendrerit. Fusce faucibus ante id dui commodo faucibus. Nulla placerat, quam a laoreet iaculis, lacus elit feugiat ex, et porta eros arcu quis dolor. Praesent convallis mauris imperdiet risus tristique laoreet a eget orci. Ut placerat eleifend elit, eu auctor eros auctor at. Nam vulputate, turpis ac vulputate vulputate, nisi enim imperdiet augue, id luctus ipsum felis et mi. Proin tincidunt posuere quam, et scelerisque nisi lacinia imperdiet. Vivamus dignissim maximus enim sed tristique. Nam feugiat ultrices luctus. Aliquam quis nulla a odio rhoncus interdum eget vel nisl. Nunc gravida eros turpis, at tempus diam posuere vitae. Curabitur efficitur aliquet malesuada. Proin tortor sapien, tempor iaculis lacus eu, euismod tempor purus.</p>
                             </group>

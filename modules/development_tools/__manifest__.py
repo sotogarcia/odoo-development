@@ -21,11 +21,10 @@
 #
 ###############################################################################
 {
-    'name': 'Development Tools',
-    'summary': 'Useful tools to make development easier OpenERP',
-    'version': '1.0',
-
-    'description': """
+    "name": "Development Tools",
+    "summary": "Useful tools to make development easier OpenERP",
+    "version": "18.0",
+    "description": """
 Development tools
 ==============================================
 
@@ -40,47 +39,35 @@ Included components:
     * Model acess by group pivot table.
 
     """,
-
-    'author': 'Jorge Soto Garcia',
-    'maintainer': 'Jorge Soto Garcia',
-    'contributors': ['Jorge Soto Garcia <sotogarcia@gmail.com>'],
-
-    'website': 'http://www.gitlab.com/sotogarcia',
-
-    'license': 'AGPL-3',
-    'category': 'Technical Settings',
-
-    'depends': [
-        'base',
-        'mail'
+    "author": "Jorge Soto Garcia",
+    "maintainer": "Jorge Soto Garcia",
+    "contributors": ["Jorge Soto Garcia <sotogarcia@gmail.com>"],
+    "website": "http://www.gitlab.com/sotogarcia",
+    "license": "AGPL-3",
+    "category": "Technical Settings",
+    "depends": ["base", "mail"],
+    "external_dependencies": {
+        "python": [],
+    },
+    "data": [
+        "views/development_tools.xml",
+        # "wizard/dev_domain_tester.xml",
+        "security/dev_code_tester.xml",
+        "wizard/dev_code_tester.xml",
     ],
-    'external_dependencies': {
-        'python': [
+    "demo": [],
+    # "js": ["static/src/js/base_views.js"],
+    # "css": ["static/src/css/styles-backend.css"],
+    # "qweb": [
+    #     # 'static/src/xml/base_base.xml',
+    #     "static/src/xml/qweb_templates.xml",
+    # ],
+    "assets": {
+        "web.assets_backend": [
+            "development_tools/static/src/css/styles-backend.css"
         ],
     },
-
-    'data': [
-        'views/development_tools.xml',
-        'wizard/dev_domain_tester.xml',
-        'wizard/dev_code_tester.xml',
-    ],
-    'demo': [
-    ],
-    'js': [
-        'static/src/js/base_views.js'
-    ],
-    'css': [
-        'static/src/css/styles-backend.css'
-    ],
-    'qweb': [
-        # 'static/src/xml/base_base.xml',
-        'static/src/xml/qweb_templates.xml',
-    ],
-    'images': [
-    ],
-
-    'test': [
-    ],
-
-    'installable': True
+    "images": [],
+    "test": [],
+    "installable": True,
 }

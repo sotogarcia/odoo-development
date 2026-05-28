@@ -4,6 +4,5 @@
 #    __openerp__.py file at the root folder of this module.                   #
 ###############################################################################
 
-from . import dev_domain_tester
+# from . import dev_domain_tester
 from . import dev_code_tester
-

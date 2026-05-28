@@ -16,7 +16,7 @@
                     <header>
                         <button name="cmd_execute" string="Execute" type="object" class="oe_highlight" />
                     </header>
-                    <div style="margin-top: 2em;">
+                    <div class="mt-2">
                         <group col="2">
                             <field name="code" class="oe_field_code" widget="text" nolabel="1" />
                         </group>
@@ -29,13 +29,13 @@
                                 <field name="is_action" class="or_right" />
                             </group>
                         </group>
-                        <notebook string="Help" style="margin-top: 1em;">
+                        <notebook string="Help" class="mt-2">
                             <page string="Output">
                                 <group col="2">
                                     <field name="stdout" widget="text" nolabel="1" />
                                 </group>
                             </page>
-                            <page string="Exception" attrs="{'invisible': [('exception', '=', False)]}" >
+                            <page string="Exception" invisible="not exception">
                                 <group col="2">
                                     <field name="exception" widget="text" nolabel="1" />
                                 </group>
